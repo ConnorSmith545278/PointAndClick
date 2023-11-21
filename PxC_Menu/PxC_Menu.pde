@@ -1,13 +1,15 @@
 Menu MainMenu;
+Clock Clock1;
 PImage BG;
-
-int menuActive = 1;
+int menuActive;
 
 
 void setup() {
-  fullScreen();
+  size(800, 800);
   MainMenu = new Menu();
+  Clock1 = new Clock();
   BG = loadImage("Background_Placeholder.png");
+  menuActive = 1;
 }
 
 
@@ -21,7 +23,9 @@ void draw() {
     scale(1.4, 1.4);
     image(BG, 0, 0);
     popMatrix();
+    Clock1.update();
   }
+
 
 
   //Main Menu
@@ -56,5 +60,15 @@ void draw() {
   //settings Menu
   if (menuActive ==2) {
     background(255);
+  }
+
+
+
+//GAME OVER Menu
+  if (menuActive == 3) {
+    background(255);
+    textMode(CENTER);
+    textSize(90);
+    text("GAME OVER!!!", width/2, height/2);
   }
 }
