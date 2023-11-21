@@ -5,7 +5,7 @@ int menuActive;
 
 
 void setup() {
-  size(800, 800);
+  fullScreen();
   MainMenu = new Menu();
   Clock1 = new Clock();
   BG = loadImage("Background_Placeholder.png");
@@ -24,6 +24,8 @@ void draw() {
     image(BG, 0, 0);
     popMatrix();
     Clock1.update();
+    
+    
   }
 
 
