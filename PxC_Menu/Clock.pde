@@ -4,23 +4,16 @@ class Clock {
   int oneclock;
   int tenclock;
   int TimeSave_Player;
-  
+
 
   void update() {
-    //changed to time++ so we can easily change the value for TIME TRAVEL
-    //clock
-    time++; //60 times per second
 
 
-    // /4 works better then either framecount or %4
-   timer = time/240; // /10 to get per second, 40 so every 4 real seconds is 1 in game minute
-    
-    println(timer);
-
-
+    time = time + deltaTime;
+    timer = time/4000;
     tenclock = timer/10;
-
     oneclock = timer % 10;
+    println(time, timer, tenclock, oneclock);
 
 
     if (tenclock >= 6) {
@@ -47,17 +40,17 @@ class Clock {
       textAlign(CENTER, CENTER);
       textSize(250);
       text("0 8 : ", width / 2 - 145, height/ 2 );
-      text(oneclock, width / 2 + 270 , height/ 2 );
+      text(oneclock, width / 2 + 270, height/ 2 );
       text(tenclock, width / 2 + 110, height/ 2 );
 
       //box around the digits
       rectMode(CENTER);
       noFill();
       strokeWeight(6);
-      rect(width/ 2 , height/ 2 , 800, 256);
+      rect(width/ 2, height/ 2, 800, 256);
     }
   }
-  
+
   //click on clock
   void mousePressed() {
     if (mouseX>width-275 && mouseX<width-25 &&
@@ -65,7 +58,6 @@ class Clock {
       mouseButton==LEFT && clockVisible == true) {
       clockVisible = false;
       TimeSave_Player = time;//safe time so we can reimplement this for easy TIME TRAVEL
-      
     } else if (mouseX>width /2 - 400  && mouseX<width /2 + 400  &&
       mouseY<height/ 2 + 128  && mouseY>height/2 - 128  &&
       mouseButton==LEFT && clockVisible == false) {
