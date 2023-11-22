@@ -2,6 +2,7 @@ Menu MainMenu;
 Clock Clock1;
 PImage BG;
 int menuActive;
+boolean clockVisible = true;
 
 
 void setup() {
@@ -17,17 +18,25 @@ void setup() {
 void draw() {
 
   //GAME!!
-  if (menuActive == 0) {
+  if (menuActive == 0 && clockVisible) {
     background(255);
     pushMatrix();
     scale(1.4, 1.4);
     image(BG, 0, 0);
     popMatrix();
     Clock1.update();
-    
-    
+    Clock1.show();
+    Clock1.mousePressed();
   }
-
+  else if (menuActive == 0 && !clockVisible){
+    background(255);
+    pushMatrix();
+    scale(1.4, 1.4);
+    image(BG, 0, 0);
+    popMatrix();
+    Clock1.show();
+    Clock1.mousePressed();
+  }
 
 
   //Main Menu
