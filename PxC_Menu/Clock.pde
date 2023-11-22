@@ -13,7 +13,9 @@ class Clock {
 
 
     // /4 works better then either framecount or %4
-    timer = time/40; // /10 to get per second, 40 so every 4 real seconds is 1 in game minute
+   timer = time/240; // /10 to get per second, 40 so every 4 real seconds is 1 in game minute
+    
+    println(timer);
 
 
     tenclock = timer/10;
