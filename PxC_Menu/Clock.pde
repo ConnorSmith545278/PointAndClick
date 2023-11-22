@@ -12,7 +12,7 @@ int TimeSave_Player;
     println(time);
     
     // /4 works better then either framecount or %4
-   timer = time/40; // /10 to get per second, 40 so every 4 real seconds is 1 in game second
+   timer = time/40; // /10 to get per second, 40 so every 4 real seconds is 1 in game minute
     
     println(timer);
 
@@ -23,7 +23,7 @@ int TimeSave_Player;
     println(oneclock);
     
     if (tenclock >= 6) {
-      timer = 0;
+      time = 0;
       menuActive = 3;
     }
     
@@ -47,6 +47,8 @@ int TimeSave_Player;
       mouseButton==LEFT){
         TimeSave_Player = time;//safe time so we can reimplement this for easy TIME TRAVEL
       }
+      
+      
     }
   
   
