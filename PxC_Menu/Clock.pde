@@ -13,12 +13,12 @@ class Clock {
     timer = time/4000;
     tenclock = timer/10;
     oneclock = timer % 10;
-    println(time, timer, tenclock, oneclock);
 
 
     if (tenclock >= 6) {
       time = 0;
       menuActive = 3;
+      
     }
   }
   void show(){
