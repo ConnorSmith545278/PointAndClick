@@ -58,6 +58,7 @@ PImage toaster_empty;
 PImage toaster_wtoast;
 
 PImage clock;
+PImage clock_zero;
 PImage clock_one;
 PImage clock_two;
 PImage clock_three;
@@ -115,6 +116,7 @@ void setup() {
 
 
   clock = loadImage("clock.png");
+  clock_zero =loadImage("clock_zero.png");
   clock_one = loadImage("clock_one.png");
   clock_two = loadImage("clock_two.png");
   clock_three = loadImage("clock_three.png");
