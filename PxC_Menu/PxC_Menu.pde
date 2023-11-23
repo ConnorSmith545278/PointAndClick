@@ -32,6 +32,9 @@ Objects object_toaster_crisp;
 Objects object_toaster_empty;
 Objects object_toaster_wtoast;
 
+Objects object_pan;
+Objects object_pan_eggs;
+
 
 
 PImage BG;
@@ -61,6 +64,9 @@ PImage toast_plain;
 PImage toaster_crisp;
 PImage toaster_empty;
 PImage toaster_wtoast;
+
+PImage pan;
+PImage pan_eggs;
 
 PImage clock;
 PImage clock_zero;
@@ -136,11 +142,15 @@ void setup() {
 
   thepaw_32x32_png = loadImage("thepaw_32x32_png.png");
 
+  toast_crisp = loadImage("toast_crisp.png");
   toast_plain = loadImage("toast_plain.png");
 
   toaster_crisp = loadImage("toaster_crisp.png");
   toaster_empty = loadImage("toaster_empty.png");
   toaster_wtoast = loadImage("toaster_wtoast.png");
+  
+  pan = loadImage("pan.png");
+  pan_eggs = loadImage("pan_eggs.png");
 
   cursor(thepaw_32x32_png);
 
@@ -179,10 +189,18 @@ void setup() {
   
   object_fireanim =                                  new Objects(fireanim,                            false, 640f, 360f, 100f, 100f, false);
 
+  object_toast_crisp =                               new Objects(toast_crisp,                         false, 280f, 263f, 150f, 150f, false);
+  object_toast_plain =                               new Objects(toast_plain,                         false, 280f, 263f, 150f, 150f, false);
+
+  object_toaster_empty =                             new Objects(toaster_empty,                       false, 280f, 263f, 150f, 150f, true); 
+  object_toaster_crisp =                             new Objects(toaster_crisp,                       false, 280f, 263f, 150f, 150f, false);
+  object_toaster_wtoast =                            new Objects(toaster_wtoast,                      false, 280f, 263f, 150f, 150f, false);
+
+  object_pan =                                       new Objects(pan,                                 false, 280f, 263f, 150f, 150f, true);
+  object_pan_eggs =                                  new Objects(pan_eggs,                            false, 280f, 263f, 150f, 150f, false);
 
 
-
-  menuActive = 0;
+  menuActive = 1;
 }
 
 void mousePressed() {
@@ -223,6 +241,16 @@ void draw() {
     object_rag_down.update();
 
     object_fireanim.update();
+    
+    object_toast_crisp.update();
+    object_toast_plain.update();
+
+    object_toaster_empty.update();
+    object_toaster_crisp.update();
+    object_toaster_wtoast.update();
+    
+    object_pan.update();
+    object_pan_eggs.update();
 
     object_the_guy_transparent.update();
     object_the_guy_different_expressions_angry.update();
