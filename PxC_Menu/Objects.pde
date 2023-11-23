@@ -9,6 +9,7 @@ class Objects {
   boolean visible;
   Objects toDisplay;
 
+
   Objects(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
     clickAble = click;
     posX = x;
@@ -20,22 +21,33 @@ class Objects {
   }
 
   void update() {
+    
     imageMode(CENTER);
-    if(visible)
-    image(hupelepup, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    
+    
+    
+    if(visible == true){
+
+      
+      
+       image(hupelepup, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+      }
+    
+    
+    
+    
   }
 
-  void mousePressed() {
+  void mouseClicked() {
     if (mouseButton == LEFT && clickAble == true &&
       mouseX < posX+sizeX/2 && mouseX > posX-sizeX/2 &&
       mouseY < posY+sizeY/2 && mouseY > posY-sizeY/2) {
-        println("click");
         clickAble = false;
         visible = false;
         if(toDisplay != null){
-        toDisplay.clickAble = true;
         toDisplay.visible = true;
         }
+
     }
   }
 }

@@ -14,8 +14,6 @@ class Clock {
     timer = time/4000;
     tenclock = timer/10;
     oneclock = timer % 10;
-    println(tenclock);
-    println(oneclock);
 
     if (tenclock >= 6) {
       time = 0;

@@ -9,9 +9,13 @@ gameState GameState;
 Objects object_mug_empty;
 Objects object_mug_filled;
 Objects object_mug_spilled;
+
 Objects object_pot_empty;
 Objects object_pot_filled;
+
 Objects object_paper_roll_asset;
+Objects object_paper_roll_asset_rotate;
+
 Objects object_rag_up;
 Objects object_rag_down;
 
@@ -40,6 +44,7 @@ PImage pot_empty;
 PImage pot_filled;
 
 PImage paper_roll_asset;
+PImage paper_roll_asset_rotate;
 
 PImage rag_up;
 PImage rag_down;
@@ -71,11 +76,6 @@ PImage clock_nine;
 
 PImage thepaw_32x32_png;
 
-
-
-
-
-
 int menuActive;
 boolean clockVisible = true;
 
@@ -105,11 +105,16 @@ void setup() {
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");
   mug_spilled = loadImage("mug_spilled.png");
+  
   pot_empty = loadImage("pot_empty.png");
   pot_filled = loadImage("pot_filled.png");
+  
   paper_roll_asset = loadImage("paper_roll_asset.png");
+  paper_roll_asset_rotate = loadImage("paper_roll_asset_rotate.png");
+  
   rag_up = loadImage("rag_up.png");
   rag_down = loadImage("rag_down.png");
+  
   the_guy_different_expressions_angry = loadImage("the_guy_different_expressions_angry.png");
   the_guy_transparent = loadImage("the_guy_transparent.png");
   the_guy_wants_coffee = loadImage("the_guy_wants_coffee.png");
@@ -144,26 +149,36 @@ void setup() {
 
   //imageMode(CENTER);
   //Objects(PImage, clickAble, posX, posY, width, height, visible)
-  object_the_guy_transparent =                       new Objects(the_guy_transparent,                 false, 640f, 360f, 900f, 900f, false);
+  object_the_guy_transparent =                       new Objects(the_guy_transparent,                 false, 480f, 360f, 400f, 400f, true);
   object_the_guy_different_expressions_angry =       new Objects(the_guy_different_expressions_angry, false, 604f, 360f, 900f, 900f, false);
   object_the_guy_wants_coffee =                      new Objects(the_guy_wants_coffee,                false, 640f, 360f, 900f, 900f, false);
+  
+  object_the_guy_transparent.toDisplay = object_the_guy_wants_coffee;
+  
 
-  object_mug_empty =                                 new Objects(mug_empty,                           true,  620f, 360f, 100f, 100f, true);
-  object_mug_filled  =                               new Objects(mug_filled,                          true,  620f, 360f, 100f, 100f, false);
+  object_mug_empty =                                 new Objects(mug_empty,                           false,  620f, 360f, 100f, 100f, false);
+  object_mug_filled  =                               new Objects(mug_filled,                          true,  620f, 360f, 100f, 100f, true);
   object_mug_spilled  =                              new Objects(mug_spilled,                         false, 620f, 360f, 100f, 100f, false);
+  
+  object_mug_filled.toDisplay = object_mug_spilled;
+
 
   object_pot_empty  =                                new Objects(pot_empty,                           false, 680f, 420f, 100f, 100f, true);
   object_pot_filled  =                               new Objects(pot_filled,                          false, 680f, 420f, 100f, 100f, false);
 
-  object_paper_roll_asset  =                         new Objects(paper_roll_asset,                    false, 1080f, 450f, 100f, 100f, true);
-
-  object_rag_up  =                                   new Objects(rag_up,                              false, 280f, 263f, 150f, 150f, true);
+  object_paper_roll_asset  =                         new Objects(paper_roll_asset,                    true, 1080f, 450f, 100f, 100f, true);
+  object_paper_roll_asset_rotate =                   new Objects(paper_roll_asset_rotate,             false, 880f, 650f, 100f, 100f, false);
+  
+  object_paper_roll_asset.toDisplay = object_paper_roll_asset_rotate;
+  
+  object_rag_up  =                                   new Objects(rag_up,                              true, 280f, 263f, 150f, 150f, true);
   object_rag_down  =                                 new Objects(rag_down,                            false, 280f, 263f, 150f, 150f, false);
-
+ 
+  object_rag_up.toDisplay = object_rag_down;
+  
+  
   object_fireanim =                                  new Objects(fireanim,                            false, 640f, 360f, 100f, 100f, false);
 
-
-  object_the_guy_transparent.toDisplay = object_the_guy_wants_coffee;
 
 
 
@@ -171,7 +186,10 @@ void setup() {
 }
 
 void mousePressed() {
-  object_the_guy_transparent.mousePressed();
+  object_the_guy_transparent.mouseClicked();
+  object_mug_filled.mouseClicked();
+  object_rag_up.mouseClicked();
+  object_paper_roll_asset.mouseClicked();
   println(mouseX, mouseY);
 }
 
@@ -186,13 +204,9 @@ void draw() {
   if (menuActive == 0 && clockVisible) {
 
     background(255);
+    
     imageMode(CORNER);
     image(BG, 0, 0, width, height);
-
-
-    object_the_guy_transparent.update();
-    object_the_guy_different_expressions_angry.update();
-    object_the_guy_wants_coffee.update();
 
 
     object_mug_empty.update();
@@ -203,16 +217,21 @@ void draw() {
     object_pot_filled.update();
 
     object_paper_roll_asset.update();
-
+    object_paper_roll_asset_rotate.update();
+    
     object_rag_up.update();
     object_rag_down.update();
 
     object_fireanim.update();
 
+    object_the_guy_transparent.update();
+    object_the_guy_different_expressions_angry.update();
+    object_the_guy_wants_coffee.update();
 
     Clock1.update();
     Clock1.show();
     Clock1.mousePressed();
+    
   } else if (menuActive == 0 && !clockVisible) {
 
     background(255);
