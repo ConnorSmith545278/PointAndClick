@@ -142,23 +142,23 @@ void setup() {
 
   //imageMode(CENTER);
   //Objects(PImage, clickAble, posX, posY, width, height, visible)
-  object_the_guy_transparent =                       new Objects(the_guy_transparent,                 false, 640f, 360f, 900f, 900f, true);
+  object_the_guy_transparent =                       new Objects(the_guy_transparent,                 false, 640f, 360f, 900f, 900f, false);
   object_the_guy_different_expressions_angry =       new Objects(the_guy_different_expressions_angry, false, 604f, 360f, 900f, 900f, false);
   object_the_guy_wants_coffee =                      new Objects(the_guy_wants_coffee,                false, 640f, 360f, 900f, 900f, false);
 
-  object_mug_empty =                                 new Objects(mug_empty,                           false, 640f, 360f, 900f, 900f, true);
-  object_mug_filled  =                               new Objects(mug_filled,                          false, 640f, 360f, 900f, 900f, true);
-  object_mug_spilled  =                              new Objects(mug_spilled,                         false, 640f, 360f, 900f, 900f, true);
+  object_mug_empty =                                 new Objects(mug_empty,                           true,  620f, 360f, 100f, 100f, true);
+  object_mug_filled  =                               new Objects(mug_filled,                          true,  620f, 360f, 100f, 100f, false);
+  object_mug_spilled  =                              new Objects(mug_spilled,                         false, 620f, 360f, 100f, 100f, false);
 
-  object_pot_empty  =                                new Objects(pot_empty,                           false, 640f, 360f, 900f, 900f, true);
-  object_pot_filled  =                               new Objects(pot_filled,                          false, 640f, 360f, 900f, 900f, true);
+  object_pot_empty  =                                new Objects(pot_empty,                           false, 680f, 420f, 100f, 100f, true);
+  object_pot_filled  =                               new Objects(pot_filled,                          false, 680f, 420f, 100f, 100f, false);
 
-  object_paper_roll_asset  =                         new Objects(paper_roll_asset,                    false, 640f, 360f, 900f, 900f, true);
+  object_paper_roll_asset  =                         new Objects(paper_roll_asset,                    false, 1080f, 450f, 100f, 100f, true);
 
-  object_rag_up  =                                   new Objects(rag_up,                              false, 640f, 360f, 900f, 900f, true);
-  object_rag_down  =                                 new Objects(rag_down,                            false, 640f, 360f, 900f, 900f, true);
+  object_rag_up  =                                   new Objects(rag_up,                              false, 280f, 263f, 150f, 150f, true);
+  object_rag_down  =                                 new Objects(rag_down,                            false, 280f, 263f, 150f, 150f, false);
 
-  object_fireanim =                                  new Objects(fireanim,                            false, 640f, 360f, 900f, 900f, true);
+  object_fireanim =                                  new Objects(fireanim,                            false, 640f, 360f, 100f, 100f, false);
 
 
   object_the_guy_transparent.toDisplay = object_the_guy_wants_coffee;
@@ -170,6 +170,7 @@ void setup() {
 
 void mousePressed() {
   object_the_guy_transparent.mousePressed();
+  println(mouseX, mouseY);
 }
 
 void draw() {
