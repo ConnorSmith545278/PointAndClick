@@ -1,35 +1,41 @@
-class Objects {
+class Objects {   
+
   boolean clickAble;
   float posX;
   float posY;
-  PImage asset;
+  PImage hupelepup;
   float sizeX;
   float sizeY;
-  
-  Objects(PImage image_name, boolean click, float x, float y, float sx, float sy) {
+  boolean visible;
+  Objects toDisplay;
+
+  Objects(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
     clickAble = click;
     posX = x;
     posY = y;
-    asset = image_name;
+    hupelepup = image_name;
     sizeX = sx;
     sizeY = sy;
+    visible = pVisible;
   }
-  
-  void update(){
+
+  void update() {
     imageMode(CENTER);
-    image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
-  
-  
+    if(visible)
+    image(hupelepup, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
-  
-  void mousePressed(){
-   if (mouseButton == LEFT && clickAble == true && 
-   mouseX < posX+sizeX/2 && mouseX > posX-sizeX/2 &&
-   mouseY < posY+sizeY/2 && mouseY > posY-sizeY/2){
-   
-   } 
+
+  void mousePressed() {
+    if (mouseButton == LEFT && clickAble == true &&
+      mouseX < posX+sizeX/2 && mouseX > posX-sizeX/2 &&
+      mouseY < posY+sizeY/2 && mouseY > posY-sizeY/2) {
+        println("click");
+        clickAble = false;
+        visible = false;
+        if(toDisplay != null){
+        toDisplay.clickAble = true;
+        toDisplay.visible = true;
+        }
+    }
   }
-  
-  
-  
 }
