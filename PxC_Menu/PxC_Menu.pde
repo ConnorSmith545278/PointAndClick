@@ -1,9 +1,12 @@
+import java.util.*;
+
+
 Menu MainMenu;
 Clock Clock1;
 gameState GameState;
 Objects object_the_guy_transparent;
 Objects object_the_guy_wants_coffee;
-
+Objects object_fireanim;
 
 
 
@@ -11,17 +14,16 @@ Objects object_the_guy_wants_coffee;
 
 PImage BG;
 
-PImage coffee_mug_empty;
-PImage coffee_mug_filled;
-PImage coffee_mug_spilled;
+PImage mug_empty;
+PImage mug_filled;
+PImage mug_spilled;
 
-PImage coffee_pot_asset;
-PImage coffee_pot_with_coffee_asset;
+PImage pot_empty;
+PImage pot_filled;
 
 PImage paper_roll_asset;
 
-PImage rag_hung_up_asset;
-PImage rag_laid_asset;
+PImage rag_up;
 PImage rag_down;
 
 PImage the_guy_different_expressions_angry;
@@ -80,14 +82,14 @@ void setup() {
 
 
   BG = loadImage("Background_Placeholder.png");
-  coffee_mug_empty = loadImage("coffee_mug_empty.png");
-  coffee_mug_filled = loadImage("coffee_mug_filled.png");
-  coffee_mug_spilled = loadImage("coffee_mug_spilled.png");
-  coffee_pot_asset = loadImage("coffee_pot_asset.png");
-  coffee_pot_with_coffee_asset = loadImage("coffee_pot_with_coffee_asset.png");
+  mug_empty = loadImage("mug_empty.png");
+  mug_filled = loadImage("mug_filled.png");
+  mug_spilled = loadImage("mug_spilled.png");
+  pot_empty = loadImage("pot_empty.png");
+  pot_filled = loadImage("pot_filled.png");
   paper_roll_asset = loadImage("paper_roll_asset.png");
-  rag_hung_up_asset = loadImage("rag_hung_up_asset.png");
-  rag_laid_asset = loadImage("rag_laid_asset.png");
+  rag_up = loadImage("rag_up.png");
+  rag_down = loadImage("rag_down.png");
   the_guy_different_expressions_angry = loadImage("the_guy_different_expressions_angry.png");
   the_guy_transparent = loadImage("the_guy_transparent.png");
   the_guy_wants_coffee = loadImage("the_guy_wants_coffee.png");
@@ -118,8 +120,11 @@ cursor(thepaw_32x32_png);
 
 
   Clock1 = new Clock();
-  object_the_guy_transparent = new Objects(the_guy_transparent, true, 640f, 360f, 900f, 900f, true);
+  object_the_guy_transparent = new Objects(the_guy_transparent, false, 640f, 360f, 900f, 900f, true);
   object_the_guy_wants_coffee = new Objects(the_guy_wants_coffee, false, 640f, 360f, 900f, 900f, false);
+  object_fireanim = new Objects(fireanim, false, 640f, 360f, 900f, 900f, false);
+  
+  
   object_the_guy_transparent.toDisplay = object_the_guy_wants_coffee;
 
 
@@ -148,6 +153,9 @@ getDeltaTime();
 
     object_the_guy_transparent.update();
     object_the_guy_wants_coffee.update();
+    
+    object_fireanim.update();
+    
     
     Clock1.update();
     Clock1.show();

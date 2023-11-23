@@ -1,7 +1,7 @@
 class gameState {
 
-  boolean rag_Fallen = false;
-  boolean mug_Tipped = false;
-  boolean pan_On_Fire = false;
-  boolean rag_On_Fire = false;
+  boolean rag_Fallen;
+  boolean mug_Tipped;
+  boolean pan_On_Fire;
+  boolean rag_On_Fire;
 }
