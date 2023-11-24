@@ -19,9 +19,9 @@ Objects object_paper_roll_asset_rotate;
 Objects object_rag_up;
 Objects object_rag_down;
 
-Objects object_the_guy_different_expressions_angry;
-Objects object_the_guy_transparent;
-Objects object_the_guy_wants_coffee;
+NPC NPC_the_guy_different_expressions_angry;
+NPC NPC_the_guy_transparent;
+NPC NPC_the_guy_wants_coffee;
 
 Objects object_fireanim;
 
@@ -157,24 +157,28 @@ void setup() {
 
   Clock1 = new Clock();
 
-  //imageMode(CENTER);
+  //NPC(PImage, posX, posY, width, height, visible)
+  NPC_the_guy_transparent =                          new NPC(the_guy_transparent,                 380f, 360f, 400f, 400f, true);
+  NPC_the_guy_different_expressions_angry =          new NPC(the_guy_different_expressions_angry, 800f, 550f, 400f, 400f, false);
+  NPC_the_guy_wants_coffee =                         new NPC(the_guy_wants_coffee,                640f, 360f, 400f, 400f, false);
+  
+  NPC_the_guy_transparent.NPCtoDisplay = NPC_the_guy_different_expressions_angry;
+  NPC_the_guy_different_expressions_angry.NPCtoDisplay = NPC_the_guy_wants_coffee;
+  NPC_the_guy_wants_coffee.NPCtoDisplay = NPC_the_guy_transparent;
+  
+  
   //Objects(PImage, clickAble, posX, posY, width, height, visible)
-  object_the_guy_transparent =                       new Objects(the_guy_transparent,                 false, 480f, 360f, 400f, 400f, true);
-  object_the_guy_different_expressions_angry =       new Objects(the_guy_different_expressions_angry, false, 604f, 360f, 900f, 900f, false);
-  object_the_guy_wants_coffee =                      new Objects(the_guy_wants_coffee,                false, 640f, 360f, 900f, 900f, false);
-  
-  object_the_guy_transparent.toDisplay = object_the_guy_wants_coffee;
-  
-
-  object_mug_empty =                                 new Objects(mug_empty,                           false,  620f, 360f, 100f, 100f, false);
-  object_mug_filled  =                               new Objects(mug_filled,                          true,  620f, 360f, 100f, 100f, true);
+  object_mug_empty =                                 new Objects(mug_empty,                           false,  620f, 360f, 100f, 100f, true);
+  object_mug_filled  =                               new Objects(mug_filled,                          false,  620f, 360f, 100f, 100f, false);
   object_mug_spilled  =                              new Objects(mug_spilled,                         false, 620f, 360f, 100f, 100f, false);
   
   object_mug_filled.toDisplay = object_mug_spilled;
 
 
-  object_pot_empty  =                                new Objects(pot_empty,                           false, 680f, 420f, 100f, 100f, true);
+  object_pot_empty  =                                new Objects(pot_empty,                           true, 680f, 420f, 100f, 100f, true);
   object_pot_filled  =                               new Objects(pot_filled,                          false, 680f, 420f, 100f, 100f, false);
+
+object_pot_empty.toDisplay = object_pot_filled;
 
   object_paper_roll_asset  =                         new Objects(paper_roll_asset,                    true, 1080f, 450f, 100f, 100f, true);
   object_paper_roll_asset_rotate =                   new Objects(paper_roll_asset_rotate,             false, 880f, 650f, 100f, 100f, false);
@@ -192,22 +196,22 @@ void setup() {
   object_toast_crisp =                               new Objects(toast_crisp,                         false, 280f, 263f, 150f, 150f, false);
   object_toast_plain =                               new Objects(toast_plain,                         false, 280f, 263f, 150f, 150f, false);
 
-  object_toaster_empty =                             new Objects(toaster_empty,                       false, 280f, 263f, 150f, 150f, true); 
+  object_toaster_empty =                             new Objects(toaster_empty,                       false, 280f, 263f, 150f, 150f, false); 
   object_toaster_crisp =                             new Objects(toaster_crisp,                       false, 280f, 263f, 150f, 150f, false);
   object_toaster_wtoast =                            new Objects(toaster_wtoast,                      false, 280f, 263f, 150f, 150f, false);
 
-  object_pan =                                       new Objects(pan,                                 false, 280f, 263f, 150f, 150f, true);
-  object_pan_eggs =                                  new Objects(pan_eggs,                            false, 280f, 263f, 150f, 150f, false);
+  object_pan =                                       new Objects(pan,                                 false, 280f, 363f, 150f, 150f, true);
+  object_pan_eggs =                                  new Objects(pan_eggs,                            false, 280f, 363f, 150f, 150f, false);
 
 
   menuActive = 1;
 }
 
-void mousePressed() {
-  object_the_guy_transparent.mouseClicked();
+void mouseClicked() {
   object_mug_filled.mouseClicked();
   object_rag_up.mouseClicked();
   object_paper_roll_asset.mouseClicked();
+  object_pot_empty.mouseClicked();
   println(mouseX, mouseY);
 }
 
@@ -252,9 +256,9 @@ void draw() {
     object_pan.update();
     object_pan_eggs.update();
 
-    object_the_guy_transparent.update();
-    object_the_guy_different_expressions_angry.update();
-    object_the_guy_wants_coffee.update();
+    NPC_the_guy_transparent.update();
+    NPC_the_guy_different_expressions_angry.update();
+    NPC_the_guy_wants_coffee.update();
 
     Clock1.update();
     Clock1.show();
@@ -262,9 +266,15 @@ void draw() {
     
   } else if (menuActive == 0 && !clockVisible) {
 
-    background(255);
+    
+    
+    
+    background(0);
     imageMode(CORNER);
+    tint(255, 128);
     image(BG, 0, 0, width, height);
+    tint(255);
+
 
     Clock1.show();
     Clock1.mousePressed();

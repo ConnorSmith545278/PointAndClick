@@ -3,7 +3,7 @@ class Objects {
   boolean clickAble;
   float posX;
   float posY;
-  PImage hupelepup;
+  PImage asset;
   float sizeX;
   float sizeY;
   boolean visible;
@@ -14,7 +14,7 @@ class Objects {
     clickAble = click;
     posX = x;
     posY = y;
-    hupelepup = image_name;
+    asset = image_name;
     sizeX = sx;
     sizeY = sy;
     visible = pVisible;
@@ -24,13 +24,8 @@ class Objects {
     
     imageMode(CENTER);
     
-    
-    
     if(visible == true){
-
-      
-      
-       image(hupelepup, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
       }
     
     
