@@ -38,24 +38,35 @@ class Button {
           MainMenu.active = false;
           Settings_Menu.active = false;
           menu_Game_over.active = false;
+          menu_Clock.active = false;
         break;
         case 1:
           Game.active = false;
           MainMenu.active = true;
           Settings_Menu.active = false;
           menu_Game_over.active = false;
+          menu_Clock.active = false;
         break;
         case 2:
           Game.active = false;
           MainMenu.active = false;
           Settings_Menu.active = true;
           menu_Game_over.active = false;
+          menu_Clock.active = false;
         break;
         case 3:
           Game.active = false;
           MainMenu.active = false;
           Settings_Menu.active = false;
           menu_Game_over.active = true;
+          menu_Clock.active = false;
+        break;
+        case 9:
+        Game.active = false;
+          MainMenu.active = false;
+          Settings_Menu.active = false;
+          menu_Game_over.active = false;
+          menu_Clock.active = true;
         break;
         }
         

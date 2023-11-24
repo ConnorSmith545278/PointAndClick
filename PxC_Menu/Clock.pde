@@ -21,7 +21,7 @@ class Clock {
   }
   void show() {
 
-    if (clockVisible) {
+    if (!menu_Clock.active) {
       image(clock, width - 150, height - 75, 370, 296 );
       switch(oneclock) {
       case 0:
@@ -75,7 +75,7 @@ class Clock {
         image(clock_five, width - 140, height - 85, 28, 46);
         break;
       }
-    } else if (!clockVisible) {
+    } else if (menu_Clock.active) {
       image(clock, width/2-300, height/2-240, 600, 480 );
       switch(oneclock) {
       case 0:
@@ -129,21 +129,6 @@ class Clock {
         image(clock_five, width/2, height/2 - 55, 47, 80);
         break;
       }
-    }
-  }
-
-
-  //click on clock
-  void mouseClicked() {
-    if (mouseX>width-300 && mouseX<width-5 &&
-      mouseY<height - 5 && mouseY>height -145 &&
-      mouseButton==LEFT && clockVisible == true) {
-      clockVisible = false;
-      TimeSave_Player = time;//safe time so we can reimplement this for easy TIME TRAVEL
-    } else if (mouseX>width /2 - 400  && mouseX<width /2 + 400  &&
-      mouseY<height/ 2 + 128  && mouseY>height/2 - 128  &&
-      mouseButton==LEFT && clockVisible == false) {
-      clockVisible = true;
     }
   }
 }

@@ -14,7 +14,7 @@ class Menu {
       switch(menu) {
       case 0:
         button_Main_menu.mouseClicked();
-        Clock1.mouseClicked();
+        button_Clock.mouseClicked();
         object_mug_empty.mouseClicked();
         object_mug_filled.mouseClicked();
         object_rag_up.mouseClicked();
@@ -29,6 +29,9 @@ class Menu {
       case 2:
         button_Main_menu.mouseClicked();
         break;
+      case 9:
+      button_Play.mouseClicked();
+      break;
       }
     }
   }
@@ -42,7 +45,6 @@ class Menu {
         image(BG, 0, 0, width, height);
 
         Clock1.update();
-
 
         object_pot_empty.show();
         object_pot_filled.show();
@@ -76,13 +78,13 @@ class Menu {
         Clock1.show();
 
         button_Main_menu.show();
+        button_Clock.show();
 
         break;
       case 1:
         background(255);
         button_Play.show();
         button_Settings.show();
-
         button_Exit.show();
 
         break;
@@ -94,6 +96,16 @@ class Menu {
       case 3:
         exit();
         break;
+      case 9:
+      background(0);
+      tint(255, 128);
+      imageMode(CORNER);
+      image(BG, 0, 0, width, height);
+      tint(255, 255);
+      button_Play.show();
+      Clock1.show();
+      
+      break;
       }
     }
   }

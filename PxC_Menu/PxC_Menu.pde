@@ -4,12 +4,13 @@ Menu Game;
 Menu MainMenu;
 Menu Settings_Menu;
 Menu menu_Game_over;
-Menu Clock;
+Menu menu_Clock;
 
 Button button_Play;
 Button button_Settings;
 Button button_Exit;
 Button button_Main_menu;
+Button button_Clock;
 
 Clock Clock1;
 gameState GameState;
@@ -213,15 +214,17 @@ void setup() {
 
 
   button_Play =                                      new Button("play",     width/2, height*0.25, 200, 100, 0);
+  button_Main_menu =                                 new Button("Main menu",150,     height-75,         300, 150, 1);
   button_Settings =                                  new Button("Settings", width/2, height*0.5,  200, 100, 2);
   button_Exit =                                      new Button("Quit",     width/2, height*0.75, 200, 100, 3);
-  button_Main_menu =                                 new Button("Main menu",200, 600, 200, 100, 1);
+
+  button_Clock =                                     new Button("clock",    width - 150, height - 75, 300, 150, 9);
   
   Game =                                             new Menu(0, false);
   MainMenu =                                         new Menu(1, true);
   Settings_Menu =                                    new Menu(2, false);
   menu_Game_over=                                    new Menu(3, false);
-  Clock =                                            new Menu(9, false);
+  menu_Clock =                                       new Menu(9, false);
   
 }
 
@@ -243,5 +246,7 @@ void draw() {
   Settings_Menu.mouseClicked();
   menu_Game_over.show();
   menu_Game_over.mouseClicked();
+  menu_Clock.show();
+  menu_Clock.mouseClicked();
   
 }
