@@ -158,9 +158,9 @@ void setup() {
   Clock1 = new Clock();
 
   //NPC(PImage, posX, posY, width, height, visible)
-  NPC_the_guy_transparent =                          new NPC(the_guy_transparent,                 380f, 360f, 400f, 400f, true);
-  NPC_the_guy_different_expressions_angry =          new NPC(the_guy_different_expressions_angry, 800f, 550f, 400f, 400f, false);
-  NPC_the_guy_wants_coffee =                         new NPC(the_guy_wants_coffee,                640f, 360f, 400f, 400f, false);
+  NPC_the_guy_transparent =                          new NPC(the_guy_transparent,                 380f, 360f, 400f, 400f, true, true);
+  NPC_the_guy_different_expressions_angry =          new NPC(the_guy_different_expressions_angry, 800f, 550f, 400f, 400f, false, true);
+  NPC_the_guy_wants_coffee =                         new NPC(the_guy_wants_coffee,                800f, 360f, 400f, 400f, false, false);
   
   NPC_the_guy_transparent.NPCtoDisplay = NPC_the_guy_different_expressions_angry;
   NPC_the_guy_different_expressions_angry.NPCtoDisplay = NPC_the_guy_wants_coffee;
@@ -172,10 +172,12 @@ void setup() {
   object_mug_filled  =                               new Objects(mug_filled,                          false,  620f, 360f, 100f, 100f, false);
   object_mug_spilled  =                              new Objects(mug_spilled,                         false, 620f, 360f, 100f, 100f, false);
   
+  
+  object_mug_empty.toDisplay = object_mug_filled;
   object_mug_filled.toDisplay = object_mug_spilled;
 
 
-  object_pot_empty  =                                new Objects(pot_empty,                           true, 680f, 420f, 100f, 100f, true);
+  object_pot_empty  =                                new Objects(pot_empty,                           false, 680f, 420f, 100f, 100f, true);
   object_pot_filled  =                               new Objects(pot_filled,                          false, 680f, 420f, 100f, 100f, false);
 
 object_pot_empty.toDisplay = object_pot_filled;
@@ -208,6 +210,7 @@ object_pot_empty.toDisplay = object_pot_filled;
 }
 
 void mouseClicked() {
+  object_mug_empty.mouseClicked();
   object_mug_filled.mouseClicked();
   object_rag_up.mouseClicked();
   object_paper_roll_asset.mouseClicked();

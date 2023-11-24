@@ -34,14 +34,16 @@ class Objects {
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT && clickAble == true &&
+    if (mouseButton == LEFT && clickAble == true && visible == true &&
       mouseX < posX+sizeX/2 && mouseX > posX-sizeX/2 &&
       mouseY < posY+sizeY/2 && mouseY > posY-sizeY/2) {
         clickAble = false;
         visible = false;
+        println("hi");
         if(toDisplay != null){
         toDisplay.visible = true;
         }
+    
 
     }
   }
