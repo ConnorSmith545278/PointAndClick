@@ -23,7 +23,7 @@ class NPC {
   }
 
 
-  void update() {
+  void show() {
 
     imageMode(CENTER);
 
@@ -32,18 +32,8 @@ class NPC {
     }
     if (this == NPC_the_guy_transparent && object_paper_roll_asset_rotate.visible == true && moveable == true) {
       visible = false;
-      object_pot_empty.clickAble = true;
       moveable = false;
       NPCtoDisplay.visible = true;
-
     }
-    
-      if (this == NPC_the_guy_different_expressions_angry && object_pot_filled.visible == true && moveable == true) {
-      visible = false;
-      NPCtoDisplay.visible = true;
-      moveable = false;
-      object_mug_empty.clickAble = true;
-    }
-    
   }
 }

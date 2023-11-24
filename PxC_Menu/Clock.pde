@@ -83,31 +83,31 @@ class Clock {
         image(clock_zero, width/2 + 85, height/2 - 55, 47, 80);
         break;
       case 1:
-        image(clock_one, width/2 + 85 , height/2 - 55, 47, 80);
+        image(clock_one, width/2 + 85, height/2 - 55, 47, 80);
         break;
       case 2:
-        image(clock_two, width/2 + 85 , height/2 - 55, 47, 80);
+        image(clock_two, width/2 + 85, height/2 - 55, 47, 80);
         break;
       case 3:
-        image(clock_three, width/2 + 85 , height/2 - 55, 47, 80);
+        image(clock_three, width/2 + 85, height/2 - 55, 47, 80);
         break;
       case 4:
-        image(clock_four, width/2 + 85 , height/2 - 55, 47, 80);
+        image(clock_four, width/2 + 85, height/2 - 55, 47, 80);
         break;
       case 5:
-        image(clock_five, width/2 + 85 , height/2 - 55, 47, 80);
+        image(clock_five, width/2 + 85, height/2 - 55, 47, 80);
         break;
       case 6:
-        image(clock_six, width/2 + 85 , height/2 - 55, 47, 80);
+        image(clock_six, width/2 + 85, height/2 - 55, 47, 80);
         break;
       case 7:
-        image(clock_seven, width/2 + 85, height/2 - 55,47, 80);
+        image(clock_seven, width/2 + 85, height/2 - 55, 47, 80);
         break;
       case 8:
-        image(clock_eight, width/2 + 85 , height/2 - 55, 47, 80);
+        image(clock_eight, width/2 + 85, height/2 - 55, 47, 80);
         break;
       case 9:
-        image(clock_nine, width/2 + 85 , height/2 - 55, 47, 80);
+        image(clock_nine, width/2 + 85, height/2 - 55, 47, 80);
         break;
       }
       switch(tenclock) {
@@ -115,21 +115,20 @@ class Clock {
         image(clock_zero, width/2, height/2 - 55, 47, 80);
         break;
       case 1:
-        image(clock_one, width/2 , height/2 - 55, 47, 80);
+        image(clock_one, width/2, height/2 - 55, 47, 80);
         break;
       case 2:
-        image(clock_two, width/2 , height/2 - 55, 47, 80);
+        image(clock_two, width/2, height/2 - 55, 47, 80);
         break;
       case 3:
-        image(clock_three, width/2 , height/2 - 55, 47, 80);
+        image(clock_three, width/2, height/2 - 55, 47, 80);
         break;
       case 4:
-        image(clock_four, width/2 , height/2 - 55, 47, 80);
+        image(clock_four, width/2, height/2 - 55, 47, 80);
         break;
       case 5:
-        image(clock_five, width/2 , height/2 - 55, 47 , 80);
+        image(clock_five, width/2, height/2 - 55, 47, 80);
         break;
-        
       }
     }
   }

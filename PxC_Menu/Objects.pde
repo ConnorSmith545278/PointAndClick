@@ -1,4 +1,4 @@
-class Objects {   
+class Objects {
 
   boolean clickAble;
   float posX;
@@ -8,6 +8,8 @@ class Objects {
   float sizeY;
   boolean visible;
   Objects toDisplay;
+
+
 
 
   Objects(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
@@ -20,31 +22,23 @@ class Objects {
     visible = pVisible;
   }
 
-  void update() {
-    
-    imageMode(CENTER);
-    
-    if(visible == true){
-       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
-      }
-    
-    
-    
-    
+  void show() {
+    if (visible == true) {
+      imageMode(CENTER);
+      image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    }
   }
 
   void mouseClicked() {
     if (mouseButton == LEFT && clickAble == true && visible == true &&
-      mouseX < posX+sizeX/2 && mouseX > posX-sizeX/2 &&
-      mouseY < posY+sizeY/2 && mouseY > posY-sizeY/2) {
-        clickAble = false;
-        visible = false;
-        println("hi");
-        if(toDisplay != null){
+      mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
+      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+      clickAble = false;
+      visible = false;
+      println("hi");
+      if (toDisplay != null) {
         toDisplay.visible = true;
-        }
-    
-
+      }
     }
   }
 }
