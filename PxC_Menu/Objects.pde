@@ -35,7 +35,6 @@ class Objects {
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       clickAble = false;
       visible = false;
-      println("hi");
       if (toDisplay != null) {
         toDisplay.visible = true;
       }

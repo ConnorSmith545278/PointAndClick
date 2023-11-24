@@ -17,7 +17,6 @@ class Clock {
 
     if (tenclock >= 6) {
       time = 0;
-      menuActive = 3;
     }
   }
   void show() {
@@ -135,7 +134,7 @@ class Clock {
 
 
   //click on clock
-  void mousePressed() {
+  void mouseClicked() {
     if (mouseX>width-300 && mouseX<width-5 &&
       mouseY<height - 5 && mouseY>height -145 &&
       mouseButton==LEFT && clockVisible == true) {

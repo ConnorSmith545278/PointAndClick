@@ -1,12 +1,15 @@
 import java.util.*;
 
-
+Menu Game;
 Menu MainMenu;
 Menu Settings_Menu;
+Menu menu_Game_over;
+Menu Clock;
 
 Button button_Play;
 Button button_Settings;
 Button button_Exit;
+Button button_Main_menu;
 
 Clock Clock1;
 gameState GameState;
@@ -88,7 +91,6 @@ PImage clock_nine;
 
 PImage thepaw_32x32_png;
 
-int menuActive;
 boolean clockVisible = true;
 
 public float scaleX;
@@ -210,20 +212,21 @@ void setup() {
 
 
 
-  button_Play =                                      new Button("play",     width/2, height*0.25, 200, 100);
-  button_Settings =                                  new Button("Settings", width/2, height*0.5,  200, 100);
-  button_Exit =                                      new Button("Quit",     width/2, height*0.75, 200, 100);
-  MainMenu =                                         new Menu(1);
-  Settings_Menu =                                    new Menu(2);
-  menuActive = 1;
+  button_Play =                                      new Button("play",     width/2, height*0.25, 200, 100, 0);
+  button_Settings =                                  new Button("Settings", width/2, height*0.5,  200, 100, 2);
+  button_Exit =                                      new Button("Quit",     width/2, height*0.75, 200, 100, 3);
+  button_Main_menu =                                 new Button("Main menu",200, 600, 200, 100, 1);
+  
+  Game =                                             new Menu(0, false);
+  MainMenu =                                         new Menu(1, true);
+  Settings_Menu =                                    new Menu(2, false);
+  menu_Game_over=                                    new Menu(3, false);
+  Clock =                                            new Menu(9, false);
+  
 }
 
 void mouseClicked() {
-  object_mug_empty.mouseClicked();
-  object_mug_filled.mouseClicked();
-  object_rag_up.mouseClicked();
-  object_paper_roll_asset.mouseClicked();
-  object_pot_empty.mouseClicked();
+  println(Game.active, MainMenu.active, Settings_Menu.active, menu_Game_over.active);
   println(mouseX, mouseY);
 }
 
@@ -231,81 +234,14 @@ void draw() {
   scaleX = width/1280f;
   scaleY = height/720f;
   getDeltaTime();
-
-
-  //GAME!!
-  if (menuActive == 0 && clockVisible) {
-    background(255);
-    imageMode(CORNER);
-    image(BG, 0, 0, width, height);
-
-    Clock1.update();
-    Clock1.show();
-    Clock1.mousePressed();
-
-    object_pot_empty.show();
-    object_pot_filled.show();
-
-    object_mug_empty.show();
-    object_mug_filled.show();
-    object_mug_spilled.show();
-
-    object_paper_roll_asset.show();
-    object_paper_roll_asset_rotate.show();
-
-    object_pan.show();
-    object_pan_eggs.show();
-
-    object_rag_up.show();
-    object_rag_down.show();
-
-    object_fireanim.show();
-
-    object_toast_crisp.show();
-    object_toast_plain.show();
-
-    object_toaster_empty.show();
-    object_toaster_crisp.show();
-    object_toaster_wtoast.show();
-
-    NPC_the_guy_transparent.show();
-    NPC_the_guy_different_expressions_angry.show();
-    NPC_the_guy_wants_coffee.show();
-  } else if (menuActive == 0 && !clockVisible) {
-    background(0);
-    imageMode(CORNER);
-    tint(255, 128);
-    image(BG, 0, 0, width, height);
-    tint(255);
-
-
-    Clock1.show();
-    Clock1.mousePressed();
-  }
-
-
-  //Main Menu
-  if (menuActive == 1) {
-    background(255);
-    MainMenu.show();
-
-  }
-
-
-  //settings Menu
-  if (menuActive ==2) {
-    background(255);
-    Settings_Menu.show();
-    
-  }
-
-
-
-  //GAME OVER Menu
-  if (menuActive == 3) {
-    background(255);
-    textMode(CENTER);
-    textSize(90);
-    text("GAME OVER!!!", width/2, height/2);
-  }
+  
+  Game.show();
+  Game.mouseClicked();
+  MainMenu.show();
+  MainMenu.mouseClicked();
+  Settings_Menu.show();
+  Settings_Menu.mouseClicked();
+  menu_Game_over.show();
+  menu_Game_over.mouseClicked();
+  
 }
