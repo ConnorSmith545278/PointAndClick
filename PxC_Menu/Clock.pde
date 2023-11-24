@@ -8,8 +8,7 @@ class Clock {
 
 
   void update() {
-
-
+    
     time = time + deltaTime;
     timer = time/4000;
     tenclock = timer/10;

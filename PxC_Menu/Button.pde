@@ -31,7 +31,6 @@ class Button {
     if (mouseX > (posX-sizeX/2)*scaleX && mouseX < (posX+sizeX/2)*scaleX
       && mouseY > (posY-sizeY/2)*scaleY && mouseY < (posY+sizeY/2)*scaleY
       && mouseButton ==LEFT) {
-        println("working button");
         switch(destination){
         case 0:
           Game.active = true;
@@ -67,6 +66,18 @@ class Button {
           Settings_Menu.active = false;
           menu_Game_over.active = false;
           menu_Clock.active = true;
+        break;
+        case 101:
+        windowResize(1280, 720);
+        delay(50);
+        break;
+        case 102:
+        windowResize(1600, 900);
+        delay(50);
+        break;
+        case 103:
+        windowResize(1920, 1080);
+        delay(50);
         break;
         }
         
