@@ -2,10 +2,10 @@ import java.util.*;
 
 
 Menu MainMenu;
-Menu Settings;
+Menu Settings_Menu;
 
 Button button_Play;
-Button button_Setting;
+Button button_Settings;
 Button button_Exit;
 
 Clock Clock1;
@@ -210,10 +210,11 @@ void setup() {
 
 
 
-  button_Play = new Button("play test", width/2, height/2, 200, 200);
-
-  MainMenu = new Menu();
-
+  button_Play =                                      new Button("play",     width/2, height*0.25, 200, 100);
+  button_Settings =                                  new Button("Settings", width/2, height*0.5,  200, 100);
+  button_Exit =                                      new Button("Quit",     width/2, height*0.75, 200, 100);
+  MainMenu =                                         new Menu(1);
+  Settings_Menu =                                    new Menu(2);
   menuActive = 1;
 }
 
@@ -288,17 +289,14 @@ void draw() {
     background(255);
     MainMenu.show();
 
-    //Play button
-
-
-
-    //Settings button
   }
 
 
   //settings Menu
   if (menuActive ==2) {
     background(255);
+    Settings_Menu.show();
+    
   }
 
 
