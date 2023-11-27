@@ -38,8 +38,6 @@ class Rag {
       Timer = Timer + 5;
       if (toDisplay != null) {
         toDisplay.visible = true;
-        NPC_the_guy_transparent.visible = false;
-        NPC_the_guy_different_expressions_angry.visible = true;
       }
        }
       }

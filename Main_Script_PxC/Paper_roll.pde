@@ -3,43 +3,75 @@ class Paper_roll {
   boolean clickAble;
   float posX;
   float posY;
-  PImage asset;
   float sizeX;
   float sizeY;
-  boolean visible;
-  Paper_roll toDisplay;
+  PImage asset;
+  int Paperrollvar = 0;
+  int count = 90;
 
-
-
-
-  Paper_roll(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
+  Paper_roll(boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
     posX = x;
     posY = y;
-    asset = image_name;
     sizeX = sx;
     sizeY = sy;
-    visible = pVisible;
   }
 
   void show() {
-    if (visible == true) {
-      imageMode(CENTER);
-      image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    imageMode(CENTER);
+    switch(Paperrollvar) {
+    case 0:
+      asset = paper_roll_asset;
+      posX = 1050;
+      posY = 390;
+      image(asset, posX, posY, sizeX, sizeY);
+      break;
+    case 1:
+      asset = paper_roll_asset_rotate;
+      posX = 920;
+      posY = 570;
+      image(asset, posX, posY, sizeX, sizeY);
+      if (count > 30){
+        Paperrollvar = 2;
+      }
+      break;
+    case 2:
+      asset = paper_roll_asset_rotate;
+      NPC_the_guy.posX = 850;
+      NPC_the_guy.posY = 470;
+      NPC_the_guy.expression = 1;
+      image(asset, posX, posY, sizeX, sizeY);
+      if (count > 60){
+        Paperrollvar = 3;
+      }
+      break;
+      case 3:
+       posX = 1080;
+      posY = 170;
+      asset = paper_roll_asset;
+      NPC_the_guy.expression = 2;
+      image(asset, posX, posY, sizeX, sizeY);
     }
+
   }
 
+
   void mouseClicked() {
-    if (mouseButton == LEFT && clickAble == true && visible == true &&
+    if (mouseButton == LEFT && clickAble == true &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       clickAble = false;
-      visible = false;
+      Paperrollvar=1;
       Timer = Timer + 5;
-      if (toDisplay != null) {
-        toDisplay.visible = true;
-      }
-       }
-      }
+      count = 0;
     }
+  }
   
+  void countDown(){
+    if (count < 90){
+     count++; 
+     println(count);
+    }
+        
+  }
+}

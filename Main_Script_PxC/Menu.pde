@@ -57,7 +57,7 @@ class Menu {
         object_mug_spilled.show();
 
         object_paper_roll_asset.show();
-        object_paper_roll_asset_rotate.show();
+        object_paper_roll_asset.countDown();
 
         object_pan.show();
         object_pan_eggs.show();
@@ -74,9 +74,7 @@ class Menu {
         object_toaster_crisp.show();
         object_toaster_wtoast.show();
 
-        NPC_the_guy_transparent.show();
-        NPC_the_guy_different_expressions_angry.show();
-        NPC_the_guy_wants_coffee.show();
+        NPC_the_guy.show();
 
         Clock1.show();
 

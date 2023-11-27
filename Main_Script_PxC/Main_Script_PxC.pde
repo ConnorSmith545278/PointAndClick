@@ -32,9 +32,7 @@ Paper_roll object_paper_roll_asset_rotate;
 Rag object_rag_up;
 Rag object_rag_down;
 
-NPC NPC_the_guy_different_expressions_angry;
-NPC NPC_the_guy_transparent;
-NPC NPC_the_guy_wants_coffee;
+NPC NPC_the_guy;
 
 Fire object_fireanim;
 
@@ -172,14 +170,9 @@ void setup() {
 
   Clock1 = new Clock();
 
-  //NPC(PImage, posX, posY, width, height, visible)
-  NPC_the_guy_transparent =                          new NPC(the_guy_transparent, 380f, 360f, 400f, 400f, true, true);
-  NPC_the_guy_different_expressions_angry =          new NPC(the_guy_different_expressions_angry, 380f, 360f, 400f, 400f, false, true);
-  NPC_the_guy_wants_coffee =                         new NPC(the_guy_wants_coffee, 380f, 360f, 400f, 400f, false, false);
+  //NPC(posX, posY, width, height)
+  NPC_the_guy =                          new NPC(380f, 360f, 400f, 400f);
 
-  NPC_the_guy_transparent.NPCtoDisplay = NPC_the_guy_different_expressions_angry;
-  NPC_the_guy_different_expressions_angry.NPCtoDisplay = NPC_the_guy_wants_coffee;
-  NPC_the_guy_wants_coffee.NPCtoDisplay = NPC_the_guy_transparent;
 
 
   //Objects(PImage, clickAble, posX, posY, width, height, visible)
@@ -196,10 +189,8 @@ void setup() {
   object_pot_filled  =                               new Pot(pot_filled, false, 680f, 420f, 100f, 100f, false);
 
 
-  object_paper_roll_asset  =                         new Paper_roll(paper_roll_asset, true, 1080f, 450f, 100f, 100f, true);
-  object_paper_roll_asset_rotate =                   new Paper_roll(paper_roll_asset_rotate, false, 880f, 650f, 100f, 100f, false);
+  object_paper_roll_asset  =                         new Paper_roll(true, 1080f, 450f, 100f, 100f);
 
-  object_paper_roll_asset.toDisplay = object_paper_roll_asset_rotate;
 
   object_rag_up  =                                   new Rag(rag_up, true, 280f, 263f, 150f, 150f, true);
   object_rag_down  =                                 new Rag(rag_down, false, 280f, 263f, 150f, 150f, false);
@@ -216,10 +207,9 @@ void setup() {
   object_toaster_crisp =                             new Toaster(toaster_crisp, false, 280f, 263f, 150f, 150f, false);
   object_toaster_wtoast =                            new Toaster(toaster_wtoast, false, 280f, 263f, 150f, 150f, false);
 
+
   object_pan =                                       new Pan(pan, false, 280f, 363f, 150f, 150f, true);
   object_pan_eggs =                                  new Pan(pan_eggs, false, 280f, 363f, 150f, 150f, false);
-
-
 
 
   button_Play =                                      new Button("play",     width/2, height*0.25, 200, 100, 0);
@@ -251,6 +241,7 @@ void draw() {
   scaleX = width/1280f;
   scaleY = height/720f;
   getDeltaTime();
+  
   
   Game.show();
   Game.mouseClicked();
