@@ -11,11 +11,14 @@ class Clock {
     
     time = time + deltaTime;
     timer = time/4000;
-    tenclock = timer/10;
-    oneclock = timer % 10;
+    oneclock = Timer;
 
     if (tenclock >= 6) {
       time = 0;
+    }
+    if (Timer == 10){
+      Timer = 0;
+      tenclock ++;
     }
   }
   void show() {

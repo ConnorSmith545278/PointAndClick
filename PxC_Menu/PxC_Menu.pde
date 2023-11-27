@@ -99,12 +99,14 @@ PImage clock_nine;
 PImage thepaw_32x32_png;
 
 boolean clockVisible = true;
+boolean timerActive;
 
 public float scaleX;
 public float scaleY;
 
 int oldmillis;
 int deltaTime;
+int Timer;
 
 
 int getDeltaTime() {
@@ -202,7 +204,7 @@ void setup() {
   object_rag_down  =                                 new Objects(rag_down, false, 280f, 263f, 150f, 150f, false);
 
   object_rag_up.toDisplay = object_rag_down;
-
+ 
 
   object_fireanim =                                  new Objects(fireanim, false, 640f, 360f, 100f, 100f, false);
 
@@ -244,6 +246,7 @@ println(width,height, mouseX, mouseY);
 }
 
 void draw() {
+
   scaleX = width/1280f;
   scaleY = height/720f;
   getDeltaTime();

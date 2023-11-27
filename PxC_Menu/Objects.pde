@@ -35,9 +35,11 @@ class Objects {
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       clickAble = false;
       visible = false;
+      Timer = Timer + 5;
       if (toDisplay != null) {
         toDisplay.visible = true;
       }
+       }
+      }
     }
-  }
-}
+  
