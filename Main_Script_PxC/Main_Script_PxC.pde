@@ -16,9 +16,6 @@ Button button_Settings_size1;
 Button button_Settings_size2;
 Button button_Settings_size3;
 
-
-
-
 Clock Clock1;
 gameState GameState;
 
@@ -98,7 +95,7 @@ PImage clock_nine;
 
 PImage thepaw_32x32_png;
 
-boolean clockVisible = true;
+boolean clockVisible;
 boolean timerActive;
 
 public float scaleX;
@@ -107,6 +104,10 @@ public float scaleY;
 int oldmillis;
 int deltaTime;
 int Timer;
+
+
+
+
 
 
 int getDeltaTime() {
@@ -173,8 +174,8 @@ void setup() {
 
   //NPC(PImage, posX, posY, width, height, visible)
   NPC_the_guy_transparent =                          new NPC(the_guy_transparent, 380f, 360f, 400f, 400f, true, true);
-  NPC_the_guy_different_expressions_angry =          new NPC(the_guy_different_expressions_angry, 800f, 550f, 400f, 400f, false, true);
-  NPC_the_guy_wants_coffee =                         new NPC(the_guy_wants_coffee, 800f, 360f, 400f, 400f, false, false);
+  NPC_the_guy_different_expressions_angry =          new NPC(the_guy_different_expressions_angry, 380f, 360f, 400f, 400f, false, true);
+  NPC_the_guy_wants_coffee =                         new NPC(the_guy_wants_coffee, 380f, 360f, 400f, 400f, false, false);
 
   NPC_the_guy_transparent.NPCtoDisplay = NPC_the_guy_different_expressions_angry;
   NPC_the_guy_different_expressions_angry.NPCtoDisplay = NPC_the_guy_wants_coffee;
