@@ -22,34 +22,34 @@ Button button_Settings_size3;
 Clock Clock1;
 gameState GameState;
 
-Objects object_mug_empty;
-Objects object_mug_filled;
-Objects object_mug_spilled;
+Mug object_mug_empty;
+Mug object_mug_filled;
+Mug object_mug_spilled;
 
-Objects object_pot_empty;
-Objects object_pot_filled;
+Pot object_pot_empty;
+Pot object_pot_filled;
 
-Objects object_paper_roll_asset;
-Objects object_paper_roll_asset_rotate;
+Paper_roll object_paper_roll_asset;
+Paper_roll object_paper_roll_asset_rotate;
 
-Objects object_rag_up;
-Objects object_rag_down;
+Rag object_rag_up;
+Rag object_rag_down;
 
 NPC NPC_the_guy_different_expressions_angry;
 NPC NPC_the_guy_transparent;
 NPC NPC_the_guy_wants_coffee;
 
-Objects object_fireanim;
+Fire object_fireanim;
 
-Objects object_toast_crisp;
-Objects object_toast_plain;
+Toast object_toast_crisp;
+Toast object_toast_plain;
 
-Objects object_toaster_crisp;
-Objects object_toaster_empty;
-Objects object_toaster_wtoast;
+Toaster object_toaster_crisp;
+Toaster object_toaster_empty;
+Toaster object_toaster_wtoast;
 
-Objects object_pan;
-Objects object_pan_eggs;
+Pan object_pan;
+Pan object_pan_eggs;
 
 
 
@@ -182,41 +182,41 @@ void setup() {
 
 
   //Objects(PImage, clickAble, posX, posY, width, height, visible)
-  object_mug_empty =                                 new Objects(mug_empty, false, 620f, 360f, 100f, 100f, true);
-  object_mug_filled  =                               new Objects(mug_filled, false, 620f, 360f, 100f, 100f, false);
-  object_mug_spilled  =                              new Objects(mug_spilled, false, 620f, 360f, 100f, 100f, false);
+  object_mug_empty =                                 new Mug(mug_empty, false, 620f, 360f, 100f, 100f, true);
+  object_mug_filled  =                               new Mug(mug_filled, false, 620f, 360f, 100f, 100f, false);
+  object_mug_spilled  =                              new Mug(mug_spilled, false, 620f, 360f, 100f, 100f, false);
 
 
   object_mug_empty.toDisplay = object_mug_filled;
   object_mug_filled.toDisplay = object_mug_spilled;
 
 
-  object_pot_empty  =                                new Objects(pot_empty, false, 680f, 420f, 100f, 100f, true);
-  object_pot_filled  =                               new Objects(pot_filled, false, 680f, 420f, 100f, 100f, false);
+  object_pot_empty  =                                new Pot(pot_empty, false, 680f, 420f, 100f, 100f, true);
+  object_pot_filled  =                               new Pot(pot_filled, false, 680f, 420f, 100f, 100f, false);
 
 
-  object_paper_roll_asset  =                         new Objects(paper_roll_asset, true, 1080f, 450f, 100f, 100f, true);
-  object_paper_roll_asset_rotate =                   new Objects(paper_roll_asset_rotate, false, 880f, 650f, 100f, 100f, false);
+  object_paper_roll_asset  =                         new Paper_roll(paper_roll_asset, true, 1080f, 450f, 100f, 100f, true);
+  object_paper_roll_asset_rotate =                   new Paper_roll(paper_roll_asset_rotate, false, 880f, 650f, 100f, 100f, false);
 
   object_paper_roll_asset.toDisplay = object_paper_roll_asset_rotate;
 
-  object_rag_up  =                                   new Objects(rag_up, true, 280f, 263f, 150f, 150f, true);
-  object_rag_down  =                                 new Objects(rag_down, false, 280f, 263f, 150f, 150f, false);
+  object_rag_up  =                                   new Rag(rag_up, true, 280f, 263f, 150f, 150f, true);
+  object_rag_down  =                                 new Rag(rag_down, false, 280f, 263f, 150f, 150f, false);
 
   object_rag_up.toDisplay = object_rag_down;
  
 
-  object_fireanim =                                  new Objects(fireanim, false, 640f, 360f, 100f, 100f, false);
+  object_fireanim =                                  new Fire(fireanim, false, 640f, 360f, 100f, 100f, false);
 
-  object_toast_crisp =                               new Objects(toast_crisp, false, 280f, 263f, 150f, 150f, false);
-  object_toast_plain =                               new Objects(toast_plain, false, 280f, 263f, 150f, 150f, false);
+  object_toast_crisp =                               new Toast(toast_crisp, false, 280f, 263f, 150f, 150f, false);
+  object_toast_plain =                               new Toast(toast_plain, false, 280f, 263f, 150f, 150f, false);
 
-  object_toaster_empty =                             new Objects(toaster_empty, false, 280f, 263f, 150f, 150f, false);
-  object_toaster_crisp =                             new Objects(toaster_crisp, false, 280f, 263f, 150f, 150f, false);
-  object_toaster_wtoast =                            new Objects(toaster_wtoast, false, 280f, 263f, 150f, 150f, false);
+  object_toaster_empty =                             new Toaster(toaster_empty, false, 280f, 263f, 150f, 150f, false);
+  object_toaster_crisp =                             new Toaster(toaster_crisp, false, 280f, 263f, 150f, 150f, false);
+  object_toaster_wtoast =                            new Toaster(toaster_wtoast, false, 280f, 263f, 150f, 150f, false);
 
-  object_pan =                                       new Objects(pan, false, 280f, 363f, 150f, 150f, true);
-  object_pan_eggs =                                  new Objects(pan_eggs, false, 280f, 363f, 150f, 150f, false);
+  object_pan =                                       new Pan(pan, false, 280f, 363f, 150f, 150f, true);
+  object_pan_eggs =                                  new Pan(pan_eggs, false, 280f, 363f, 150f, 150f, false);
 
 
 
