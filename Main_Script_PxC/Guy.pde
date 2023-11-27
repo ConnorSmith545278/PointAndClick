@@ -30,10 +30,23 @@ class NPC {
     if (visible == true) {
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     }
+    
     if (this == NPC_the_guy_transparent && object_paper_roll_asset_rotate.visible && moveable) {
       visible = false;
       moveable = false;
       NPCtoDisplay.visible = true;
     }
+    if (this == NPC_the_guy_different_expressions_angry && object_rag_down.visible) {
+      visible = false;
+
+      NPC_the_guy_transparent.visible = true;
+      
+      
+      
+    }
+    
+    
+    
+    
   }
 }

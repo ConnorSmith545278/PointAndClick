@@ -1,4 +1,4 @@
-class Objects {
+class Fire {
 
   boolean clickAble;
   float posX;
@@ -7,12 +7,12 @@ class Objects {
   float sizeX;
   float sizeY;
   boolean visible;
-  Objects toDisplay;
+  Fire toDisplay;
 
 
 
 
-  Objects(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
+  Fire(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
     clickAble = click;
     posX = x;
     posY = y;
