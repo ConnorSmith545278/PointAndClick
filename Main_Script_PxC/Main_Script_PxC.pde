@@ -1,4 +1,6 @@
 import java.util.*;
+Stack<MomentInTime> timeStack;
+MomentInTime startTime;
 
 Menu Game;
 Menu MainMenu;
@@ -17,7 +19,7 @@ Button button_Settings_size2;
 Button button_Settings_size3;
 
 Clock Clock1;
-gameState GameState;
+
 
 Mug object_mug_empty;
 Mug object_mug_filled;
@@ -33,7 +35,7 @@ Rag object_rag_up;
 Rag object_rag_down;
 
 NPC NPC_the_guy;
-
+Cat Cat;
 Fire object_fireanim;
 
 Toast object_toast_crisp;
@@ -48,29 +50,23 @@ Pan object_pan_eggs;
 
 
 
-PImage BG;
+PImage Sunrise, Sun, background_fire, background;
 
-PImage mug_empty;
-PImage mug_filled;
-PImage mug_spilled;
+PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent;
 
-PImage pot_empty;
-PImage pot_filled;
+PImage mug_empty, mug_filled, mug_spilled;
 
-PImage paper_roll_asset;
-PImage paper_roll_asset_rotate;
+PImage pot_empty, pot_filled;
 
-PImage rag_up;
-PImage rag_down;
+PImage paper_roll_asset, paper_roll_asset_rotate;
 
-PImage the_guy_different_expressions_angry;
-PImage the_guy_transparent;
-PImage the_guy_wants_coffee;
+PImage rag_up, rag_down;
+
+PImage the_guy_panic_transparent, the_guy_different_expressions_angry, the_guy_transparent, the_guy_wants_coffee;
 
 PImage fireanim;
 
-PImage toast_crisp;
-PImage toast_plain;
+PImage toast_crisp, toast_plain;
 
 PImage toaster_crisp;
 PImage toaster_empty;
@@ -120,7 +116,15 @@ int getDeltaTime() {
 
 void setup() {
   size(1280, 720, P2D);
-  BG = loadImage("Background_Placeholder.png");
+
+ 
+  Sunrise = loadImage("Sunrise.png");
+  Sun = loadImage("Sun.png");
+  background_fire = loadImage("background_fire.png");
+  background = loadImage("background.png");
+  
+  
+  
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");
   mug_spilled = loadImage("mug_spilled.png");
@@ -137,7 +141,10 @@ void setup() {
   the_guy_different_expressions_angry = loadImage("the_guy_different_expressions_angry.png");
   the_guy_transparent = loadImage("the_guy_transparent.png");
   the_guy_wants_coffee = loadImage("the_guy_wants_coffee.png");
-
+  the_guy_panic_transparent = loadImage("the_guy_panic_transparent.png");
+  
+  the_cat_sitting_transparent = loadImage("the_cat_sitting_transparent.png");
+  the_cat_paw_up_tiltedhead_transparent = loadImage("the_cat_paw_up_tiltedhead_transparent.png");
 
   clock = loadImage("clock.png");
   clock_zero =loadImage("clock_zero.png");
@@ -164,8 +171,13 @@ void setup() {
 
   pan = loadImage("pan.png");
   pan_eggs = loadImage("pan_eggs.png");
-
+  
   cursor(thepaw_32x32_png);
+  
+  timeStack = new Stack<MomentInTime>();
+  startTime = new MomentInTime();
+  timeStack.push(startTime);
+
 
 
   Clock1 = new Clock();
@@ -173,7 +185,7 @@ void setup() {
   //NPC(posX, posY, width, height)
   NPC_the_guy =                          new NPC(380f, 360f, 400f, 400f);
 
-
+  Cat =                                  new Cat(width/2, height/2 -50, 150F, 150F);
 
   //Objects(PImage, clickAble, posX, posY, width, height, visible)
   object_mug_empty =                                 new Mug(mug_empty, false, 620f, 360f, 100f, 100f, true);
@@ -232,26 +244,30 @@ void setup() {
 }
 
 void mouseClicked() {
+  Game.mouseClicked();
+  MainMenu.mouseClicked();
+  Settings_Menu.mouseClicked();
+  menu_Game_over.mouseClicked();
+  menu_Clock.mouseClicked();
 println(width,height, mouseX, mouseY);
 
 }
 
 void draw() {
-
+if (timeStack.empty()){
+  timeStack.push(startTime);
+  }
+  
   scaleX = width/1280f;
   scaleY = height/720f;
   getDeltaTime();
   
   
   Game.show();
-  Game.mouseClicked();
   MainMenu.show();
-  MainMenu.mouseClicked();
   Settings_Menu.show();
-  Settings_Menu.mouseClicked();
   menu_Game_over.show();
-  menu_Game_over.mouseClicked();
   menu_Clock.show();
-  menu_Clock.mouseClicked();
+  
   
 }

@@ -24,14 +24,12 @@ class Paper_roll {
       asset = paper_roll_asset;
       posX = 1050;
       posY = 390;
-      image(asset, posX, posY, sizeX, sizeY);
       break;
     case 1:
       asset = paper_roll_asset_rotate;
       posX = 920;
       posY = 570;
-      image(asset, posX, posY, sizeX, sizeY);
-      if (count > 30){
+      if (count >= 30) {
         Paperrollvar = 2;
       }
       break;
@@ -40,19 +38,17 @@ class Paper_roll {
       NPC_the_guy.posX = 850;
       NPC_the_guy.posY = 470;
       NPC_the_guy.expression = 1;
-      image(asset, posX, posY, sizeX, sizeY);
-      if (count > 60){
+      if (count >= 60) {
         Paperrollvar = 3;
       }
       break;
-      case 3:
-       posX = 1080;
+    case 3:
+      posX = 1080;
       posY = 170;
       asset = paper_roll_asset;
       NPC_the_guy.expression = 2;
-      image(asset, posX, posY, sizeX, sizeY);
     }
-
+    image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
 
 
@@ -66,12 +62,11 @@ class Paper_roll {
       count = 0;
     }
   }
-  
-  void countDown(){
-    if (count < 90){
-     count++; 
-     println(count);
+
+  void countDown() {
+    if (count < 60) {
+      count++;
+      println(count);
     }
-        
   }
 }

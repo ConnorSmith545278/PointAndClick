@@ -13,7 +13,6 @@ class NPC {
     posY = y;
     sizeX = sx;
     sizeY = sy;
-
   }
 
 
@@ -23,16 +22,16 @@ class NPC {
     switch(expression) {
     case 0:
       asset = the_guy_transparent;
-      image(asset, posX, posY, sizeX, sizeY);
       break;
     case 1:
       asset = the_guy_different_expressions_angry;
-      image(asset, posX, posY, sizeX, sizeY);
       break;
     case 2:
       asset = the_guy_wants_coffee;
-      image(asset, posX, posY, sizeX, sizeY);
       break;
+    case 3:
+      asset = the_guy_panic_transparent;
     }
+    image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
 }

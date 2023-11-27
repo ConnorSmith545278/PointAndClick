@@ -69,15 +69,12 @@ class Button {
         break;
         case 101:
         windowResize(1280, 720);
-        delay(50);
         break;
         case 102:
         windowResize(1600, 900);
-        delay(50);
         break;
         case 103:
         windowResize(1920, 1080);
-        delay(50);
         break;
         }
         

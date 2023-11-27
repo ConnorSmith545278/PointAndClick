@@ -20,6 +20,7 @@ class Menu {
         object_rag_up.mouseClicked();
         object_paper_roll_asset.mouseClicked();
         object_pot_empty.mouseClicked();
+        Cat.mouseClicked();
         break;
       case 1:
         button_Play.mouseClicked();
@@ -45,7 +46,9 @@ class Menu {
       case 0:
         background(255);
         imageMode(CORNER);
-        image(BG, 0, 0, width, height);
+        image(Sunrise, 0, 0, width, height);
+        image(Sun, 0, 0, width, height);
+        image(background, 0, 0, width, height);
 
         Clock1.update();
 
@@ -74,7 +77,9 @@ class Menu {
         object_toaster_crisp.show();
         object_toaster_wtoast.show();
 
+        Cat.show();
         NPC_the_guy.show();
+        
 
         Clock1.show();
 
@@ -100,15 +105,15 @@ class Menu {
         exit();
         break;
       case 9:
+      imageMode(CORNER);
       background(0);
       tint(255, 128);
-      imageMode(CORNER);
-      image(BG, 0, 0, width, height);
+        image(Sunrise, 0, 0, width, height);
+        image(Sun, 0, 0, width, height);
+        image(background, 0, 0, width, height);
       tint(255, 255);
       button_Play.show();
       Clock1.show();
-      
-      break;
       }
     }
   }
