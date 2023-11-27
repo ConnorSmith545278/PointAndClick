@@ -28,7 +28,6 @@ class Menu {
         break;
       case 2:
         button_Main_menu.mouseClicked();
-        button_Settings_size0.mouseClicked();
         button_Settings_size1.mouseClicked();
         button_Settings_size2.mouseClicked();
         button_Settings_size3.mouseClicked();
@@ -95,7 +94,6 @@ class Menu {
       case 2:
         background(255);
         button_Main_menu.show();
-        button_Settings_size0.show();
         button_Settings_size1.show();
         button_Settings_size2.show();
         button_Settings_size3.show();
