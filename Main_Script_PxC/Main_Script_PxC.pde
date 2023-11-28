@@ -20,7 +20,7 @@ Button button_Settings_size3;
 
 Clock Clock1;
 
-Paper_roll paper_roll;
+coffee_Beans coffee_Beans;
 
 Rag rag;
 
@@ -46,7 +46,7 @@ PImage mug_empty, mug_filled, mug_spilled, mug_empty_rotated;
 
 PImage pot_empty, pot_filled;
 
-PImage paper_roll_asset, paper_roll_asset_rotate;
+PImage coffee_beans, coffee_beans_spilled;
 
 PImage rag_up, rag_down;
 
@@ -95,8 +95,8 @@ void setup() {
   pot_empty = loadImage("pot_empty.png");
   pot_filled = loadImage("pot_filled.png");
 
-  paper_roll_asset = loadImage("paper_roll_asset.png");
-  paper_roll_asset_rotate = loadImage("paper_roll_asset_rotate.png");
+  coffee_beans = loadImage("coffee_beans.png");
+  coffee_beans_spilled = loadImage("coffee_beans_spilled.png");
 
   rag_up = loadImage("rag_up.png");
   rag_down = loadImage("rag_down.png");
@@ -148,7 +148,7 @@ void setup() {
   Cat =                                              new Cat(width/2, height/2 -50, 150F, 150F);
   mug =                                              new Mug(true, 580f, 400f, 100f, 100f);
   pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
-  paper_roll  =                                      new Paper_roll(true, 1080f, 450f, 100f, 100f);
+  coffee_Beans  =                                    new coffee_Beans(true, 1080f, 450f, 100f, 100f);
   rag =                                              new Rag(true, 280f, 263f, 150f, 150f);
   object_fireanim =                                  new Fire(fireanim, false, 640f, 360f, 100f, 100f, false);
   toast =                                            new Toast(false, 280f, 263f, 150f, 150f);

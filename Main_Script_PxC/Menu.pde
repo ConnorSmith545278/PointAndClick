@@ -18,7 +18,7 @@ class Menu {
         button_Clock.mouseClicked();
         mug.mouseClicked();
         rag.mouseClicked();
-        paper_roll.mouseClicked();
+        coffee_Beans.mouseClicked();
         pot.mouseClicked();
         Cat.mouseClicked();
         break;
@@ -73,12 +73,12 @@ class Menu {
         image(background, 0, 0, width, height);
 
         Clock1.update();
-        paper_roll.countDown();
+        coffee_Beans.countDown();
         
         
         pot.show();
         mug.show();
-        paper_roll.show();
+        coffee_Beans.show();
         pan.show();
         rag.show();
         object_fireanim.show();
