@@ -1,14 +1,15 @@
 class Clock {
   int time;
-  int timer;
   int oneclock;
   int tenclock;
   int TimeSave_Player;
-  int numberSizeX = 14;
-  int numberSizeY = 46;
-  int oneClock_offsetX = 69;
-  int tenClock_offsetX = 93;
-  int offsetY = 85;
+  int numberSizeX = 15;
+  int numberSizeY = 45;
+  int oneClock_posX = 1210;
+  int tenClock_posX = 1185;
+  int clockNumber_posY = 635;
+  PImage oneClock_asset;
+  PImage tenClock_asset;
 
   void update() {
     
@@ -17,7 +18,8 @@ class Clock {
     oneclock = Timer;
 
     if (tenclock >= 6) {
-      time = 0;
+      Timer = 0;
+      tenclock = 0;
     }
     if (Timer == 10){
       Timer = 0;
@@ -25,115 +27,123 @@ class Clock {
     }
   }
   void show() {
-
     if (!menu_Clock.active) {
-      image(clock, width - 150, height - 75, 370, 296 );
+      image(clock, 1130*scaleX, 645*scaleY, 370*scaleX, 296*scaleY);
       switch(oneclock) {
       case 0:
-        image(clock_zero, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_zero;
         break;
       case 1:
-        image(clock_one, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_one;
         break;
       case 2:
-        image(clock_two, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_two;
         break;
       case 3:
-        image(clock_three, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_three;
         break;
       case 4:
-        image(clock_four, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_four;
         break;
       case 5:
-        image(clock_five, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_five;
         break;
       case 6:
-        image(clock_six, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_six;
         break;
       case 7:
-        image(clock_seven, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_seven;
         break;
       case 8:
-        image(clock_eight, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_eight;
         break;
       case 9:
-        image(clock_nine, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_nine;
         break;
       }
       switch(tenclock) {
       case 0:
-        image(clock_zero, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_zero;
         break;
       case 1:
-        image(clock_one, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_one;
         break;
       case 2:
-        image(clock_two, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_two;
         break;
       case 3:
-        image(clock_three, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_three;
         break;
       case 4:
-        image(clock_four, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_four;
         break;
       case 5:
-        image(clock_five, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+       tenClock_asset = clock_five;
         break;
       }
-    } else if (menu_Clock.active) {
-      image(clock, width/2-300, height/2-240, 600, 480 );
+      image(oneClock_asset, oneClock_posX*scaleX, clockNumber_posY*scaleY, numberSizeX*scaleX, numberSizeY*scaleY);
+      image(tenClock_asset, tenClock_posX*scaleX, clockNumber_posY*scaleY, numberSizeX*scaleX, numberSizeY*scaleY);
+    } 
+    
+    if (menu_Clock.active) {
+      imageMode(CENTER);
+      image(clock, 640, 360, 500, 400 );
       switch(oneclock) {
       case 0:
-        image(clock_zero, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_zero;
         break;
       case 1:
-        image(clock_one, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_one;
         break;
       case 2:
-        image(clock_two, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_two;
         break;
       case 3:
-        image(clock_three, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_three;
         break;
       case 4:
-        image(clock_four, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_four;
         break;
       case 5:
-        image(clock_five, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_five;
         break;
       case 6:
-        image(clock_six, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_six;
         break;
       case 7:
-        image(clock_seven, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_seven;
         break;
       case 8:
-        image(clock_eight, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_eight;
         break;
       case 9:
-        image(clock_nine, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_nine;
         break;
       }
+
+      
       switch(tenclock) {
       case 0:
-        image(clock_zero, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_zero;
         break;
       case 1:
-        image(clock_one, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_one;
         break;
       case 2:
-        image(clock_two, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_two;
         break;
       case 3:
-        image(clock_three, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_three;
         break;
       case 4:
-        image(clock_four, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_four;
         break;
       case 5:
-        image(clock_five, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_five;
         break;
       }
+      image(oneClock_asset, 750, 346, 24, 60);
+      image(tenClock_asset, 715, 346, 24, 60); 
     }
   }
 }

@@ -20,7 +20,6 @@ Button button_Settings_size3;
 
 Clock Clock1;
 
-
 Paper_roll paper_roll;
 
 Rag rag;
@@ -70,9 +69,7 @@ boolean timerActive;
 
 public float scaleX, scaleY;
 
-int oldmillis;
-int deltaTime;
-int Timer;
+int oldmillis, deltaTime, Timer;
 
 int getDeltaTime() {
   deltaTime = millis()-oldmillis;
@@ -162,7 +159,7 @@ void setup() {
   button_Main_menu =                                 new Button("Main menu",150,     height-75,   300, 150, 1);
   button_Settings =                                  new Button("Settings", width/2, height*0.5,  200, 100, 2);
   button_Exit =                                      new Button("Quit",     width/2, height*0.75, 200, 100, 3);
-  button_Clock =                                     new Button("clock",    width - 150, height - 75, 300, 150, 9);
+  button_Clock =                                     new Button("",    width - 150, height - 75, 300, 150, 9);
   
   button_Settings_size1 =                            new Button("1280X720", 200, 200, 100, 100, 101);
   button_Settings_size2 =                            new Button("1600X900", 300, 300, 100, 100, 102);
