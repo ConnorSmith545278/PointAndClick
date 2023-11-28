@@ -21,10 +21,6 @@ Button button_Settings_size3;
 Clock Clock1;
 
 
-
-
-
-
 Paper_roll paper_roll;
 
 Rag rag;
@@ -61,50 +57,28 @@ PImage fireanim;
 
 PImage toast_crisp, toast_plain;
 
-PImage toaster_crisp;
-PImage toaster_empty;
-PImage toaster_wtoast;
+PImage toaster_crisp, toaster_empty, toaster_wtoast;
 
-PImage pan_empty;
-PImage pan_eggs;
+PImage pan_empty, pan_eggs;
 
-PImage clock;
-PImage clock_zero;
-PImage clock_one;
-PImage clock_two;
-PImage clock_three;
-PImage clock_four;
-PImage clock_five;
-PImage clock_six;
-PImage clock_seven;
-PImage clock_eight;
-PImage clock_nine;
+PImage clock, clock_zero, clock_one, clock_two, clock_three, clock_four, clock_five, clock_six, clock_seven, clock_eight, clock_nine;
 
 PImage thepaw_32x32_png;
 
 boolean clockVisible;
 boolean timerActive;
 
-public float scaleX;
-public float scaleY;
+public float scaleX, scaleY;
 
 int oldmillis;
 int deltaTime;
 int Timer;
-
-
-
-
-
 
 int getDeltaTime() {
   deltaTime = millis()-oldmillis;
   oldmillis = millis();
   return deltaTime;
 }
-
-
-
 
 
 void setup() {
@@ -115,8 +89,6 @@ void setup() {
   Sun = loadImage("Sun.png");
   background_fire = loadImage("background_fire.png");
   background = loadImage("background.png");
-  
-  
   
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");
@@ -170,48 +142,26 @@ void setup() {
   timeStack = new Stack<MomentInTime>();
   startTime = new MomentInTime();
   timeStack.push(startTime);
-
-
-
+  
   Clock1 = new Clock();
 
   //NPC(posX, posY, width, height)
-  NPC_the_guy =                          new NPC(380f, 360f, 400f, 400f);
-
-  Cat =                                  new Cat(width/2, height/2 -50, 150F, 150F);
-
-  //Objects(PImage, clickAble, posX, posY, width, height, visible)
-  mug =                                 new Mug(true, 580f, 400f, 100f, 100f);
- 
-
-
-  pot  =                               new Pot(false, 680f, 420f, 100f, 100f);
-
-
-  paper_roll  =                         new Paper_roll(true, 1080f, 450f, 100f, 100f);
-
-
-  rag =                               new Rag(true, 280f, 263f, 150f, 150f);
-
-
- 
-
+  NPC_the_guy =                                      new NPC(380f, 360f, 400f, 400f);
+  Cat =                                              new Cat(width/2, height/2 -50, 150F, 150F);
+  mug =                                              new Mug(true, 580f, 400f, 100f, 100f);
+  pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
+  paper_roll  =                                      new Paper_roll(true, 1080f, 450f, 100f, 100f);
+  rag =                                              new Rag(true, 280f, 263f, 150f, 150f);
   object_fireanim =                                  new Fire(fireanim, false, 640f, 360f, 100f, 100f, false);
-
   toast =                                            new Toast(false, 280f, 263f, 150f, 150f);
-
   toaster =                                          new Toaster(false, 280f, 263f, 150f, 150f);
-
-
   pan =                                              new Pan( false, 280f, 363f, 150f, 150f);
-
 
   button_Play =                                      new Button("play",     width/2, height*0.25, 200, 100, 0);
   button_Main_menu =                                 new Button("Main menu",150,     height-75,   300, 150, 1);
   button_Settings =                                  new Button("Settings", width/2, height*0.5,  200, 100, 2);
   button_Exit =                                      new Button("Quit",     width/2, height*0.75, 200, 100, 3);
   button_Clock =                                     new Button("clock",    width - 150, height - 75, 300, 150, 9);
-  
   
   button_Settings_size1 =                            new Button("1280X720", 200, 200, 100, 100, 101);
   button_Settings_size2 =                            new Button("1600X900", 300, 300, 100, 100, 102);
@@ -243,13 +193,10 @@ if (timeStack.empty()){
   scaleX = width/1280f;
   scaleY = height/720f;
   getDeltaTime();
-  
-  
+   
   Game.show();
   MainMenu.show();
   Settings_Menu.show();
   menu_Game_over.show();
   menu_Clock.show();
-  
-  
 }

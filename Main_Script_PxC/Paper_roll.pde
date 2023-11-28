@@ -1,5 +1,6 @@
 class Paper_roll {
 
+  boolean clicked = false;
   boolean clickAble;
   float posX;
   float posY;
@@ -8,7 +9,7 @@ class Paper_roll {
   PImage asset;
   int Paperrollvar = 0;
   int count = 90;
-  boolean clicked = false;
+  
 
   Paper_roll(boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
@@ -37,8 +38,7 @@ class Paper_roll {
     case 2:
       asset = paper_roll_asset_rotate;
       NPC_the_guy.posX = 850;
-      NPC_the_guy.posY = 470;
-      
+      NPC_the_guy.posY = 470;  
       if (count >= 60) {
         Paperrollvar = 3;
       }
@@ -62,8 +62,7 @@ class Paper_roll {
     if (mouseButton == LEFT && clickAble == true &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-     clickAble = false;
-      
+      clickAble = false;
       Paperrollvar=1;
       Timer = Timer + 5;
       count = 0;
@@ -72,8 +71,7 @@ class Paper_roll {
 
   void countDown() {
     if (count < 150) {
-      count++;
-      
+      count++;     
     }
   }
 }

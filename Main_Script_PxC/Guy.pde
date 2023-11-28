@@ -18,7 +18,6 @@ class NPC {
 
   void show() {
     imageMode(CENTER);
-
     switch(expression) {
     case 0:
       asset = the_guy_transparent;

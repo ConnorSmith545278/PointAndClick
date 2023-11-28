@@ -7,7 +7,6 @@ class Pan {
   float sizeX;
   float sizeY;
   boolean visible;
-  Pan toDisplay;
 
 
 
@@ -16,17 +15,16 @@ class Pan {
     clickAble = click;
     posX = x;
     posY = y;
-   
     sizeX = sx;
     sizeY = sy;
     
   }
 
   void show() {
-    if (visible == true) {
+      asset = pan_empty;
       imageMode(CENTER);
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
-    }
+    
   }
 
   void mouseClicked() {
@@ -36,9 +34,6 @@ class Pan {
       clickAble = false;
       visible = false;
       Timer = Timer + 5;
-      if (toDisplay != null) {
-        toDisplay.visible = true;
-      }
        }
       }
     }

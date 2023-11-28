@@ -1,22 +1,17 @@
 class Toaster {
-
+  boolean visible;
   boolean clickAble;
   float posX;
   float posY;
   PImage asset;
   float sizeX;
   float sizeY;
-  boolean visible;
-  Toaster toDisplay;
-
-
 
 
   Toaster( boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
     posX = x;
     posY = y;
-    
     sizeX = sx;
     sizeY = sy;
     
@@ -31,15 +26,12 @@ class Toaster {
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT && clickAble == true && visible == true &&
+    if (mouseButton == LEFT && clickAble && visible &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       clickAble = false;
       visible = false;
       Timer = Timer + 5;
-      if (toDisplay != null) {
-        toDisplay.visible = true;
-      }
        }
       }
     }
