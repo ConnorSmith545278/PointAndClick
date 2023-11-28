@@ -29,12 +29,11 @@ Cat Cat;
 Fire object_fireanim;
 Mug mug;
 Pot pot;
-
 Toast toast;
-
 Toaster toaster;
-
 Pan pan;
+Salt Salt;
+Pepper Pepper;
 
 
 
@@ -63,6 +62,9 @@ PImage pan_empty, pan_eggs;
 PImage clock, clock_zero, clock_one, clock_two, clock_three, clock_four, clock_five, clock_six, clock_seven, clock_eight, clock_nine;
 
 PImage thepaw_32x32_png;
+
+PImage salt;
+PImage pepper;
 
 boolean clockVisible;
 boolean timerActive;
@@ -135,6 +137,10 @@ void setup() {
   pan_empty = loadImage("pan.png");
   pan_eggs = loadImage("pan_eggs.png");
   
+  salt = loadImage("salt.png");
+  pepper = loadImage("pepper.png");
+  
+  
   cursor(thepaw_32x32_png);
   
   timeStack = new Stack<MomentInTime>();
@@ -144,16 +150,22 @@ void setup() {
   Clock1 = new Clock();
 
   //NPC(posX, posY, width, height)
-  NPC_the_guy =                                      new NPC(380f, 360f, 400f, 400f);
+  NPC_the_guy =                                      new NPC(400f, 360f, 400f, 400f);
   Cat =                                              new Cat(width/2, height/2 -50, 150F, 150F);
+  
+  
+  
   mug =                                              new Mug(true, 580f, 400f, 100f, 100f);
   pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
-  coffee_Beans  =                                    new coffee_Beans(true, 1080f, 450f, 100f, 100f);
+  coffee_Beans  =                                    new coffee_Beans(true, 1050f, 390f, 100f, 100f);
   rag =                                              new Rag(true, 280f, 263f, 150f, 150f);
   object_fireanim =                                  new Fire(fireanim, false, 640f, 360f, 100f, 100f, false);
   toast =                                            new Toast(false, 280f, 263f, 150f, 150f);
   toaster =                                          new Toaster(false, 280f, 263f, 150f, 150f);
   pan =                                              new Pan( false, 280f, 363f, 150f, 150f);
+  Salt =                                             new Salt(true, 1040f, 135f, 100f, 100f);
+  Pepper =                                           new Pepper(true, 1070f, 155f, 100f, 100f);
+
 
   button_Play =                                      new Button("play",     width/2, height*0.25, 200, 100, 0);
   button_Main_menu =                                 new Button("Main menu",150,     height-75,   300, 150, 1);

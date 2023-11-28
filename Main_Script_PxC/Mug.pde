@@ -11,10 +11,6 @@ class Mug {
   boolean visible;
   boolean spillMug = false;
   boolean cleaned = false;
-  
-  
-  Mug toDisplay;
-
 
 
 
@@ -60,13 +56,13 @@ class Mug {
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT  && asset == mug_filled && clickAble == true &&
+    if (mouseButton == LEFT  && asset == mug_filled && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       spillMug = true;
       Timer = Timer + 5;
        }
-       if (mouseButton == LEFT  && asset == mug_empty && clickAble == true &&
+       if (mouseButton == LEFT  && asset == mug_empty && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       mugVar = 1;

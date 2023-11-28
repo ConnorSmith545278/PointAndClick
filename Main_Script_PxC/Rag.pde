@@ -24,21 +24,27 @@ class Rag {
     if(mug.spillMug == true){
       ragVar = 3;
     }
+    
     if (ragVar == 0) {
       asset = rag_up;
     }
+    
     if (ragVar == 1) {
       ragTimer ++;
       asset = rag_down;
+      
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
       }
+      
       if (ragTimer >=45) {
         ragVar = 0;
         ragTimer = 0;
       }
     }
+    
+    
     if (ragVar == 3) {
       ragTimer ++;
       if (ragTimer >=30) {
@@ -78,6 +84,7 @@ class Rag {
       imageMode(CENTER);
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     }
+    
   }
 
   void mouseClicked() {
@@ -87,6 +94,5 @@ class Rag {
       ragVar = 1;
       Timer = Timer + 5;
     }
-
   }
 }

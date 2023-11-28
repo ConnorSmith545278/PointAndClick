@@ -45,7 +45,6 @@ class Pot {
         wantsCoffee = false;
         pot_Timer = 140;
       }
-      println(pot_Timer);
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     
   }
