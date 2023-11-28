@@ -20,7 +20,6 @@ Button button_Settings_size3;
 
 Clock Clock1;
 
-
 Paper_roll paper_roll;
 
 Rag rag;
@@ -70,9 +69,7 @@ boolean timerActive;
 
 public float scaleX, scaleY;
 
-int oldmillis;
-int deltaTime;
-int Timer;
+int oldmillis, deltaTime, Timer;
 
 int getDeltaTime() {
   deltaTime = millis()-oldmillis;

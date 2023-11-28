@@ -87,7 +87,7 @@ class Clock {
     
     if (menu_Clock.active) {
       imageMode(CENTER);
-      image(clock, width/2, height/2, 500, 400 );
+      image(clock, 640, 360, 500, 400 );
       switch(oneclock) {
       case 0:
       oneClock_asset = clock_zero;
@@ -142,8 +142,8 @@ class Clock {
       tenClock_asset = clock_five;
         break;
       }
-      image(tenClock_asset, width/2 + 85, height/2 - 55, 47, 80);
-      image(tenClock_asset, width/2, height/2 - 55, 47, 80); 
+      image(oneClock_asset, 750, 346, 24, 60);
+      image(tenClock_asset, 715, 346, 24, 60); 
     }
   }
 }
