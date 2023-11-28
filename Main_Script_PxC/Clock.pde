@@ -3,11 +3,13 @@ class Clock {
   int oneclock;
   int tenclock;
   int TimeSave_Player;
-  int numberSizeX = 14;
-  int numberSizeY = 46;
+  int numberSizeX = 15;
+  int numberSizeY = 45;
   int oneClock_posX = 1210;
-  int tenClock_posX = 1190;
+  int tenClock_posX = 1185;
   int clockNumber_posY = 635;
+  PImage oneClock_asset;
+  PImage tenClock_asset;
 
   void update() {
     
@@ -30,58 +32,63 @@ class Clock {
       image(clock, 1130*scaleX, 645*scaleY, 370*scaleX, 296*scaleY);
       switch(oneclock) {
       case 0:
-        image(clock_zero, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_zero;
         break;
       case 1:
-        image(clock_one, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_one;
         break;
       case 2:
-        image(clock_two, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_two;
         break;
       case 3:
-        image(clock_three, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_three;
         break;
       case 4:
-        image(clock_four, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_four;
         break;
       case 5:
-        image(clock_five, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_five;
         break;
       case 6:
-        image(clock_six, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_six;
         break;
       case 7:
-        image(clock_seven, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_seven;
         break;
       case 8:
-        image(clock_eight, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_eight;
         break;
       case 9:
-        image(clock_nine, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      oneClock_asset = clock_nine;
         break;
       }
       switch(tenclock) {
       case 0:
-        image(clock_zero, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_zero;
         break;
       case 1:
-        image(clock_one, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_one;
         break;
       case 2:
-        image(clock_two, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_two;
         break;
       case 3:
-        image(clock_three, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_three;
         break;
       case 4:
-        image(clock_four, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+      tenClock_asset = clock_four;
         break;
       case 5:
-        image(clock_five, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
+       tenClock_asset = clock_five;
         break;
       }
-    } else if (menu_Clock.active) {
-      image(clock, width/2-300, height/2-240, 600, 480 );
+      image(oneClock_asset, oneClock_posX*scaleX, clockNumber_posY*scaleY, numberSizeX*scaleX, numberSizeY*scaleY);
+      image(tenClock_asset, tenClock_posX*scaleX, clockNumber_posY*scaleY, numberSizeX*scaleX, numberSizeY*scaleY);
+    } 
+    
+    if (menu_Clock.active) {
+      imageMode(CENTER);
+      image(clock, width/2, height/2, 600, 480 );
       switch(oneclock) {
       case 0:
         image(clock_zero, width/2 + 85, height/2 - 55, 47, 80);
@@ -114,6 +121,7 @@ class Clock {
         image(clock_nine, width/2 + 85, height/2 - 55, 47, 80);
         break;
       }
+      
       switch(tenclock) {
       case 0:
         image(clock_zero, width/2, height/2 - 55, 47, 80);

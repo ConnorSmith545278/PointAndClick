@@ -7,10 +7,7 @@ class Fire {
   float sizeX;
   float sizeY;
   boolean visible;
-  Fire toDisplay;
-
-
-
+  
 
   Fire(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
     clickAble = click;
@@ -36,10 +33,6 @@ class Fire {
       clickAble = false;
       visible = false;
       Timer = Timer + 5;
-      if (toDisplay != null) {
-        toDisplay.visible = true;
-      }
-       }
-      }
     }
-  
+  }
+}

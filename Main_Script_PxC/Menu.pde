@@ -73,35 +73,20 @@ class Menu {
         image(background, 0, 0, width, height);
 
         Clock1.update();
-
-        pot.show();
-        
-        mug.show();
-        
-
-        paper_roll.show();
         paper_roll.countDown();
-
+        
+        
+        pot.show();
+        mug.show();
+        paper_roll.show();
         pan.show();
-        
-
         rag.show();
-        
-
         object_fireanim.show();
-
         toast.show();
-        
-
         toaster.show();
-        
-
         Cat.show();
-        NPC_the_guy.show();
-        
-
+        NPC_the_guy.show();    
         Clock1.show();
-
         button_Main_menu.show();
         button_Clock.show();
 
