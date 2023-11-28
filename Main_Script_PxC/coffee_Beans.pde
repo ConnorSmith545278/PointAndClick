@@ -2,7 +2,7 @@ class coffee_Beans {
 
   boolean visible = true;
   boolean clickAble;
-  boolean coffeeActive = false;
+  boolean coffeeActive = false; //animation
   float posX;
   float posY;
   float sizeX;
@@ -18,6 +18,12 @@ class coffee_Beans {
     posY = y;
     sizeX = sx;
     sizeY = sy;
+  }
+
+  void countDown() {
+    if (count < 180) {
+      count++;
+    }
   }
 
   void show() {
@@ -40,7 +46,7 @@ class coffee_Beans {
       NPC_the_guy.posX = 850;
       NPC_the_guy.posY = 470;
       if (count >= 60) {
-      coffeeActive = true;
+        coffeeActive = true;
         Paperrollvar = 3;
       }
       break;
@@ -54,16 +60,14 @@ class coffee_Beans {
       if (count >= 150) {
         coffeeActive = true;
         NPC_the_guy.expression = 0;
-        
-        
       }
-      if (count >= 180){
-     coffeeActive = false;
+      if (count >= 180) {
+        coffeeActive = false;
       }
     }
-    if (visible){
-    image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
-  }
+    if (visible) {
+      image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    }
   }
 
   void mouseClicked() {
@@ -74,12 +78,6 @@ class coffee_Beans {
       Paperrollvar=1;
       Timer = Timer + 5;
       count = 0;
-    }
-  }
-
-  void countDown() {
-    if (count < 180) {
-      count++;
     }
   }
 }

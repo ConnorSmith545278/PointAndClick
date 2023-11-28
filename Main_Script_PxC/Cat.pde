@@ -31,6 +31,7 @@ class Cat {
       posY = 260f;
       break;
     }
+    
     switch(expression) {
     case 0:
       asset = the_cat_sitting_transparent;

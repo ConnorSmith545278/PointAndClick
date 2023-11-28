@@ -31,10 +31,10 @@ class NPC {
     case 3:
       asset = the_guy_panic_transparent;
       break;
-      case 4:
+    case 4:
       asset = the_guy_wantsegg;
       break;
-      case 5:
+    case 5:
       asset = the_guy_handsout_png;
     }
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);

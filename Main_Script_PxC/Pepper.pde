@@ -13,8 +13,7 @@ class Pepper{
     posX = x;
     posY = y;
     sizeX = sx;
-    sizeY = sy;
-    
+    sizeY = sy;  
   }
 
 
@@ -22,5 +21,17 @@ void show(){
   asset = pepper;
  image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY); 
 }
+
+
+  void mouseClicked() {
+    if (mouseButton == LEFT && clickAble &&
+      mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
+      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+      clickAble = false;
+      
+      
+       }
+      }
+
 
 }

@@ -2,6 +2,8 @@ import java.util.*;
 Stack<MomentInTime> timeStack;
 MomentInTime startTime;
 
+
+
 Menu Game;
 Menu MainMenu;
 Menu Settings_Menu;
@@ -13,6 +15,7 @@ Button button_Settings;
 Button button_Exit;
 Button button_Main_menu;
 Button button_Clock;
+Button button_Rewind;
 
 Button button_Settings_size1;
 Button button_Settings_size2;
@@ -36,8 +39,6 @@ Toaster toaster;
 Pan pan;
 Salt Salt;
 Pepper Pepper;
-
-
 
 PImage Sunrise, Sun, background_fire, background, Vignette;
 
@@ -151,7 +152,7 @@ void setup() {
   timeStack = new Stack<MomentInTime>();
   startTime = new MomentInTime();
   timeStack.push(startTime);
-  
+    
   Clock1 = new Clock();
   Catbuttons = new CatButtons();
 
@@ -178,6 +179,7 @@ void setup() {
   button_Settings =                                  new Button("Settings", width/2, height*0.5,  200, 100, 2);
   button_Exit =                                      new Button("Quit",     width/2, height*0.75, 200, 100, 3);
   button_Clock =                                     new Button("",    width - 150, height - 75, 300, 150, 9);
+  button_Rewind =                                    new Button("Rewind", width/2, height*0.75, 200, 100, 10);
   
   button_Settings_size1 =                            new Button("1280X720", 200, 200, 100, 100, 101);
   button_Settings_size2 =                            new Button("1600X900", 300, 300, 100, 100, 102);
@@ -189,6 +191,7 @@ void setup() {
   menu_Game_over=                                    new Menu(3, false);
   menu_Clock =                                       new Menu(9, false);
   
+  
 }
 
 void mouseClicked() {
@@ -198,7 +201,7 @@ void mouseClicked() {
   menu_Game_over.mouseClicked();
   menu_Clock.mouseClicked();
 println(width,height, mouseX, mouseY);
-
+println(timeStack.empty(), timeStack.peek().Cat_location, timeStack.peek().beans_spilled, timeStack.peek().coffee_spilled);
 }
 
 void draw() {
@@ -209,6 +212,7 @@ if (timeStack.empty()){
   scaleX = width/1280f;
   scaleY = height/720f;
   getDeltaTime();
+  Clock1.update();
    
   Game.show();
   MainMenu.show();

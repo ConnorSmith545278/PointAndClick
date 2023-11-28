@@ -6,9 +6,6 @@ class Pan {
   PImage asset;
   float sizeX;
   float sizeY;
-  boolean visible;
-  boolean Cooking;
-  boolean eggs;
   int cookTimer;
 
 
@@ -20,45 +17,24 @@ class Pan {
     posY = y;
     sizeX = sx;
     sizeY = sy;
-    
   }
 
   void show() {
-      asset = pan_empty;
-      if(Clock1.tenclock == 2 && mug.mugActive == false && rag.ragActive == false && coffee_Beans.coffeeActive == false){
-        cookTimer ++;
-        eggs = true;
+    asset = pan_empty;
+    if (Timer >=25 && mug.mugActive == false && rag.ragActive == false && coffee_Beans.coffeeActive == false) {
+      cookTimer ++;
+      if (cookTimer >= 30) {
+        NPC_the_guy.expression = 4;
+        NPC_the_guy.posX=400;
+        NPC_the_guy.posY=360;
       }
-        if(cookTimer >= 30 && eggs == true){
-          NPC_the_guy.expression = 4;
-          NPC_the_guy.posX=400;
-          NPC_the_guy.posY=360;
-        }
-        if(cookTimer >= 50 && eggs == true){
-          NPC_the_guy.expression = 4;
-          asset = pan_eggs;
-          cookTimer = 60;
-          Cooking = true;
-          NPC_the_guy.posX=400;
-          NPC_the_guy.posY=360;
-        }
-       
-       
-     
-      
-      imageMode(CENTER);
-      image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
-    
-  }
-
-  void mouseClicked() {
-    if (mouseButton == LEFT && clickAble == true && visible == true &&
-      mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
-      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-      clickAble = false;
-      visible = false;
-      Timer = Timer + 5;
-       }
+      if (cookTimer >= 50) {
+        asset = pan_eggs;
+        cookTimer = 50;
       }
     }
-  
+
+    imageMode(CENTER);
+    image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+  }
+}
