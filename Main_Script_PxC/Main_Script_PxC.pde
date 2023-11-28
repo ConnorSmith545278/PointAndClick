@@ -81,7 +81,7 @@ int getDeltaTime() {
 
 
 void setup() {
-  size(1280, 720, P2D);
+  size(1280, 720, P3D);
 
  
   Sunrise = loadImage("Sunrise.png");

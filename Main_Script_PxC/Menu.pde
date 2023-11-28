@@ -72,32 +72,41 @@ class Menu {
         image(Sunrise, 0, 0, width, height);
        // image(Sun, 0, 0, width, height);
         image(background, 0, 0, width, height);
-        tint(255, shadow);
-        image(Vignette, 0, 0, width, height);
-        tint(255, 255);
+
         
         Clock1.update();
         coffee_Beans.countDown();
+         pot.show();
         
-        
-        pot.show();
         mug.show();
+        
         coffee_Beans.show();
+        
         pan.show();
+        
         rag.show();
+        
         object_fireanim.show();
+        
         toast.show();
+        
         toaster.show();
+        
         Salt.show();
+        
         Pepper.show();
+        
         Cat.show();
-        NPC_the_guy.show();    
         
-        
-        
+        NPC_the_guy.show(); 
+   
+        tint(255, shadow);
+        image(Vignette, 0, 0, width, height);
+        tint(255, 255);
+       
         
         Clock1.show();
-        button_Main_menu.show();
+        button_Main_menu.show(); 
         button_Clock.show();
 
         break;

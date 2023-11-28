@@ -27,6 +27,7 @@ class Clock {
     }
   }
   void show() {
+    imageMode(CENTER);
     if (!menu_Clock.active) {
       image(clock, 1130*scaleX, 645*scaleY, 370*scaleX, 296*scaleY);
       switch(oneclock) {
