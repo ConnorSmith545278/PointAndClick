@@ -21,7 +21,7 @@ class Rag {
   }
 
   void show() {
-    if(mug.spillMug == true){
+    if(mug.spillMug){
       ragVar = 3;
     }
     
