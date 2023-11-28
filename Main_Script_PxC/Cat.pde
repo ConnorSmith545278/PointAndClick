@@ -6,7 +6,7 @@ class Cat {
   float sizeX;
   float sizeY;
   int expression=0;
-  int catPosition;
+  int catPosition = 1;
 
 
   Cat(float x, float y, float sx, float sy) {
@@ -18,7 +18,18 @@ class Cat {
 
   void show() {
     switch(catPosition){
-      
+      case 0:
+      posX = 335f;
+      posY = 220f;
+      break;
+      case 1:
+      posX = 640f;
+      posY = 320f;
+      break;
+      case 2:
+      posX = 970f;
+      posY = 260f;
+      break;
     }
     switch(expression) {
     case 0:

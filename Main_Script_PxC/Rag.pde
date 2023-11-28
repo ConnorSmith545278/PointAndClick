@@ -50,7 +50,7 @@ class Rag {
         ragVar = 0;
         ragTimer = 0;
         ragUp = true;
-        ragActive = true;
+        ragActive = false;
       }
     }
     
@@ -60,7 +60,7 @@ class Rag {
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
-        ragUp = false;
+        ragUp = true;
         ragActive = true;
       }
       if (ragTimer >=60) {
@@ -69,7 +69,7 @@ class Rag {
         posX = 600;
         posY = 350;
         asset = rag_down;
-        ragUp = false;
+        ragUp = true;
         ragActive = true;
       }
       if (ragTimer >=75) {
@@ -78,7 +78,7 @@ class Rag {
         posX = 600;
         posY = 365;
         asset = rag_down;
-        ragUp = false;
+        ragUp = true;
         ragActive = true;
       }
       if (ragTimer >=110) {
@@ -96,7 +96,7 @@ class Rag {
       }
       if ( ragTimer >= 120){
         ragActive = false;
-        ragTimer = 120;
+        ragVar = 0;
       }
     }
 

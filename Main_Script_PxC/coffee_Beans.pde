@@ -52,10 +52,13 @@ class coffee_Beans {
       coffeeActive = true;
       NPC_the_guy.expression = 2;
       if (count >= 150) {
-        coffeeActive = false;
+        coffeeActive = true;
         NPC_the_guy.expression = 0;
-        count = 150;
-        break;
+        
+        
+      }
+      if (count >= 180){
+     coffeeActive = false;
       }
     }
     if (visible){
@@ -75,7 +78,7 @@ class coffee_Beans {
   }
 
   void countDown() {
-    if (count < 150) {
+    if (count < 180) {
       count++;
     }
   }

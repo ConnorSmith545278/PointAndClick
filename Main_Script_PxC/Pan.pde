@@ -8,6 +8,7 @@ class Pan {
   float sizeY;
   boolean visible;
   boolean Cooking;
+  boolean eggs;
   int cookTimer;
 
 
@@ -26,21 +27,25 @@ class Pan {
       asset = pan_empty;
       if(Clock1.tenclock == 2 && mug.mugActive == false && rag.ragActive == false && coffee_Beans.coffeeActive == false){
         cookTimer ++;
-        
-        if(cookTimer >= 30){
+        eggs = true;
+      }
+        if(cookTimer >= 30 && eggs == true){
           NPC_the_guy.expression = 4;
           NPC_the_guy.posX=400;
-        NPC_the_guy.posY=360;
+          NPC_the_guy.posY=360;
         }
-        if(cookTimer >= 60){
+        if(cookTimer >= 50 && eggs == true){
+          NPC_the_guy.expression = 4;
           asset = pan_eggs;
           cookTimer = 60;
           Cooking = true;
+          NPC_the_guy.posX=400;
+          NPC_the_guy.posY=360;
         }
        
        
      
-      }
+      
       imageMode(CENTER);
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     

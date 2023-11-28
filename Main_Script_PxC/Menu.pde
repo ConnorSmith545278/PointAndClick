@@ -15,13 +15,28 @@ class Menu {
     if (active) {
       switch(menu) {
       case 0:
+      if(Cat.catPosition == 0){
         button_Main_menu.mouseClicked();
         button_Clock.mouseClicked();
-        mug.mouseClicked();
         rag.mouseClicked();
-        coffee_Beans.mouseClicked();
-        pot.mouseClicked();
+        Catbuttons.mouseClicked();
         Cat.mouseClicked();
+      }
+      if(Cat.catPosition == 1){
+        button_Main_menu.mouseClicked();
+        button_Clock.mouseClicked();
+        mug.mouseClicked(); 
+        Catbuttons.mouseClicked();
+        Cat.mouseClicked();
+      }
+      if(Cat.catPosition == 2){
+        button_Main_menu.mouseClicked();
+        button_Clock.mouseClicked();
+        coffee_Beans.mouseClicked();
+        Catbuttons.mouseClicked();
+        Cat.mouseClicked();
+      }
+     
         break;
       case 1:
         button_Play.mouseClicked();
@@ -79,6 +94,8 @@ class Menu {
          pot.show();
         
         mug.show();
+        
+        Catbuttons.show();
         
         coffee_Beans.show();
         

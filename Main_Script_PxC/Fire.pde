@@ -22,15 +22,29 @@ class Fire {
   void show() {
     asset = fireanim;
     
-    if (Clock1.tenclock == 2 && rag.ragUp == true && mug.mugActive == false && rag.ragActive == false && pan.Cooking == true && coffee_Beans.coffeeActive == false){
+    if (Clock1.tenclock == 2 && rag.ragUp == true && Clock1.oneclock == 0 && mug.mugActive == false && rag.ragActive == false && pan.Cooking == true && coffee_Beans.coffeeActive == false){
       visible = true;
       NPC_the_guy.expression = 3;
+      NPC_the_guy.posX=400;
+      NPC_the_guy.posY=360;
+    }
+      if (Clock1.tenclock == 2 && rag.ragUp == true && Clock1.oneclock == 5 && mug.mugActive == false 
+      && rag.ragActive == false && pan.Cooking == true && coffee_Beans.coffeeActive == false){
+      visible = true;
+      NPC_the_guy.posX=400;
+      NPC_the_guy.posY=360;
+      NPC_the_guy.expression = 0;
+
       
     }
-    if (Clock1.tenclock == 2 && rag.ragUp == false){
+    if(rag.ragUp == false){
       visible = false;
-      
+      NPC_the_guy.expression = 0;
+      NPC_the_guy.posX=400;
+      NPC_the_guy.posY=360;
     }
+   
+    
     if (visible == true) {
       imageMode(CENTER);
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);

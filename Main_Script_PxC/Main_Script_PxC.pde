@@ -22,10 +22,12 @@ Clock Clock1;
 
 coffee_Beans coffee_Beans;
 
+
 Rag rag;
 
 NPC NPC_the_guy;
 Cat Cat;
+CatButtons Catbuttons;
 Fire object_fireanim;
 Mug mug;
 Pot pot;
@@ -151,6 +153,7 @@ void setup() {
   timeStack.push(startTime);
   
   Clock1 = new Clock();
+  Catbuttons = new CatButtons();
 
   //NPC(posX, posY, width, height)
   NPC_the_guy =                                      new NPC(400f, 360f, 400f, 400f);
