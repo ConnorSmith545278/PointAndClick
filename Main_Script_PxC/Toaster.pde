@@ -12,21 +12,22 @@ class Toaster {
 
 
 
-  Toaster(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
+  Toaster( boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
     posX = x;
     posY = y;
-    asset = image_name;
+    
     sizeX = sx;
     sizeY = sy;
-    visible = pVisible;
+    
   }
 
   void show() {
-    if (visible == true) {
-      imageMode(CENTER);
-      image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
-    }
+
+     // imageMode(CENTER);
+      //asset = toaster_empty;
+      //image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+   
   }
 
   void mouseClicked() {

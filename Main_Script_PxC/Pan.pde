@@ -12,14 +12,14 @@ class Pan {
 
 
 
-  Pan(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
+  Pan( boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
     posX = x;
     posY = y;
-    asset = image_name;
+   
     sizeX = sx;
     sizeY = sy;
-    visible = pVisible;
+    
   }
 
   void show() {

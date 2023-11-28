@@ -6,40 +6,99 @@ class Rag {
   PImage asset;
   float sizeX;
   float sizeY;
+  int ragVar;
   boolean visible;
+  boolean showAsset = true;
   Rag toDisplay;
+  int ragTimer;
+  boolean spilled = false;
 
 
 
 
-  Rag(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
+  Rag(boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
     posX = x;
     posY = y;
-    asset = image_name;
     sizeX = sx;
     sizeY = sy;
-    visible = pVisible;
+    
   }
 
   void show() {
-    if (visible == true) {
+    if(ragVar == 0){
+      asset = rag_up;
+    }
+    else if (ragVar == 1){
+      ragTimer ++;
+      asset = rag_down;
+      if(ragTimer >=30){
+        NPC_the_guy.posX = 380;
+        NPC_the_guy.posY = 360;
+      }
+      if(ragTimer >=45){
+        ragVar = 0;
+        ragTimer = 0;
+      }
+    }
+    else if (ragVar == 3){
+      ragTimer ++;
+      if(ragTimer >=30){
+        NPC_the_guy.posX = 380;
+        NPC_the_guy.posY = 360;
+      }
+      if(ragTimer >=60){
+        NPC_the_guy.posX = 500;
+        NPC_the_guy.posY = 400;
+        posX = 600;
+        posY = 350;
+        asset = rag_down;
+      }
+      if(ragTimer >=75){
+        NPC_the_guy.posX = 500;
+        NPC_the_guy.posY = 400;
+        posX = 600;
+        posY = 365;
+        asset = rag_down;
+      }
+      if(ragTimer >=110){
+        NPC_the_guy.posX = 500;
+        NPC_the_guy.posY = 400;
+        posX = 600;
+        posY = 350;
+        mug.asset = mug_empty;
+        showAsset = false;
+        spilled = false;
+      }
+      
+    }
+    
+    
+    
+    if(showAsset == true){
       imageMode(CENTER);
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    
     }
+  
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT && clickAble == true && visible == true &&
+    if (mouseButton == LEFT && spilled == false &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-      clickAble = false;
-      visible = false;
+      ragVar = 1;
       Timer = Timer + 5;
-      if (toDisplay != null) {
-        toDisplay.visible = true;
+   
       }
+      else if (mouseButton == LEFT && spilled == true &&
+      mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
+      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+      ragVar = 3;
+      Timer = Timer + 5;
+      
        }
       }
-    }
+}
+   
   

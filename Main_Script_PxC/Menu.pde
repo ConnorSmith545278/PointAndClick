@@ -1,6 +1,7 @@
 class Menu {
   int menu;
   boolean active;
+  //int timeLastClick = 180;
 
   Menu(int i, boolean act) {
     menu = i;
@@ -15,12 +16,33 @@ class Menu {
       case 0:
         button_Main_menu.mouseClicked();
         button_Clock.mouseClicked();
-        object_mug_empty.mouseClicked();
-        object_mug_filled.mouseClicked();
-        object_rag_up.mouseClicked();
-        object_paper_roll_asset.mouseClicked();
-        object_pot_empty.mouseClicked();
+        mug.mouseClicked();
+        rag.mouseClicked();
+        paper_roll.mouseClicked();
+        pot.mouseClicked();
         Cat.mouseClicked();
+        break;
+      case 1:
+        button_Play.mouseClicked();
+        button_Settings.mouseClicked();
+        button_Exit.mouseClicked();
+        break;
+      case 2:
+        button_Main_menu.mouseClicked();
+        button_Settings_size1.mouseClicked();
+        button_Settings_size2.mouseClicked();
+        button_Settings_size3.mouseClicked();
+        break;
+      case 9:
+      button_Play.mouseClicked();
+      break;
+      }
+    }
+    else if (active) {
+      switch(menu) {
+      case 0:
+        button_Main_menu.mouseClicked();
+        button_Clock.mouseClicked();
         break;
       case 1:
         button_Play.mouseClicked();
@@ -52,30 +74,27 @@ class Menu {
 
         Clock1.update();
 
-        object_pot_empty.show();
-        object_pot_filled.show();
+        pot.show();
+        
+        mug.show();
+        
 
-        object_mug_empty.show();
-        object_mug_filled.show();
-        object_mug_spilled.show();
+        paper_roll.show();
+        paper_roll.countDown();
 
-        object_paper_roll_asset.show();
-        object_paper_roll_asset.countDown();
+        pan.show();
+        
 
-        object_pan.show();
-        object_pan_eggs.show();
-
-        object_rag_up.show();
-        object_rag_down.show();
+        rag.show();
+        
 
         object_fireanim.show();
 
-        object_toast_crisp.show();
-        object_toast_plain.show();
+        toast.show();
+        
 
-        object_toaster_empty.show();
-        object_toaster_crisp.show();
-        object_toaster_wtoast.show();
+        toaster.show();
+        
 
         Cat.show();
         NPC_the_guy.show();

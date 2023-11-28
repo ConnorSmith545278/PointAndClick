@@ -7,38 +7,59 @@ class Pot {
   float sizeX;
   float sizeY;
   boolean visible;
+  boolean fillMug = false;
+  boolean wantsCoffee = false;
   Pot toDisplay;
+  int coffeeVar;
+  int Timer;
+  
 
 
 
 
-  Pot(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
+  Pot( boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
     posX = x;
     posY = y;
-    asset = image_name;
     sizeX = sx;
     sizeY = sy;
-    visible = pVisible;
+    
   }
 
   void show() {
-    if (visible == true) {
-      imageMode(CENTER);
-      image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+  imageMode(CENTER);
+  asset = pot_filled;
+    if (NPC_the_guy.expression == 2){
+      wantsCoffee = true;
     }
+    if(wantsCoffee){
+      Timer ++;
+    }
+      if(Timer >= 70){
+        NPC_the_guy.posX = 780;
+        NPC_the_guy.posY = 470;
+        NPC_the_guy.expression = 0;
+      }
+      if(Timer >= 150){
+        asset = pot_empty;
+        fillMug = true;
+        NPC_the_guy.posX = 500;
+        NPC_the_guy.posY = 400;
+        NPC_the_guy.expression = 0;
+        wantsCoffee = false;
+        Timer = 0;
+      }
+    image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT && clickAble == true && visible == true &&
+    if (mouseButton == LEFT &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-      clickAble = false;
-      visible = false;
+     
       Timer = Timer + 5;
-      if (toDisplay != null) {
-        toDisplay.visible = true;
-      }
+      
+      
        }
       }
     }

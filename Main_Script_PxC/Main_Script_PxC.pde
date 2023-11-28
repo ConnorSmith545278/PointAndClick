@@ -21,32 +21,25 @@ Button button_Settings_size3;
 Clock Clock1;
 
 
-Mug object_mug_empty;
-Mug object_mug_filled;
-Mug object_mug_spilled;
 
-Pot object_pot_empty;
-Pot object_pot_filled;
 
-Paper_roll object_paper_roll_asset;
-Paper_roll object_paper_roll_asset_rotate;
 
-Rag object_rag_up;
-Rag object_rag_down;
+
+Paper_roll paper_roll;
+
+Rag rag;
 
 NPC NPC_the_guy;
 Cat Cat;
 Fire object_fireanim;
+Mug mug;
+Pot pot;
 
-Toast object_toast_crisp;
-Toast object_toast_plain;
+Toast toast;
 
-Toaster object_toaster_crisp;
-Toaster object_toaster_empty;
-Toaster object_toaster_wtoast;
+Toaster toaster;
 
-Pan object_pan;
-Pan object_pan_eggs;
+Pan pan;
 
 
 
@@ -72,7 +65,7 @@ PImage toaster_crisp;
 PImage toaster_empty;
 PImage toaster_wtoast;
 
-PImage pan;
+PImage pan_empty;
 PImage pan_eggs;
 
 PImage clock;
@@ -169,7 +162,7 @@ void setup() {
   toaster_empty = loadImage("toaster_empty.png");
   toaster_wtoast = loadImage("toaster_wtoast.png");
 
-  pan = loadImage("pan.png");
+  pan_empty = loadImage("pan.png");
   pan_eggs = loadImage("pan_eggs.png");
   
   cursor(thepaw_32x32_png);
@@ -188,40 +181,29 @@ void setup() {
   Cat =                                  new Cat(width/2, height/2 -50, 150F, 150F);
 
   //Objects(PImage, clickAble, posX, posY, width, height, visible)
-  object_mug_empty =                                 new Mug(mug_empty, false, 620f, 360f, 100f, 100f, true);
-  object_mug_filled  =                               new Mug(mug_filled, false, 620f, 360f, 100f, 100f, false);
-  object_mug_spilled  =                              new Mug(mug_spilled, false, 620f, 360f, 100f, 100f, false);
+  mug =                                 new Mug(true, 580f, 400f, 100f, 100f);
+ 
 
 
-  object_mug_empty.toDisplay = object_mug_filled;
-  object_mug_filled.toDisplay = object_mug_spilled;
+  pot  =                               new Pot(false, 680f, 420f, 100f, 100f);
 
 
-  object_pot_empty  =                                new Pot(pot_empty, false, 680f, 420f, 100f, 100f, true);
-  object_pot_filled  =                               new Pot(pot_filled, false, 680f, 420f, 100f, 100f, false);
+  paper_roll  =                         new Paper_roll(true, 1080f, 450f, 100f, 100f);
 
 
-  object_paper_roll_asset  =                         new Paper_roll(true, 1080f, 450f, 100f, 100f);
+  rag =                               new Rag(true, 280f, 263f, 150f, 150f);
 
 
-  object_rag_up  =                                   new Rag(rag_up, true, 280f, 263f, 150f, 150f, true);
-  object_rag_down  =                                 new Rag(rag_down, false, 280f, 263f, 150f, 150f, false);
-
-  object_rag_up.toDisplay = object_rag_down;
  
 
   object_fireanim =                                  new Fire(fireanim, false, 640f, 360f, 100f, 100f, false);
 
-  object_toast_crisp =                               new Toast(toast_crisp, false, 280f, 263f, 150f, 150f, false);
-  object_toast_plain =                               new Toast(toast_plain, false, 280f, 263f, 150f, 150f, false);
+  toast =                                            new Toast(false, 280f, 263f, 150f, 150f);
 
-  object_toaster_empty =                             new Toaster(toaster_empty, false, 280f, 263f, 150f, 150f, false);
-  object_toaster_crisp =                             new Toaster(toaster_crisp, false, 280f, 263f, 150f, 150f, false);
-  object_toaster_wtoast =                            new Toaster(toaster_wtoast, false, 280f, 263f, 150f, 150f, false);
+  toaster =                                          new Toaster(false, 280f, 263f, 150f, 150f);
 
 
-  object_pan =                                       new Pan(pan, false, 280f, 363f, 150f, 150f, true);
-  object_pan_eggs =                                  new Pan(pan_eggs, false, 280f, 363f, 150f, 150f, false);
+  pan =                                              new Pan( false, 280f, 363f, 150f, 150f);
 
 
   button_Play =                                      new Button("play",     width/2, height*0.25, 200, 100, 0);
