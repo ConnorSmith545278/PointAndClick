@@ -1,14 +1,13 @@
 class Clock {
   int time;
-  int timer;
   int oneclock;
   int tenclock;
   int TimeSave_Player;
   int numberSizeX = 14;
   int numberSizeY = 46;
-  int oneClock_offsetX = 69;
-  int tenClock_offsetX = 93;
-  int offsetY = 85;
+  int oneClock_posX = 1210;
+  int tenClock_posX = 1190;
+  int clockNumber_posY = 635;
 
   void update() {
     
@@ -17,7 +16,8 @@ class Clock {
     oneclock = Timer;
 
     if (tenclock >= 6) {
-      time = 0;
+      Timer = 0;
+      tenclock = 0;
     }
     if (Timer == 10){
       Timer = 0;
@@ -27,57 +27,57 @@ class Clock {
   void show() {
 
     if (!menu_Clock.active) {
-      image(clock, width - 150, height - 75, 370, 296 );
+      image(clock, 1130*scaleX, 645*scaleY, 370*scaleX, 296*scaleY);
       switch(oneclock) {
       case 0:
-        image(clock_zero, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_zero, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 1:
-        image(clock_one, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_one, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 2:
-        image(clock_two, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_two, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 3:
-        image(clock_three, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_three, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 4:
-        image(clock_four, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_four, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 5:
-        image(clock_five, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_five, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 6:
-        image(clock_six, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_six, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 7:
-        image(clock_seven, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_seven, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 8:
-        image(clock_eight, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_eight, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 9:
-        image(clock_nine, width - oneClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_nine, oneClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       }
       switch(tenclock) {
       case 0:
-        image(clock_zero, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_zero, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 1:
-        image(clock_one, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_one, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 2:
-        image(clock_two, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_two, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 3:
-        image(clock_three, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_three, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 4:
-        image(clock_four, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_four, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       case 5:
-        image(clock_five, width - tenClock_offsetX, height - offsetY, numberSizeX, numberSizeY);
+        image(clock_five, tenClock_posX, clockNumber_posY, numberSizeX, numberSizeY);
         break;
       }
     } else if (menu_Clock.active) {
