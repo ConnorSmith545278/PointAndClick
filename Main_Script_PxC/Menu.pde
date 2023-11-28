@@ -84,8 +84,14 @@ class Menu {
         object_fireanim.show();
         toast.show();
         toaster.show();
+        Salt.show();
+        Pepper.show();
         Cat.show();
         NPC_the_guy.show();    
+        
+        
+        
+        
         Clock1.show();
         button_Main_menu.show();
         button_Clock.show();

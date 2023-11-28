@@ -11,7 +11,7 @@ class Pan {
 
 
 
-  Pan( boolean click, float x, float y, float sx, float sy) {
+  Pan(boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
     posX = x;
     posY = y;

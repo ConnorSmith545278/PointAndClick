@@ -1,6 +1,6 @@
 class coffee_Beans {
 
-  boolean clicked = false;
+  boolean visible = true;
   boolean clickAble;
   float posX;
   float posY;
@@ -9,7 +9,7 @@ class coffee_Beans {
   PImage asset;
   int Paperrollvar = 0;
   int count = 90;
-  
+
 
   coffee_Beans(boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
@@ -24,8 +24,6 @@ class coffee_Beans {
     switch(Paperrollvar) {
     case 0:
       asset = coffee_beans;
-      posX = 1050;
-      posY = 390;
       break;
     case 1:
       asset = coffee_beans_spilled;
@@ -38,28 +36,29 @@ class coffee_Beans {
     case 2:
       asset = coffee_beans_spilled;
       NPC_the_guy.posX = 850;
-      NPC_the_guy.posY = 470;  
+      NPC_the_guy.posY = 470;
       if (count >= 60) {
         Paperrollvar = 3;
       }
       break;
     case 3:
-      posX = 1080;
-      posY = 170;
+      posX = 1050;
+      posY = 390;
       asset = coffee_beans;
+      visible = false;
       NPC_the_guy.expression = 2;
-     if (count >= 150) {
+      if (count >= 150) {
         NPC_the_guy.expression = 0;
-      break;
+        break;
+      }
     }
-    }
+    if (visible){
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
-    
+  }
   }
 
-
   void mouseClicked() {
-    if (mouseButton == LEFT && clickAble && 
+    if (mouseButton == LEFT && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       clickAble = false;
@@ -71,7 +70,7 @@ class coffee_Beans {
 
   void countDown() {
     if (count < 150) {
-      count++;     
+      count++;
     }
   }
 }
