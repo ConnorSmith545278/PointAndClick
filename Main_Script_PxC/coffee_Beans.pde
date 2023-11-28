@@ -1,4 +1,4 @@
-class Paper_roll {
+class coffee_Beans {
 
   boolean clicked = false;
   boolean clickAble;
@@ -11,7 +11,7 @@ class Paper_roll {
   int count = 90;
   
 
-  Paper_roll(boolean click, float x, float y, float sx, float sy) {
+  coffee_Beans(boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
     posX = x;
     posY = y;
@@ -23,12 +23,12 @@ class Paper_roll {
     imageMode(CENTER);
     switch(Paperrollvar) {
     case 0:
-      asset = paper_roll_asset;
+      asset = coffee_beans;
       posX = 1050;
       posY = 390;
       break;
     case 1:
-      asset = paper_roll_asset_rotate;
+      asset = coffee_beans_spilled;
       posX = 920;
       posY = 570;
       if (count >= 30) {
@@ -36,7 +36,7 @@ class Paper_roll {
       }
       break;
     case 2:
-      asset = paper_roll_asset_rotate;
+      asset = coffee_beans_spilled;
       NPC_the_guy.posX = 850;
       NPC_the_guy.posY = 470;  
       if (count >= 60) {
@@ -46,7 +46,7 @@ class Paper_roll {
     case 3:
       posX = 1080;
       posY = 170;
-      asset = paper_roll_asset;
+      asset = coffee_beans;
       NPC_the_guy.expression = 2;
      if (count >= 150) {
         NPC_the_guy.expression = 0;
