@@ -37,7 +37,7 @@ Pepper Pepper;
 
 
 
-PImage Sunrise, Sun, background_fire, background;
+PImage Sunrise, Sun, background_fire, background, Vignette;
 
 PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent;
 
@@ -88,6 +88,7 @@ void setup() {
   Sun = loadImage("Sun.png");
   background_fire = loadImage("background_fire.png");
   background = loadImage("background.png");
+  Vignette = loadImage("Vignette.png");
   
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");

@@ -1,6 +1,7 @@
 class Menu {
   int menu;
   boolean active;
+  int shadow = 255;
   //int timeLastClick = 180;
 
   Menu(int i, boolean act) {
@@ -69,9 +70,12 @@ class Menu {
         background(255);
         imageMode(CORNER);
         image(Sunrise, 0, 0, width, height);
-        image(Sun, 0, 0, width, height);
+       // image(Sun, 0, 0, width, height);
         image(background, 0, 0, width, height);
-
+        tint(255, shadow);
+        image(Vignette, 0, 0, width, height);
+        tint(255, 255);
+        
         Clock1.update();
         coffee_Beans.countDown();
         
