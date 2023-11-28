@@ -42,7 +42,7 @@ PImage Sunrise, Sun, background_fire, background;
 
 PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent;
 
-PImage mug_empty, mug_filled, mug_spilled;
+PImage mug_empty, mug_filled, mug_spilled, mug_empty_rotated;
 
 PImage pot_empty, pot_filled;
 
@@ -90,6 +90,7 @@ void setup() {
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");
   mug_spilled = loadImage("mug_spilled.png");
+  mug_empty_rotated = loadImage("mug_empty_rotated.png");
 
   pot_empty = loadImage("pot_empty.png");
   pot_filled = loadImage("pot_filled.png");

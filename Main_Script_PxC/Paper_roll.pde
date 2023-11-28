@@ -59,7 +59,7 @@ class Paper_roll {
 
 
   void mouseClicked() {
-    if (mouseButton == LEFT && clickAble == true &&
+    if (mouseButton == LEFT && clickAble && 
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       clickAble = false;
