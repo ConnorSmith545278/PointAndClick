@@ -49,9 +49,14 @@ class Mug {
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
         asset = mug_empty;
+        
+        
+        mugActive = true;
+      }
+      if(mugTimer >=60){
+        mugActive = false;
         mugTimer = 0;
         mugVar=0;
-        mugActive = false;
       }
     }
 

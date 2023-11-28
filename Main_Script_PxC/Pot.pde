@@ -38,12 +38,17 @@ class Pot {
       }
       if(pot_Timer >= 140){
         asset = pot_empty;
-        fillMug = true;
+        fillMug = false;
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
         NPC_the_guy.expression = 0;
+       
+        wantsCoffee = true;
+      }
+      if(pot_Timer > 160){
+        fillMug = true;
+        pot_Timer = 160;
         wantsCoffee = false;
-        pot_Timer = 140;
       }
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     

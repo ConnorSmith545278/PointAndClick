@@ -22,7 +22,7 @@ class Fire {
   void show() {
     asset = fireanim;
     
-    if (Clock1.tenclock == 2 && rag.ragUp == true && mug.mugActive == false && rag.ragActive == false && pan.Cooking == true){
+    if (Clock1.tenclock == 2 && rag.ragUp == true && mug.mugActive == false && rag.ragActive == false && pan.Cooking == true && coffee_Beans.coffeeActive == false){
       visible = true;
       NPC_the_guy.expression = 3;
       

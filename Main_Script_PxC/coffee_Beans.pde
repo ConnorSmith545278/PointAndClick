@@ -2,6 +2,7 @@ class coffee_Beans {
 
   boolean visible = true;
   boolean clickAble;
+  boolean coffeeActive = false;
   float posX;
   float posY;
   float sizeX;
@@ -30,6 +31,7 @@ class coffee_Beans {
       posX = 920;
       posY = 570;
       if (count >= 30) {
+        coffeeActive = true;
         Paperrollvar = 2;
       }
       break;
@@ -38,6 +40,7 @@ class coffee_Beans {
       NPC_the_guy.posX = 850;
       NPC_the_guy.posY = 470;
       if (count >= 60) {
+      coffeeActive = true;
         Paperrollvar = 3;
       }
       break;
@@ -46,9 +49,12 @@ class coffee_Beans {
       posY = 390;
       asset = coffee_beans;
       visible = false;
+      coffeeActive = true;
       NPC_the_guy.expression = 2;
       if (count >= 150) {
+        coffeeActive = false;
         NPC_the_guy.expression = 0;
+        count = 150;
         break;
       }
     }

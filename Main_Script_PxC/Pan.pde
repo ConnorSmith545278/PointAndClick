@@ -24,10 +24,11 @@ class Pan {
 
   void show() {
       asset = pan_empty;
-      if(Clock1.tenclock == 2 && mug.mugActive == false && rag.ragActive == false){
+      if(Clock1.tenclock == 2 && mug.mugActive == false && rag.ragActive == false && coffee_Beans.coffeeActive == false){
         cookTimer ++;
-        NPC_the_guy.expression = 4;
+        
         if(cookTimer >= 30){
+          NPC_the_guy.expression = 4;
           NPC_the_guy.posX=400;
         NPC_the_guy.posY=360;
         }
