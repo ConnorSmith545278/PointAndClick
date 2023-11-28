@@ -27,7 +27,6 @@ class Clock {
     }
   }
   void show() {
-
     if (!menu_Clock.active) {
       image(clock, 1130*scaleX, 645*scaleY, 370*scaleX, 296*scaleY);
       switch(oneclock) {
@@ -88,60 +87,63 @@ class Clock {
     
     if (menu_Clock.active) {
       imageMode(CENTER);
-      image(clock, width/2, height/2, 600, 480 );
+      image(clock, width/2, height/2, 500, 400 );
       switch(oneclock) {
       case 0:
-        image(clock_zero, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_zero;
         break;
       case 1:
-        image(clock_one, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_one;
         break;
       case 2:
-        image(clock_two, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_two;
         break;
       case 3:
-        image(clock_three, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_three;
         break;
       case 4:
-        image(clock_four, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_four;
         break;
       case 5:
-        image(clock_five, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_five;
         break;
       case 6:
-        image(clock_six, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_six;
         break;
       case 7:
-        image(clock_seven, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_seven;
         break;
       case 8:
-        image(clock_eight, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_eight;
         break;
       case 9:
-        image(clock_nine, width/2 + 85, height/2 - 55, 47, 80);
+      oneClock_asset = clock_nine;
         break;
       }
+
       
       switch(tenclock) {
       case 0:
-        image(clock_zero, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_zero;
         break;
       case 1:
-        image(clock_one, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_one;
         break;
       case 2:
-        image(clock_two, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_two;
         break;
       case 3:
-        image(clock_three, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_three;
         break;
       case 4:
-        image(clock_four, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_four;
         break;
       case 5:
-        image(clock_five, width/2, height/2 - 55, 47, 80);
+      tenClock_asset = clock_five;
         break;
       }
+      image(tenClock_asset, width/2 + 85, height/2 - 55, 47, 80);
+      image(tenClock_asset, width/2, height/2 - 55, 47, 80); 
     }
   }
 }
