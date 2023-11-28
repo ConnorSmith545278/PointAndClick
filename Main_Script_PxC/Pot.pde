@@ -28,7 +28,7 @@ class Pot {
       wantsCoffee = true;
     }
     
-    if(wantsCoffee){
+    if(wantsCoffee == true){
       pot_Timer ++;
     }
       if(pot_Timer >= 70){
@@ -36,23 +36,25 @@ class Pot {
         NPC_the_guy.posY = 470;
         NPC_the_guy.expression = 0;
       }
-      if(pot_Timer >= 150){
+      if(pot_Timer >= 140){
         asset = pot_empty;
         fillMug = true;
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
         NPC_the_guy.expression = 0;
         wantsCoffee = false;
-        pot_Timer = 0;
+        pot_Timer = 140;
       }
+      println(pot_Timer);
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    
   }
 
   void mouseClicked() {
     if (mouseButton == LEFT &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-      Timer = Timer + 5;
+      
       
       
        }

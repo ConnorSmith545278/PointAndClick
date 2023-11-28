@@ -67,6 +67,8 @@ class Rag {
         mug.cleaned = true;
         showAsset = false;
         spilled = false;
+        ragTimer = 110;
+        clickAble = false;
       }
     }
 
@@ -79,7 +81,7 @@ class Rag {
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT && !spilled &&
+    if (mouseButton == LEFT && !spilled && clickAble == true &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       ragVar = 1;
