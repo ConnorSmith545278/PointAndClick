@@ -21,6 +21,9 @@ class Rag {
   }
 
   void show() {
+    if(mug.spillMug == true){
+      ragVar = 3;
+    }
     if (ragVar == 0) {
       asset = rag_up;
     }
@@ -61,7 +64,7 @@ class Rag {
         NPC_the_guy.posY = 400;
         posX = 600;
         posY = 350;
-        mug.asset = mug_empty;
+        mug.cleaned = true;
         showAsset = false;
         spilled = false;
       }
@@ -83,11 +86,5 @@ class Rag {
       Timer = Timer + 5;
     }
 
-    if (mouseButton == LEFT && spilled &&
-      mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
-      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-      ragVar = 3;
-      Timer = Timer + 5;
-    }
   }
 }
