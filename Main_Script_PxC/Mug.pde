@@ -49,14 +49,10 @@ class Mug {
        NPC_the_guy.posX = 500;
        NPC_the_guy.posY = 400;
      }
-     if (mugTimer >= 60){
-       mugVar = 0;
-       asset = mug_empty;
-     }
-     if (cleaned == true){
-       spillMug = false;
-       asset = mug_empty;
-     }
+   } 
+       if (rag.ragTimer == 110){
+        clickAble = false;
+        asset = mug_empty;
    }
     
      image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
@@ -64,19 +60,15 @@ class Mug {
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT  && asset == mug_filled &&
+    if (mouseButton == LEFT  && asset == mug_filled && clickAble == true &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-     
-      
       spillMug = true;
       Timer = Timer + 5;
        }
-       if (mouseButton == LEFT  && asset == mug_empty &&
+       if (mouseButton == LEFT  && asset == mug_empty && clickAble == true &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-     
-      
       mugVar = 1;
       Timer = Timer + 5;
        }
