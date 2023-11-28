@@ -6,6 +6,7 @@ class Cat {
   float sizeX;
   float sizeY;
   int expression=0;
+  int catPosition;
 
 
   Cat(float x, float y, float sx, float sy) {
@@ -16,6 +17,9 @@ class Cat {
   }
 
   void show() {
+    switch(catPosition){
+      
+    }
     switch(expression) {
     case 0:
       asset = the_cat_sitting_transparent;

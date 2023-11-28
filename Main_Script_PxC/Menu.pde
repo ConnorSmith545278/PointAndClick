@@ -70,7 +70,7 @@ class Menu {
         background(255);
         imageMode(CORNER);
         image(Sunrise, 0, 0, width, height);
-       // image(Sun, 0, 0, width, height);
+        image(Sun, 0, 0, width, height);
         image(background, 0, 0, width, height);
 
         
@@ -101,7 +101,7 @@ class Menu {
         NPC_the_guy.show(); 
    
         tint(255, shadow);
-        image(Vignette, 0, 0, width, height);
+        image(Vignette, width/2, height/2, width, height);
         tint(255, 255);
        
         

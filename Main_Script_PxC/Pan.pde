@@ -7,6 +7,8 @@ class Pan {
   float sizeX;
   float sizeY;
   boolean visible;
+  boolean Cooking;
+  int cookTimer;
 
 
 
@@ -22,6 +24,22 @@ class Pan {
 
   void show() {
       asset = pan_empty;
+      if(Clock1.tenclock == 2 && mug.mugActive == false && rag.ragActive == false){
+        cookTimer ++;
+        NPC_the_guy.expression = 4;
+        if(cookTimer >= 30){
+          NPC_the_guy.posX=400;
+        NPC_the_guy.posY=360;
+        }
+        if(cookTimer >= 60){
+          asset = pan_eggs;
+          cookTimer = 60;
+          Cooking = true;
+        }
+       
+       
+     
+      }
       imageMode(CENTER);
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     

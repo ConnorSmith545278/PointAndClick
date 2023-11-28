@@ -6,7 +6,7 @@ class Fire {
   PImage asset;
   float sizeX;
   float sizeY;
-  boolean visible;
+  boolean visible = false;
   
 
   Fire(PImage image_name, boolean click, float x, float y, float sx, float sy, boolean pVisible) {
@@ -20,6 +20,17 @@ class Fire {
   }
 
   void show() {
+    asset = fireanim;
+    
+    if (Clock1.tenclock == 2 && rag.ragUp == true && mug.mugActive == false && rag.ragActive == false && pan.Cooking == true){
+      visible = true;
+      NPC_the_guy.expression = 3;
+      
+    }
+    if (Clock1.tenclock == 2 && rag.ragUp == false){
+      visible = false;
+      
+    }
     if (visible == true) {
       imageMode(CENTER);
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);

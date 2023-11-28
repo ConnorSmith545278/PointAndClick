@@ -49,7 +49,7 @@ PImage coffee_beans, coffee_beans_spilled;
 
 PImage rag_up, rag_down;
 
-PImage the_guy_panic_transparent, the_guy_different_expressions_angry, the_guy_transparent, the_guy_wants_coffee;
+PImage the_guy_panic_transparent, the_guy_different_expressions_angry, the_guy_transparent, the_guy_wants_coffee, the_guy_handsout_png, the_guy_wantsegg;
 
 PImage fireanim;
 
@@ -108,6 +108,8 @@ void setup() {
   the_guy_transparent = loadImage("the_guy_transparent.png");
   the_guy_wants_coffee = loadImage("the_guy_wants_coffee.png");
   the_guy_panic_transparent = loadImage("the_guy_panic_transparent.png");
+  the_guy_handsout_png = loadImage("the_guy_handsout_png.png");
+  the_guy_wantsegg = loadImage("the_guy_wantsegg.png");
   
   the_cat_sitting_transparent = loadImage("the_cat_sitting_transparent.png");
   the_cat_paw_up_tiltedhead_transparent = loadImage("the_cat_paw_up_tiltedhead_transparent.png");
@@ -160,7 +162,7 @@ void setup() {
   pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
   coffee_Beans  =                                    new coffee_Beans(true, 1050f, 390f, 100f, 100f);
   rag =                                              new Rag(true, 280f, 263f, 150f, 150f);
-  object_fireanim =                                  new Fire(fireanim, false, 640f, 360f, 100f, 100f, false);
+  object_fireanim =                                  new Fire(fireanim, false, 280f, 350f, 100f, 100f, false);
   toast =                                            new Toast(false, 280f, 263f, 150f, 150f);
   toaster =                                          new Toaster(false, 280f, 263f, 150f, 150f);
   pan =                                              new Pan( false, 280f, 363f, 150f, 150f);

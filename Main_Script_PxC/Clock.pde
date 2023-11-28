@@ -145,6 +145,9 @@ class Clock {
       }
       image(oneClock_asset, 750, 346, 24, 60);
       image(tenClock_asset, 715, 346, 24, 60); 
+      
     }
+    println(oneclock);
+      println(tenclock);
   }
 }

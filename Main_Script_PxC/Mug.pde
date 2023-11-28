@@ -11,6 +11,7 @@ class Mug {
   boolean visible;
   boolean spillMug = false;
   boolean cleaned = false;
+  boolean mugActive = false;
 
 
 
@@ -43,11 +44,14 @@ class Mug {
     if (mugVar == 1) {
       asset = mug_empty_rotated;
       mugTimer ++;
+      mugActive = true;
       if (mugTimer >= 30) {
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
         asset = mug_empty;
+        mugTimer = 0;
         mugVar=0;
+        mugActive = false;
       }
     }
 
