@@ -19,9 +19,9 @@ class Toaster {
 
   void show() {
 
-     // imageMode(CENTER);
-      //asset = toaster_empty;
-      //image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+     imageMode(CENTER);
+     asset = toaster_empty;
+     //image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
    
   }
 

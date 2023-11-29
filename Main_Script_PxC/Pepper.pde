@@ -1,5 +1,5 @@
 class Pepper{
-
+  
   boolean clickAble;
   float posX;
   float posY;
@@ -28,7 +28,6 @@ void show(){
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       clickAble = false;
-      
       
        }
       }

@@ -6,7 +6,6 @@ class MomentInTime {
   boolean mouseCaught;
   boolean saltOff;
   boolean pepperOff;
-
 }
 
   void CreateMomentInTime(int cl, boolean bs, boolean cs, boolean tt, boolean mc, boolean so, boolean po) {

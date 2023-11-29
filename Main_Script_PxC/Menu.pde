@@ -50,7 +50,7 @@ class Menu {
         button_Settings_size3.mouseClicked();
         break;
       case 9:
-        button_Play.mouseClicked();
+        button_Resume.mouseClicked();
         break;
       }
     }
@@ -73,7 +73,7 @@ class Menu {
         button_Settings_size3.mouseClicked();
         break;
       case 9:
-        button_Play.mouseClicked();
+        button_Resume.mouseClicked();
         button_Rewind.mouseClicked();
         break;
       }
@@ -154,7 +154,7 @@ class Menu {
         image(Sun, 0, 0, width, height);
         image(background, 0, 0, width, height);
         tint(255, 255);
-        button_Play.show();
+        button_Resume.show();
         Clock1.show();
         button_Rewind.show();
       }

@@ -5,6 +5,7 @@ class CatButtons {
   float leftposY;
   float sizeX;
   float sizeY;
+  PImage asset;
   int wait = 60;
   int timeSinceLastClick = wait;
 

@@ -3,7 +3,6 @@ Stack<MomentInTime> timeStack;
 MomentInTime startTime;
 Rewind Rewind;
 
-
 Menu Game;
 Menu MainMenu;
 Menu Settings_Menu;
@@ -16,6 +15,7 @@ Button button_Exit;
 Button button_Main_menu;
 Button button_Clock;
 Button button_Rewind;
+Button button_Resume;
 
 Button button_Settings_size1;
 Button button_Settings_size2;
@@ -24,7 +24,6 @@ Button button_Settings_size3;
 Clock Clock1;
 
 coffee_Beans coffee_Beans;
-
 
 Rag rag;
 
@@ -66,13 +65,20 @@ PImage clock, clock_zero, clock_one, clock_two, clock_three, clock_four, clock_f
 
 PImage thepaw_32x32_png;
 
-PImage salt;
-PImage pepper;
+PImage salt, pepper;
+
+PImage button_720, button_900, button_1080;
+
+PImage mainmenu_button, play_button, quit_button, settings_button;
+
+PImage resume_button, rewind_button;
+
+PImage pawprint;
 
 boolean clockVisible;
 boolean timerActive;
 
-public float scaleX, scaleY;
+float scaleX, scaleY;
 
 int oldmillis, deltaTime, Timer;
 
@@ -85,8 +91,19 @@ int getDeltaTime() {
 
 void setup() {
   size(1280, 720, P3D);
+  
+  resume_button = loadImage("resume_button.png");
+  rewind_button = loadImage("rewind_button.png");
 
-
+  button_720 = loadImage("720_button.png");
+  button_900 = loadImage("900_button.png");
+  button_1080 = loadImage("1080_button.png");
+ 
+  mainmenu_button = loadImage("mainmenu_button.png");
+  play_button = loadImage("play_button.png");
+  quit_button = loadImage("quit_button.png");
+  settings_button = loadImage("settings_button.png");
+  
   Sunrise = loadImage("Sunrise.png");
   Sun = loadImage("Sun.png");
   background_fire = loadImage("background_fire.png");
@@ -160,9 +177,7 @@ void setup() {
   //NPC(posX, posY, width, height)
   NPC_the_guy =                                      new NPC(400f, 360f, 400f, 400f);
   Cat =                                              new Cat(width/2, height/2 -50, 150F, 150F);
-
-
-
+  
   mug =                                              new Mug(true, 580f, 400f, 100f, 100f);
   pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
   coffee_Beans  =                                    new coffee_Beans(true, 1050f, 390f, 100f, 100f);
@@ -175,16 +190,17 @@ void setup() {
   Pepper =                                           new Pepper(true, 1070f, 155f, 100f, 100f);
 
 
-  button_Play =                                      new Button("play", width/2, height*0.25, 200, 100, 0);
-  button_Main_menu =                                 new Button("Main menu", 150, height-75, 300, 150, 1);
-  button_Settings =                                  new Button("Settings", width/2, height*0.5, 200, 100, 2);
-  button_Exit =                                      new Button("Quit", width/2, height*0.75, 200, 100, 3);
-  button_Clock =                                     new Button("", width - 150, height - 75, 300, 150, 9);
-  button_Rewind =                                    new Button("Rewind", width/2, height*0.75, 200, 100, 10);
+  button_Play =                                      new Button(play_button, width/2, height*0.25, 200, 100, 0);
+  button_Main_menu =                                 new Button(mainmenu_button, 150, height-75, 300, 150, 1);
+  button_Settings =                                  new Button(settings_button, width/2, height*0.5, 200, 100, 2);
+  button_Exit =                                      new Button(quit_button, width/2, height*0.75, 200, 100, 3);
+  button_Clock =                                     new Button(null, width - 150, height - 75, 300, 150, 9);
+  button_Rewind =                                    new Button(rewind_button, width/2, height*0.75, 200, 100, 10);
+  button_Resume =                                    new Button(resume_button, width/2, height*0.25, 200, 100, 0);
 
-  button_Settings_size1 =                            new Button("1280X720", 200, 200, 100, 100, 101);
-  button_Settings_size2 =                            new Button("1600X900", 300, 300, 100, 100, 102);
-  button_Settings_size3 =                            new Button("1920X1080", 400, 400, 100, 100, 103);
+  button_Settings_size1 =                            new Button(button_720, 200, 200, 100, 100, 101);
+  button_Settings_size2 =                            new Button(button_900, 300, 300, 100, 100, 102);
+  button_Settings_size3 =                            new Button(button_1080, 400, 400, 100, 100, 103);
 
   Game =                                             new Menu(0, false);
   MainMenu =                                         new Menu(1, true);
@@ -199,8 +215,7 @@ void mouseClicked() {
   Settings_Menu.mouseClicked();
   menu_Game_over.mouseClicked();
   menu_Clock.mouseClicked();
-  //println(width,height, mouseX, mouseY);
-  println(timeStack.size());
+  println(mouseX, mouseY);
   if (!timeStack.empty()) {
     println(timeStack.empty(), timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
   }

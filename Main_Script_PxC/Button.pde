@@ -3,11 +3,10 @@ class Button {
   float posY;
   float sizeX;
   float sizeY;
-  PImage asset;
-  String text;
+  PImage text;
   int destination;
 
-  Button(String txt, float x, float y, float sx, float sy, int des) {
+  Button(PImage txt, float x, float y, float sx, float sy, int des) {
     posX = x;
     posY = y;
     sizeX = sx;
@@ -17,14 +16,15 @@ class Button {
   }
 
   void show() {
+    if (text != null){
     noFill();
     rectMode(CENTER);
     strokeWeight(5);
     rect(posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     fill(0);
-    textSize(80);
-    textAlign(CENTER, CENTER);
-    text(text, posX*scaleX, posY*scaleY);
+    imageMode(CENTER);
+    image(text, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    }
   }
 
   void mouseClicked() {
