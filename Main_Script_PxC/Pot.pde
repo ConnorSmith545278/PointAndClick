@@ -45,26 +45,18 @@ class Pot {
        
         wantsCoffee = true;
       }
-      if(pot_Timer >= 160){
+      if(pot_Timer >= 180){
         fillMug = true;
         coffee_Beans.coffeeActive = false;
-        NPC_the_guy.posX = 500;
-        NPC_the_guy.posY = 400;
-        pot_Timer = 160;
+        NPC_the_guy.posX = 400;
+        NPC_the_guy.posY = 360;
+        pot_Timer = 180;
         wantsCoffee = false;
       }
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     
   }
 
-  void mouseClicked() {
-    if (mouseButton == LEFT &&
-      mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
-      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-      
-      
-      
-       }
-      }
+
     }
   

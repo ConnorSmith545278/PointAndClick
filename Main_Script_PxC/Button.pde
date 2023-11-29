@@ -62,10 +62,13 @@ class Button {
         break;
         case 9:
         Game.active = false;
-          MainMenu.active = false;
-          Settings_Menu.active = false;
-          menu_Game_over.active = false;
-          menu_Clock.active = true;
+        MainMenu.active = false;
+        Settings_Menu.active = false;
+        menu_Game_over.active = false;
+        menu_Clock.active = true;
+        break;
+        case 10:
+        Rewind.update();
         break;
         case 101:
         windowResize(1280, 720);

@@ -23,13 +23,14 @@ class Mug {
     sizeX = sx;
     sizeY = sy;
   }
+  
 
   void show() {
     if (!spillMug) {
       asset = mug_empty;
 
-      if (pot.fillMug) {
-        asset = mug_filled;
+    if (pot.fillMug) {
+        mug.asset = mug_filled;
         pot.asset = pot_empty;
         NPC_the_guy.expression = 0;
       }
