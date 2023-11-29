@@ -13,28 +13,35 @@ class Menu {
 
   void mouseClicked() {
     if (active) {
+       
       switch(menu) {
       case 0:
         if (Cat.catPosition == 0) {
+          toaster.mouseClicked();
+          rag.mouseClicked(); 
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
-          rag.mouseClicked();
           Catbuttons.mouseClicked();
           Cat.mouseClicked();
+          Mouse.mouseClicked();
         }
         if (Cat.catPosition == 1) {
+          mug.mouseClicked();
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
-          mug.mouseClicked();
           Catbuttons.mouseClicked();
           Cat.mouseClicked();
+          Mouse.mouseClicked();
         }
         if (Cat.catPosition == 2) {
+          coffee_Beans.mouseClicked();
+          Salt.mouseClicked();
+          Pepper.mouseClicked();
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
-          coffee_Beans.mouseClicked();
           Catbuttons.mouseClicked();
           Cat.mouseClicked();
+          Mouse.mouseClicked();
         }
         break;
       case 1:
@@ -93,13 +100,14 @@ class Menu {
         
 
         coffee_Beans.countDown();
+        
         pot.show();
 
         mug.show();
 
         Catbuttons.show();
 
-        coffee_Beans.show();
+        
 
         pan.show();
 
@@ -107,13 +115,17 @@ class Menu {
 
         object_fireanim.show();
 
-        toast.show();
+     
 
         toaster.show();
 
         Salt.show();
 
         Pepper.show();
+        
+        coffee_Beans.show();
+        
+        Mouse.show();
 
         Cat.show();
 
