@@ -1,5 +1,7 @@
 class Mouse{
  
+  
+  int mouseLocation;
   boolean clickAble;
   float posX;
   float posY;
@@ -22,6 +24,7 @@ class Mouse{
  void show(){
    
    if(Timer == 5 && !mouseDead){
+     mouseLocation = 0;
      asset = mouse_left;
      clickAble = true;
      visible = true;
@@ -31,6 +34,7 @@ class Mouse{
 
 }
 if(Timer == 25 && !mouseDead){
+     mouseLocation = 2;
      asset = mouse_right;
      clickAble = true;
      visible = true;
@@ -39,6 +43,7 @@ if(Timer == 25 && !mouseDead){
      image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
 }
 if(Timer == 50 && !mouseDead){
+     mouseLocation = 1;
      asset = mouse_middle;
      clickAble = true;
      visible = true;
@@ -51,7 +56,7 @@ if(Timer == 50 && !mouseDead){
 
  }
 void mouseClicked(){
-if (mouseButton == LEFT  && clickAble &&
+if (mouseButton == LEFT  && clickAble && mouseLocation == Cat.catPosition &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       Timer = Timer + 5;
