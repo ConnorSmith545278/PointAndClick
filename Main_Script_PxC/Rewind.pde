@@ -34,7 +34,15 @@ class Rewind {
      
      
     if (topElement.coffeeSpilled != secondElement.coffeeSpilled){
-    
+    mug.asset = mug_filled;
+    pot.fillMug = true;
+    rag.visible = true;
+    rag.clickAble = true;
+    rag.ragUp = true;
+    mug.cleaned = false;
+    mug.clickAble=true;
+    rag.posX = 280;
+    rag.posY = 263;
     
     }
      

@@ -26,14 +26,14 @@ class Mug {
 
 
   void show() {
-    
-    if(!spillMug){
-    asset = mug_empty;
+
+    if (!spillMug) {
+      asset = mug_empty;
     }
-    
+
     if (pot.fillMug) {
-      mug.asset = mug_filled; 
-      }
+      mug.asset = mug_filled;
+    }
 
     if (spillMug) {
       asset = mug_spilled;
@@ -57,13 +57,6 @@ class Mug {
         mugVar=0;
       }
     }
-
-
-    if (rag.ragTimer >= 110) {
-      clickAble = false;
-      asset = mug_empty;
-     pot.fillMug = false; 
-    }
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
 
@@ -72,8 +65,10 @@ class Mug {
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       spillMug = true;
+      clickAble = false;
+      CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, true,
+        timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;
-      
     }
     if (mouseButton == LEFT  && asset == mug_empty && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&

@@ -8,7 +8,7 @@ class Rag {
   float sizeY;
   int ragVar;
   boolean visible = true;
-  boolean ragUp;
+  boolean ragUp = true;
   int ragTimer;
   boolean spilled = false;
   boolean ragActive = false;
@@ -37,49 +37,40 @@ class Rag {
       ragActive = true;
       asset = rag_down;
       ragUp = true;
-
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
-        ragUp = true;
-        ragActive = true;
       }
-
       if (ragTimer >=45) {
         ragVar = 0;
         ragTimer = 0;
-        ragUp = true;
         ragActive = false;
       }
+      
     case 3:
       ragTimer ++;
+        ragUp = true;
+        ragActive = true;
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
-        ragUp = true;
-        ragActive = true;
       }
+      
       if (ragTimer >=60) {
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
+        
         posX = 600;
         posY = 350;
         asset = rag_down;
-        ragUp = true;
-        ragActive = true;
       }
+      
       if (ragTimer >=75) {
-        NPC_the_guy.posX = 500;
-        NPC_the_guy.posY = 400;
         posX = 600;
         posY = 365;
-        asset = rag_down;
-        ragUp = true;
-        ragActive = true;
       }
+      
       if (ragTimer >=110) {
-        NPC_the_guy.posX = 500;
-        NPC_the_guy.posY = 400;
         posX = 600;
         posY = 350;
         mug.cleaned = true;
@@ -88,8 +79,11 @@ class Rag {
         ragActive = true;
         clickAble = false;
         ragUp = false;
-      }
+        pot.fillMug = false;
+      }   
       if (ragTimer >= 120) {
+        NPC_the_guy.posX = 400;
+        NPC_the_guy.posY = 360;
         ragActive = false;
         ragTimer = 0;
         ragVar = 0;
@@ -107,7 +101,7 @@ class Rag {
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT && mug.asset == mug_spilled && clickAble &&
+    if (mouseButton == LEFT && (mug.asset == mug_empty || mug.asset == mug_filled) && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       ragVar = 1;

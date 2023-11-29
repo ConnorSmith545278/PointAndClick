@@ -36,7 +36,6 @@ class Menu {
           Catbuttons.mouseClicked();
           Cat.mouseClicked();
         }
-
         break;
       case 1:
         button_Play.mouseClicked();
