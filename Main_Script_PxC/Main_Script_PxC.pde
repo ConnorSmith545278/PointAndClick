@@ -33,13 +33,14 @@ CatButtons Catbuttons;
 Fire object_fireanim;
 Mug mug;
 Pot pot;
-Toast toast;
+
 Toaster toaster;
 Pan pan;
 Salt Salt;
 Pepper Pepper;
+Mouse Mouse;
 
-PImage Sunrise, Sun, background_fire, background, Vignette;
+PImage Sunrise, Sun, background_fire, background, Vignette, Cupboard;
 
 PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent;
 
@@ -57,7 +58,7 @@ PImage fireanim;
 
 PImage toast_crisp, toast_plain;
 
-PImage toaster_crisp, toaster_empty, toaster_wtoast;
+PImage toaster_crisp, toaster_empty, toaster_wtoast, toaster_wtoast_on,toaster_wtoast_off;
 
 PImage pan_empty, pan_eggs;
 
@@ -74,6 +75,8 @@ PImage mainmenu_button, play_button, quit_button, settings_button;
 PImage resume_button, rewind_button;
 
 PImage pawprint;
+
+PImage mouse_middle, mouse_left, mouse_right;
 
 boolean clockVisible;
 boolean timerActive;
@@ -109,6 +112,7 @@ void setup() {
   background_fire = loadImage("background_fire.png");
   background = loadImage("background.png");
   Vignette = loadImage("Vignette.png");
+  Cupboard = loadImage("Cupboard.png");
 
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");
@@ -156,12 +160,18 @@ void setup() {
   toaster_crisp = loadImage("toaster_crisp.png");
   toaster_empty = loadImage("toaster_empty.png");
   toaster_wtoast = loadImage("toaster_wtoast.png");
+  toaster_wtoast_off = loadImage("toaster_wtoast_off.png");
+  toaster_wtoast_on = loadImage("toaster_wtoast_on.png");
 
   pan_empty = loadImage("pan.png");
   pan_eggs = loadImage("pan_eggs.png");
 
   salt = loadImage("salt.png");
   pepper = loadImage("pepper.png");
+  
+  mouse_middle = loadImage("mouse_front.png");
+  mouse_left = loadImage("mouse_peep_left.png");
+  mouse_right = loadImage("mouse_peep_right.png");
 
 
   cursor(thepaw_32x32_png);
@@ -180,14 +190,15 @@ void setup() {
   
   mug =                                              new Mug(true, 580f, 400f, 100f, 100f);
   pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
-  coffee_Beans  =                                    new coffee_Beans(true, 1050f, 390f, 100f, 100f);
-  rag =                                              new Rag(true, 280f, 263f, 150f, 150f);
+  coffee_Beans  =                                    new coffee_Beans(true, 1120f, 430f, 100f, 100f);
+  rag =                                              new Rag(true, 205f, 260f, 150f, 150f);
   object_fireanim =                                  new Fire(fireanim, false, 280f, 350f, 100f, 100f, false);
-  toast =                                            new Toast(false, 280f, 263f, 150f, 150f);
-  toaster =                                          new Toaster(false, 280f, 263f, 150f, 150f);
+
+  toaster =                                          new Toaster(true, 140f, 423f, 150f, 150f);
   pan =                                              new Pan( false, 280f, 363f, 150f, 150f);
-  Salt =                                             new Salt(true, 1040f, 135f, 100f, 100f);
-  Pepper =                                           new Pepper(true, 1070f, 155f, 100f, 100f);
+  Salt =                                             new Salt(true, 1040f, 137f, 90f, 90f);
+  Pepper =                                           new Pepper(true, 1090f, 160f, 90f, 90f);
+  Mouse =                                            new Mouse(false, 1070f, 155f, 100f, 100f);
 
 
   button_Play =                                      new Button(play_button, width/2, height*0.25, 200, 100, 0);

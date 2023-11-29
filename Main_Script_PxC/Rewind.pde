@@ -29,18 +29,49 @@ class Rewind {
        coffee_Beans.clickAble = true;
        coffee_Beans.visible = true;
        coffee_Beans.Paperrollvar=0;
-       pot.pot_Timer = 0;
-       mug.asset = mug_empty;
+       pot.fillMug = false; 
      }
      
      
-     
+    if (topElement.coffeeSpilled != secondElement.coffeeSpilled){
+    mug.asset = mug_filled;
+    pot.fillMug = true;
+    rag.visible = true;
+    rag.clickAble = true;
+    rag.ragUp = true;
+    mug.cleaned = false;
+    mug.clickAble=true;
+    rag.posX = 205;
+    rag.posY = 260;
     }
+     
+     
+     if (topElement.mouseCaught != secondElement.mouseCaught){
+      Mouse.mouseDead = true;      
+     }
+     
+     
+     if (topElement.pepperOff != secondElement.pepperOff){
+     Pepper.pepperFallen = false;
+     Pepper.posX = 1090;
+     Pepper.posY = 160;
+    }
+ 
+    
+     if (topElement.saltOff != secondElement.saltOff){
+     Salt.saltFallen = false;
+     Salt.posX =1040;
+     Salt.posY = 137;
+    } 
+    
+    
+    
     
     Timer -= 5;
     if (Timer <= 20) {
      pan.cookTimer = 0; 
      NPC_the_guy.expression = 0;
+    }
     }
     timeStack.pop();
   }

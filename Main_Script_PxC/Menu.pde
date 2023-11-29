@@ -1,7 +1,7 @@
 class Menu {
   int menu;
   boolean active;
-  int shadow = 255;
+  float shadow = 255;
   //int timeLastClick = 180;
 
   Menu(int i, boolean act) {
@@ -13,30 +13,36 @@ class Menu {
 
   void mouseClicked() {
     if (active) {
+       
       switch(menu) {
       case 0:
         if (Cat.catPosition == 0) {
+          toaster.mouseClicked();
+          rag.mouseClicked(); 
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
-          rag.mouseClicked();
           Catbuttons.mouseClicked();
           Cat.mouseClicked();
+          Mouse.mouseClicked();
         }
         if (Cat.catPosition == 1) {
+          mug.mouseClicked();
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
-          mug.mouseClicked();
           Catbuttons.mouseClicked();
           Cat.mouseClicked();
+          Mouse.mouseClicked();
         }
         if (Cat.catPosition == 2) {
+          coffee_Beans.mouseClicked();
+          Salt.mouseClicked();
+          Pepper.mouseClicked();
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
-          coffee_Beans.mouseClicked();
           Catbuttons.mouseClicked();
           Cat.mouseClicked();
+          Mouse.mouseClicked();
         }
-
         break;
       case 1:
         button_Play.mouseClicked();
@@ -90,31 +96,32 @@ class Menu {
         image(Sun, 0, 0, width, height);
         image(background, 0, 0, width, height);
         
-        
+        shadow = 255 - (Timer * 4.25);
         
 
         coffee_Beans.countDown();
+        
         pot.show();
 
         mug.show();
-
-        Catbuttons.show();
-
-        coffee_Beans.show();
 
         pan.show();
 
         rag.show();
 
-        object_fireanim.show();
+       image(Cupboard, width/2, height/2, width, height);
 
-        toast.show();
+        object_fireanim.show();
 
         toaster.show();
 
         Salt.show();
 
         Pepper.show();
+        
+        coffee_Beans.show();
+        
+        Mouse.show();
 
         Cat.show();
 
@@ -124,7 +131,7 @@ class Menu {
         image(Vignette, width/2, height/2, width, height);
         tint(255, 255);
 
-
+        Catbuttons.show();
         Clock1.show();
         button_Main_menu.show();
         button_Clock.show();

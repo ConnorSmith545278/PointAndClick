@@ -23,17 +23,16 @@ class Mug {
     sizeX = sx;
     sizeY = sy;
   }
-  
+
 
   void show() {
+
     if (!spillMug) {
       asset = mug_empty;
+    }
 
     if (pot.fillMug) {
-        mug.asset = mug_filled;
-        pot.asset = pot_empty;
-        NPC_the_guy.expression = 0;
-      }
+      mug.asset = mug_filled;
     }
 
     if (spillMug) {
@@ -49,23 +48,14 @@ class Mug {
       if (mugTimer >= 30) {
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
-       
-        
-        
         mugActive = true;
       }
-      if(mugTimer >=60){
+      if (mugTimer >=60) {
         asset = mug_empty;
         mugActive = false;
         mugTimer = 0;
         mugVar=0;
       }
-    }
-
-
-    if (rag.ragTimer >= 110) {
-      clickAble = false;
-      asset = mug_empty;
     }
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
@@ -75,6 +65,9 @@ class Mug {
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       spillMug = true;
+      clickAble = false;
+      CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, true,
+        timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;
     }
     if (mouseButton == LEFT  && asset == mug_empty && clickAble &&

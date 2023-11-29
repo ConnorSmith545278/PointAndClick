@@ -50,7 +50,7 @@ class Pot {
         coffee_Beans.coffeeActive = false;
         NPC_the_guy.posX = 400;
         NPC_the_guy.posY = 360;
-        pot_Timer = 180;
+        pot_Timer = 0;
         wantsCoffee = false;
       }
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);

@@ -7,6 +7,7 @@ class Salt{
   PImage asset;
   float sizeX;
   float sizeY;
+  boolean saltFallen = false;
   
   
   Salt(boolean click, float x, float y, float sx, float sy) {
@@ -19,6 +20,13 @@ class Salt{
   }
   
 void show(){
+  if(saltFallen == true){
+    clickAble = false;
+    posX = 1070;
+    posY = 400;
+  }
+  
+  
   asset = salt;
  image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY); 
 }
@@ -27,9 +35,10 @@ void show(){
     if (mouseButton == LEFT && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-      
-      
-      
+      saltFallen = true;
+      Timer = Timer + 5;
+CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
+       timeStack.peek().toasterTurnedoff,timeStack.peek().mouseCaught ,true,timeStack.peek().pepperOff);
        }
       }
 
