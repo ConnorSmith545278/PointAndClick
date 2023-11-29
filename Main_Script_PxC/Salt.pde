@@ -37,7 +37,8 @@ void show(){
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       saltFallen = true;
       Timer = Timer + 5;
-
+CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
+       timeStack.peek().toasterTurnedoff,timeStack.peek().mouseCaught ,true,timeStack.peek().pepperOff);
        }
       }
 

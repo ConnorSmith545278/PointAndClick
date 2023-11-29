@@ -19,7 +19,7 @@ class Pepper{
 
 
 void show(){
-  if(pepperFallen == true){
+  if(pepperFallen){
     clickAble = false;
     posX = 1130;
     posY = 400;
@@ -36,7 +36,8 @@ void show(){
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       pepperFallen = true;
       Timer = Timer + 5;
-
+     CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
+       timeStack.peek().toasterTurnedoff,timeStack.peek().mouseCaught ,timeStack.peek().saltOff,true);
        }
       }
 

@@ -43,17 +43,35 @@ class Rewind {
     mug.clickAble=true;
     rag.posX = 280;
     rag.posY = 263;
+    }
+     
+     
+     if (topElement.mouseCaught != secondElement.mouseCaught){
+      Mouse.mouseDead = true;      
+     }
+     
+     
+     if (topElement.pepperOff != secondElement.pepperOff){
+     Pepper.pepperFallen = false;
+     Pepper.posX = 1090;
+     Pepper.posY = 160;
+    }
+ 
     
-    }
-     
-     
-     
-    }
+     if (topElement.saltOff != secondElement.saltOff){
+     Salt.saltFallen = false;
+     Salt.posX =1040;
+     Salt.posY = 137;
+    } 
+    
+    
+    
     
     Timer -= 5;
     if (Timer <= 20) {
      pan.cookTimer = 0; 
      NPC_the_guy.expression = 0;
+    }
     }
     timeStack.pop();
   }
