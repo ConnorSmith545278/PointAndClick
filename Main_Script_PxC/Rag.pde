@@ -28,12 +28,12 @@ class Rag {
       ragVar = 3;
     }
     
-    if (ragVar == 0) {
+    switch(ragVar){
+     case 0:
       asset = rag_up;
-      ragUp = true;
-    }
-    
-    if (ragVar == 1) {
+      ragUp = true;  
+      break;
+     case 1:
       ragTimer ++;
       ragActive = true;
       asset = rag_down;
@@ -52,10 +52,7 @@ class Rag {
         ragUp = true;
         ragActive = false;
       }
-    }
-    
-    
-    if (ragVar == 3) {
+      case 3:
       ragTimer ++;
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
@@ -96,9 +93,13 @@ class Rag {
       }
       if ( ragTimer >= 120){
         ragActive = false;
+        ragTimer = 0;
         ragVar = 0;
+        mug.spillMug = false;
       }
+      
     }
+    
 
 
 

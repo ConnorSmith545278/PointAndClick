@@ -34,6 +34,12 @@ class Rewind {
      }
      
      
+    if (topElement.coffeeSpilled != secondElement.coffeeSpilled){
+    
+    
+    }
+     
+     
      
     }
     

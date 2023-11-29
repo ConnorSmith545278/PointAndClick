@@ -48,10 +48,7 @@ class Mug {
       mugActive = true;
       if (mugTimer >= 30) {
         NPC_the_guy.posX = 500;
-        NPC_the_guy.posY = 400;
-       
-        
-        
+        NPC_the_guy.posY = 400;  
         mugActive = true;
       }
       if(mugTimer >=60){
