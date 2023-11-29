@@ -1,7 +1,7 @@
 import java.util.*;
 Stack<MomentInTime> timeStack;
 MomentInTime startTime;
-
+Rewind Rewind;
 
 
 Menu Game;
@@ -86,13 +86,13 @@ int getDeltaTime() {
 void setup() {
   size(1280, 720, P3D);
 
- 
+
   Sunrise = loadImage("Sunrise.png");
   Sun = loadImage("Sun.png");
   background_fire = loadImage("background_fire.png");
   background = loadImage("background.png");
   Vignette = loadImage("Vignette.png");
-  
+
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");
   mug_spilled = loadImage("mug_spilled.png");
@@ -113,7 +113,7 @@ void setup() {
   the_guy_panic_transparent = loadImage("the_guy_panic_transparent.png");
   the_guy_handsout_png = loadImage("the_guy_handsout_png.png");
   the_guy_wantsegg = loadImage("the_guy_wantsegg.png");
-  
+
   the_cat_sitting_transparent = loadImage("the_cat_sitting_transparent.png");
   the_cat_paw_up_tiltedhead_transparent = loadImage("the_cat_paw_up_tiltedhead_transparent.png");
 
@@ -142,26 +142,27 @@ void setup() {
 
   pan_empty = loadImage("pan.png");
   pan_eggs = loadImage("pan_eggs.png");
-  
+
   salt = loadImage("salt.png");
   pepper = loadImage("pepper.png");
-  
-  
+
+
   cursor(thepaw_32x32_png);
-  
+
   timeStack = new Stack<MomentInTime>();
   startTime = new MomentInTime();
   timeStack.push(startTime);
-    
+
+  Rewind = new Rewind();
   Clock1 = new Clock();
   Catbuttons = new CatButtons();
 
   //NPC(posX, posY, width, height)
   NPC_the_guy =                                      new NPC(400f, 360f, 400f, 400f);
   Cat =                                              new Cat(width/2, height/2 -50, 150F, 150F);
-  
-  
-  
+
+
+
   mug =                                              new Mug(true, 580f, 400f, 100f, 100f);
   pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
   coffee_Beans  =                                    new coffee_Beans(true, 1050f, 390f, 100f, 100f);
@@ -174,24 +175,22 @@ void setup() {
   Pepper =                                           new Pepper(true, 1070f, 155f, 100f, 100f);
 
 
-  button_Play =                                      new Button("play",     width/2, height*0.25, 200, 100, 0);
-  button_Main_menu =                                 new Button("Main menu",150,     height-75,   300, 150, 1);
-  button_Settings =                                  new Button("Settings", width/2, height*0.5,  200, 100, 2);
-  button_Exit =                                      new Button("Quit",     width/2, height*0.75, 200, 100, 3);
-  button_Clock =                                     new Button("",    width - 150, height - 75, 300, 150, 9);
+  button_Play =                                      new Button("play", width/2, height*0.25, 200, 100, 0);
+  button_Main_menu =                                 new Button("Main menu", 150, height-75, 300, 150, 1);
+  button_Settings =                                  new Button("Settings", width/2, height*0.5, 200, 100, 2);
+  button_Exit =                                      new Button("Quit", width/2, height*0.75, 200, 100, 3);
+  button_Clock =                                     new Button("", width - 150, height - 75, 300, 150, 9);
   button_Rewind =                                    new Button("Rewind", width/2, height*0.75, 200, 100, 10);
-  
+
   button_Settings_size1 =                            new Button("1280X720", 200, 200, 100, 100, 101);
   button_Settings_size2 =                            new Button("1600X900", 300, 300, 100, 100, 102);
   button_Settings_size3 =                            new Button("1920X1080", 400, 400, 100, 100, 103);
-  
+
   Game =                                             new Menu(0, false);
   MainMenu =                                         new Menu(1, true);
   Settings_Menu =                                    new Menu(2, false);
   menu_Game_over=                                    new Menu(3, false);
   menu_Clock =                                       new Menu(9, false);
-  
-  
 }
 
 void mouseClicked() {
@@ -200,20 +199,23 @@ void mouseClicked() {
   Settings_Menu.mouseClicked();
   menu_Game_over.mouseClicked();
   menu_Clock.mouseClicked();
-println(width,height, mouseX, mouseY);
-println(timeStack.empty(), timeStack.peek().Cat_location, timeStack.peek().beans_spilled, timeStack.peek().coffee_spilled);
+  //println(width,height, mouseX, mouseY);
+  println(timeStack.size());
+  if (!timeStack.empty()) {
+    println(timeStack.empty(), timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
+  }
 }
 
 void draw() {
-if (timeStack.empty()){
-  timeStack.push(startTime);
+  if (timeStack.empty()) {
+    timeStack.push(startTime);
   }
-  
+
   scaleX = width/1280f;
   scaleY = height/720f;
   getDeltaTime();
   Clock1.update();
-   
+
   Game.show();
   MainMenu.show();
   Settings_Menu.show();

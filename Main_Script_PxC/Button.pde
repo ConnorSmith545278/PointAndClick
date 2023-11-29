@@ -33,7 +33,6 @@ class Button {
       && mouseButton ==LEFT) {
         switch(destination){
         case 0:
-        println("Play");
           Game.active = true;
           MainMenu.active = false;
           Settings_Menu.active = false;
@@ -69,8 +68,7 @@ class Button {
         menu_Clock.active = true;
         break;
         case 10:
-        print("Rewind");
-        Timer = Timer-5;
+        Rewind.update();
         break;
         case 101:
         windowResize(1280, 720);
