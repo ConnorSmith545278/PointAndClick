@@ -1,7 +1,7 @@
 class Menu {
   int menu;
   boolean active;
-  int shadow = 255;
+  float shadow = 255;
   //int timeLastClick = 180;
 
   Menu(int i, boolean act) {
@@ -96,7 +96,7 @@ class Menu {
         image(Sun, 0, 0, width, height);
         image(background, 0, 0, width, height);
         
-        
+        shadow = 255 - (Timer * 4.25);
         
 
         coffee_Beans.countDown();
@@ -105,17 +105,13 @@ class Menu {
 
         mug.show();
 
-        Catbuttons.show();
-
-        
-
         pan.show();
 
         rag.show();
 
-        object_fireanim.show();
+       image(Cupboard, width/2, height/2, width, height);
 
-     
+        object_fireanim.show();
 
         toaster.show();
 
@@ -135,7 +131,7 @@ class Menu {
         image(Vignette, width/2, height/2, width, height);
         tint(255, 255);
 
-
+        Catbuttons.show();
         Clock1.show();
         button_Main_menu.show();
         button_Clock.show();

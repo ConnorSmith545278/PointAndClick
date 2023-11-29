@@ -40,7 +40,7 @@ Salt Salt;
 Pepper Pepper;
 Mouse Mouse;
 
-PImage Sunrise, Sun, background_fire, background, Vignette;
+PImage Sunrise, Sun, background_fire, background, Vignette, Cupboard;
 
 PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent;
 
@@ -112,6 +112,7 @@ void setup() {
   background_fire = loadImage("background_fire.png");
   background = loadImage("background.png");
   Vignette = loadImage("Vignette.png");
+  Cupboard = loadImage("Cupboard.png");
 
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");
@@ -190,7 +191,7 @@ void setup() {
   mug =                                              new Mug(true, 580f, 400f, 100f, 100f);
   pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
   coffee_Beans  =                                    new coffee_Beans(true, 1120f, 430f, 100f, 100f);
-  rag =                                              new Rag(true, 280f, 263f, 150f, 150f);
+  rag =                                              new Rag(true, 205f, 260f, 150f, 150f);
   object_fireanim =                                  new Fire(fireanim, false, 280f, 350f, 100f, 100f, false);
 
   toaster =                                          new Toaster(true, 140f, 423f, 150f, 150f);

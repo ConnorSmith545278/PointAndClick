@@ -41,8 +41,8 @@ class Rewind {
     rag.ragUp = true;
     mug.cleaned = false;
     mug.clickAble=true;
-    rag.posX = 280;
-    rag.posY = 263;
+    rag.posX = 205;
+    rag.posY = 260;
     }
      
      
