@@ -30,7 +30,6 @@ class Rag {
     switch(ragVar) {
     case 0:
       asset = rag_up;
-      ragUp = true;
       ragActive = false;
       break;
     case 1:
@@ -86,9 +85,9 @@ class Rag {
       if (ragTimer >= 120) {
         NPC_the_guy.posX = 400;
         NPC_the_guy.posY = 360;
+        ragVar = 0;
         ragActive = false;
         ragTimer = 0;
-        ragVar = 0;
         mug.spillMug = false;
       }
     }

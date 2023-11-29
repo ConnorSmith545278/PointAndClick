@@ -19,5 +19,5 @@ class MomentInTime {
     newTime.pepperOff = po;
     timeStack.push(newTime);
   }
-  
- // CreateMomentInTime(timeStack.peek().Cat_location, timeStack.peek().beans_spilled, timeStack.peek().coffee_spilled, timeStack.peek().toaster_turned_off,timeStack.peek().mouse_caught,timeStack.peek().salt_off,timeStack.peek().pepper_off);
+  //CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
+  //    timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);

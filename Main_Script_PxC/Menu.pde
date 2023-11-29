@@ -103,6 +103,8 @@ class Menu {
         coffee_Beans.show();
 
         Mouse.show();
+        
+        Smoke.show();
 
         Cat.show();
 
@@ -158,6 +160,8 @@ class Menu {
         coffee_Beans.show();
 
         Mouse.show();
+        
+        Smoke.show();
 
         Cat.show();
 

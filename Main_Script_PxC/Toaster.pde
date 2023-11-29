@@ -9,29 +9,30 @@ class Toaster {
   boolean toaster_off = false;
 
 
+
+
+
   Toaster( boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
     posX = x;
     posY = y;
     sizeX = sx;
     sizeY = sy;
-    
   }
 
   void show() {
-    asset = toaster_wtoast_on;
-    if(!toaster_off){
+    if (!toaster_off) {
       clickAble = true;
-      imageMode(CENTER);
-     asset = toaster_wtoast_on;
-     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+      asset = toaster_wtoast_on;
     }
-        if(toaster_off){
-     clickAble = false;
-     imageMode(CENTER);
-     asset = toaster_wtoast_off;
-     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    if (toaster_off) {
+      clickAble = false;
+      asset = toaster_wtoast_off;
+
+
     }
+    imageMode(CENTER);
+    image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
 
   void mouseClicked() {
@@ -40,7 +41,8 @@ class Toaster {
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       Timer = Timer + 5;
       toaster_off = true;
-       }
-      }
+      CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
+        true, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
     }
-  
+  }
+}

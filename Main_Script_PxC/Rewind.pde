@@ -64,11 +64,13 @@ class Rewind {
      Salt.posY = 137;
     } 
     
+    if (topElement.toasterTurnedoff != secondElement.toasterTurnedoff){
+    toaster.toaster_off = false;
+    }
     
     
     
-    
-    if (Timer <= 20) {
+    if (Timer <= 25) {
      pan.cookTimer = 0; 
      NPC_the_guy.expression = 0;
     }

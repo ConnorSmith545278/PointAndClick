@@ -8,7 +8,7 @@ class CatButtons {
   PImage asset;
   int wait = 60;
   int timeSinceLastClick = wait;
-
+  int jumpTime;
 
   void show() {
     if (timeSinceLastClick <= wait) {
@@ -49,8 +49,15 @@ class CatButtons {
     if (mouseButton == LEFT  && Cat.catPosition == 2 && timeSinceLastClick >= wait &&
       mouseX < (leftposX+sizeX/2)*scaleX && mouseX > (leftposX-sizeX/2)*scaleX &&
       mouseY < (leftposY+sizeY/2)*scaleY && mouseY > (leftposY-sizeY/2)*scaleY) {
+        
+        
+        
       timeSinceLastClick = 0;
-      Cat.catPosition = 1;
+      Cat.catPosition = 6;
+      
+      
+      
+      
       CreateMomentInTime(1, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
       timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;
@@ -58,8 +65,14 @@ class CatButtons {
     if (mouseButton == LEFT  && Cat.catPosition == 1 && timeSinceLastClick >= wait &&
       mouseX < (leftposX+sizeX/2)*scaleX && mouseX > (leftposX-sizeX/2)*scaleX &&
       mouseY < (leftposY+sizeY/2)*scaleY && mouseY > (leftposY-sizeY/2)*scaleY) {
+        
+        
+        
       timeSinceLastClick= 0;
-      Cat.catPosition = 0;
+      Cat.catPosition = 4;
+      
+            
+      
       CreateMomentInTime(0, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
       timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;
@@ -67,8 +80,14 @@ class CatButtons {
     if (mouseButton == LEFT  && Cat.catPosition == 0 && timeSinceLastClick >= wait &&
       mouseX < (rightposX+sizeX/2)*scaleX && mouseX > (rightposX-sizeX/2)*scaleX &&
       mouseY < (rightposY+sizeY/2)*scaleY && mouseY > (rightposY-sizeY/2)*scaleY) {
+        
+        
+        
       timeSinceLastClick= 0;
-      Cat.catPosition = 1;
+      Cat.catPosition = 3;
+      
+      
+      
       CreateMomentInTime(1, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
       timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;  
@@ -76,8 +95,14 @@ class CatButtons {
     if (mouseButton == LEFT  && Cat.catPosition == 1 && timeSinceLastClick >= wait &&
       mouseX < (rightposX+sizeX/2)*scaleX && mouseX > (rightposX-sizeX/2)*scaleX &&
       mouseY < (rightposY+sizeY/2)*scaleY && mouseY > (rightposY-sizeY/2)*scaleY) {
+        
+        
+        
       timeSinceLastClick = 0;
-      Cat.catPosition = 2;
+      Cat.catPosition = 5;
+      
+      
+      
       CreateMomentInTime(2, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
       timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;  

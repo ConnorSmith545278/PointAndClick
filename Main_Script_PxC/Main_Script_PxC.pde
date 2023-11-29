@@ -34,6 +34,7 @@ Fire object_fireanim;
 Mug mug;
 Pot pot;
 
+Smoke Smoke;
 Toaster toaster;
 Pan pan;
 Salt Salt;
@@ -42,7 +43,7 @@ Mouse Mouse;
 
 PImage Sunrise, Sun, background_fire, background, Vignette, Cupboard;
 
-PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent;
+PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent, the_cat_jumping_to_the_left, the_cat_jumping_to_the_right;
 
 PImage mug_empty, mug_filled, mug_spilled, mug_empty_rotated;
 
@@ -58,7 +59,7 @@ PImage fireanim;
 
 PImage toast_crisp, toast_plain;
 
-PImage toaster_crisp, toaster_empty, toaster_wtoast, toaster_wtoast_on,toaster_wtoast_off;
+PImage toaster_crisp, toaster_empty, toaster_wtoast, toaster_wtoast_on,toaster_wtoast_off, smoke;
 
 PImage pan_empty, pan_eggs;
 
@@ -138,6 +139,12 @@ void setup() {
 
   the_cat_sitting_transparent = loadImage("the_cat_sitting_transparent.png");
   the_cat_paw_up_tiltedhead_transparent = loadImage("the_cat_paw_up_tiltedhead_transparent.png");
+  the_cat_jumping_to_the_left = loadImage("the_cat_jumping_to_the_left_png.png");
+  the_cat_jumping_to_the_right = loadImage("the_cat_jumping_to_the_right_png.png");
+  
+  
+  
+  
 
   clock = loadImage("clock.png");
   clock_zero =loadImage("clock_zero.png");
@@ -174,6 +181,7 @@ void setup() {
   mouse_left = loadImage("mouse_peep_left.png");
   mouse_right = loadImage("mouse_peep_right.png");
 
+  smoke = loadImage("smoke.png");
 
   cursor(thepaw_32x32_png);
 
@@ -200,7 +208,7 @@ void setup() {
   Salt =                                             new Salt(true, 1040f, 137f, 90f, 90f);
   Pepper =                                           new Pepper(true, 1090f, 160f, 90f, 90f);
   Mouse =                                            new Mouse(false, 1070f, 155f, 100f, 100f);
-
+  Smoke =                                            new Smoke();
 
   button_Play =                                      new Button(play_button, width/2, height*0.25, 200, 100, 0);
   button_Main_menu =                                 new Button(mainmenu_button, 150, height-75, 300, 150, 1);
