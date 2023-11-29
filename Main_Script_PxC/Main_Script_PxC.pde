@@ -78,6 +78,7 @@ PImage pawprint;
 
 PImage mouse_middle, mouse_left, mouse_right;
 
+
 boolean clockVisible;
 boolean timerActive;
 

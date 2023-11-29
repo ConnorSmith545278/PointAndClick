@@ -67,12 +67,13 @@ class Rewind {
     
     
     
-    Timer -= 5;
+    
     if (Timer <= 20) {
      pan.cookTimer = 0; 
      NPC_the_guy.expression = 0;
     }
     }
+    Timer -= 5;
     timeStack.pop();
   }
 }

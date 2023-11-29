@@ -29,6 +29,15 @@ class Fire {
       NPC_the_guy.posY=360;
       imageMode(CENTER);
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+      
+      if(Timer >= 30){
+          Game.active = false;
+          MainMenu.active = false;
+          Settings_Menu.active = false;
+          menu_Game_over.active = true;
+          menu_Clock.active = false;
+        
+      }
     }
   }
 }

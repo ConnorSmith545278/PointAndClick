@@ -13,12 +13,14 @@ class Menu {
 
   void mouseClicked() {
     if (active) {
-       
       switch(menu) {
       case 0:
+        button_Main_menu.mouseClicked();
+        button_Clock.mouseClicked();
+      
         if (Cat.catPosition == 0) {
           toaster.mouseClicked();
-          rag.mouseClicked(); 
+          rag.mouseClicked();
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
           Catbuttons.mouseClicked();
@@ -55,29 +57,10 @@ class Menu {
         button_Settings_size2.mouseClicked();
         button_Settings_size3.mouseClicked();
         break;
-      case 9:
-        button_Resume.mouseClicked();
-        break;
-      }
-    }
-
-    if (active) {
-      switch(menu) {
-      case 0:
-        button_Main_menu.mouseClicked();
-        button_Clock.mouseClicked();
-        break;
-      case 1:
-        button_Play.mouseClicked();
-        button_Settings.mouseClicked();
-        button_Exit.mouseClicked();
-        break;
-      case 2:
-        button_Main_menu.mouseClicked();
-        button_Settings_size1.mouseClicked();
-        button_Settings_size2.mouseClicked();
-        button_Settings_size3.mouseClicked();
-        break;
+      case 3:
+      
+      
+      break;
       case 9:
         button_Resume.mouseClicked();
         button_Rewind.mouseClicked();
@@ -90,17 +73,15 @@ class Menu {
     if (active) {
       switch(menu) {
       case 0:
+        shadow = 255 - (Timer * 4.25);
+        
+        coffee_Beans.countDown();
         background(255);
         imageMode(CORNER);
         image(Sunrise, 0, 0, width, height);
         image(Sun, 0, 0, width, height);
         image(background, 0, 0, width, height);
-        
-        shadow = 255 - (Timer * 4.25);
-        
 
-        coffee_Beans.countDown();
-        
         pot.show();
 
         mug.show();
@@ -109,7 +90,7 @@ class Menu {
 
         rag.show();
 
-       image(Cupboard, width/2, height/2, width, height);
+        image(Cupboard, width/2, height/2, width, height);
 
         object_fireanim.show();
 
@@ -118,9 +99,9 @@ class Menu {
         Salt.show();
 
         Pepper.show();
-        
+
         coffee_Beans.show();
-        
+
         Mouse.show();
 
         Cat.show();
@@ -134,8 +115,7 @@ class Menu {
         Catbuttons.show();
         Clock1.show();
         button_Main_menu.show();
-        button_Clock.show();
-
+        
         break;
       case 1:
         background(255);
@@ -151,7 +131,44 @@ class Menu {
         button_Settings_size3.show();
         break;
       case 3:
-        exit();
+              background(255);
+        imageMode(CORNER);
+        image(Sunrise, 0, 0, width, height);
+        image(Sun, 0, 0, width, height);
+        image(background, 0, 0, width, height);
+
+        pot.show();
+
+        mug.show();
+
+        pan.show();
+
+        rag.show();
+
+        image(Cupboard, width/2, height/2, width, height);
+
+        object_fireanim.show();
+
+        toaster.show();
+
+        Salt.show();
+
+        Pepper.show();
+
+        coffee_Beans.show();
+
+        Mouse.show();
+
+        Cat.show();
+
+        NPC_the_guy.show();
+
+        tint(255, shadow);
+        image(Vignette, width/2, height/2, width, height);
+        tint(255, 255);
+      
+        imageMode(CENTER);
+        image(background_fire, width/2, height/2, width, height); 
         break;
       case 9:
         imageMode(CORNER);
@@ -164,6 +181,7 @@ class Menu {
         button_Resume.show();
         Clock1.show();
         button_Rewind.show();
+        
       }
     }
   }

@@ -3,27 +3,22 @@ class Button {
   float posY;
   float sizeX;
   float sizeY;
-  PImage text;
+  PImage asset;
   int destination;
 
-  Button(PImage txt, float x, float y, float sx, float sy, int des) {
+  Button(PImage ass, float x, float y, float sx, float sy, int des) {
     posX = x;
     posY = y;
     sizeX = sx;
     sizeY = sy;
-    text = txt;
+    asset = ass;
     destination = des;
   }
 
   void show() {
-    if (text != null){
-    noFill();
-    rectMode(CENTER);
-    strokeWeight(5);
-    rect(posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
-    fill(0);
+    if (asset != null){
     imageMode(CENTER);
-    image(text, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     }
   }
 

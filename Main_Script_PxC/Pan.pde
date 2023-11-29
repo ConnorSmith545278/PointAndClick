@@ -21,7 +21,7 @@ class Pan {
 
   void show() {
     asset = pan_empty;
-    if (Timer >=25 && mug.mugActive == false && rag.ragActive == false && coffee_Beans.coffeeActive == false) {
+    if (Timer >=25 && mug.mugActive == false && coffee_Beans.coffeeActive == false) {
       cookTimer ++;
       if (cookTimer >= 30) {
         NPC_the_guy.expression = 4;
