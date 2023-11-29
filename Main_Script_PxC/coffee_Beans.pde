@@ -76,6 +76,8 @@ class coffee_Beans {
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
       clickAble = false;
       Paperrollvar=1;
+      CreateMomentInTime(timeStack.peek().catLocation, true, timeStack.peek().coffeeSpilled, 
+      timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;
       count = 0;
     }

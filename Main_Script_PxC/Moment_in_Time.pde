@@ -1,7 +1,7 @@
 class MomentInTime {
   int catLocation =1;
   boolean beansSpilled;
-  boolean coffeeSpilled; 
+  boolean coffeeSpilled;
   boolean toasterTurnedoff;
   boolean mouseCaught;
   boolean saltOff;

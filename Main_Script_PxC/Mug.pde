@@ -29,7 +29,7 @@ class Mug {
     if (!spillMug) {
       asset = mug_empty;
 
-      if (pot.fillMug) {
+    if (pot.fillMug) {
         mug.asset = mug_filled;
         pot.asset = pot_empty;
         NPC_the_guy.expression = 0;
