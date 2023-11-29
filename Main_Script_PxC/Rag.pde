@@ -31,6 +31,7 @@ class Rag {
     case 0:
       asset = rag_up;
       ragUp = true;
+      ragActive = false;
       break;
     case 1:
       ragTimer ++;
@@ -42,9 +43,10 @@ class Rag {
         NPC_the_guy.posY = 360;
       }
       if (ragTimer >=45) {
+        ragActive = false;
         ragVar = 0;
         ragTimer = 0;
-        ragActive = false;
+
       }
       
     case 3:
