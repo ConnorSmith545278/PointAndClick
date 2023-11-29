@@ -29,8 +29,7 @@ class Rewind {
        coffee_Beans.clickAble = true;
        coffee_Beans.visible = true;
        coffee_Beans.Paperrollvar=0;
-       pot.pot_Timer = 0;
-       mug.asset = mug_empty;
+       pot.fillMug = false; 
      }
      
      
