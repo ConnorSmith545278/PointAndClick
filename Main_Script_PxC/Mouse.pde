@@ -33,8 +33,8 @@ class Mouse {
       mouseLocation = 2;
       asset = mouse_right;
       clickAble = true;
-      posX = 750;
-      posY = 435;
+      posX = 1246;
+      posY = 448;
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     }
     if (Timer == 50 && !mouseDead) {
