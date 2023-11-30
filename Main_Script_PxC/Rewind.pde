@@ -84,6 +84,7 @@ class Rewind {
     }
     if (Timer <= 20) {
       pan.cookingEggs = false;
+      pan.asset = pan_empty;
     }
 
 
