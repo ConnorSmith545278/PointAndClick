@@ -45,6 +45,17 @@ class Mouse {
       posY = 435;
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     }
+    if (Timer == 55 && !mouseDead) {
+      mouseLocation = 1;
+      asset = mouse_middle;
+      clickAble = true;
+      posX = Cheese.posX;
+      posY = Cheese.posY;
+      image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    }
+    
+    
+
   }
   void mouseClicked() {
     if (mouseButton == LEFT  && clickAble && mouseLocation == Cat.catPosition &&

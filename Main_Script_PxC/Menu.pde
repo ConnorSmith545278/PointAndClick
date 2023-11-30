@@ -76,39 +76,28 @@ class Menu {
         shadow = 255 - (Timer * 4.25);
         
         coffee_Beans.countDown();
+        
         background(255);
         imageMode(CORNER);
         image(Sunrise, 0, 0, width, height);
         image(Sun, 0, 0, width, height);
         image(background, 0, 0, width, height);
-
-        pot.show();
-
-        mug.show();
-
-        pan.show();
-
-        rag.show();
-
-        image(Cupboard, width/2, height/2, width, height);
-
-        object_fireanim.show();
-
-        toaster.show();
-
-        Salt.show();
-
-        Pepper.show();
-
-        coffee_Beans.show();
-
-        Mouse.show();
         
+        pot.show();
+        mug.show();
+        pan.show();
+        rag.show();
+        image(Cupboard, width/2, height/2, width, height);
+        object_fireanim.show();
+        toaster.show();
+        Salt.show();
+        Pepper.show();
+        coffee_Beans.show();  
         Smoke.show();
-
         Cat.show();
-
         NPC_the_guy.show();
+        Mouse.show(); 
+        Cheese.show();
 
         tint(255, shadow);
         image(Vignette, width/2, height/2, width, height);
@@ -140,32 +129,20 @@ class Menu {
         image(background, 0, 0, width, height);
 
         pot.show();
-
         mug.show();
-
         pan.show();
-
         rag.show();
-
         image(Cupboard, width/2, height/2, width, height);
-
         object_fireanim.show();
-
         toaster.show();
-
         Salt.show();
-
         Pepper.show();
-
-        coffee_Beans.show();
-
-        Mouse.show();
-        
+        coffee_Beans.show();  
         Smoke.show();
-
         Cat.show();
-
         NPC_the_guy.show();
+        Mouse.show(); 
+        Cheese.show();
 
         tint(255, shadow);
         image(Vignette, width/2, height/2, width, height);

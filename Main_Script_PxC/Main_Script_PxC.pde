@@ -34,6 +34,7 @@ Fire object_fireanim;
 Mug mug;
 Pot pot;
 
+Cheese Cheese;
 Smoke Smoke;
 Toaster toaster;
 Pan pan;
@@ -77,7 +78,7 @@ PImage resume_button, rewind_button;
 
 PImage pawprint;
 
-PImage mouse_middle, mouse_left, mouse_right;
+PImage mouse_middle, mouse_left, mouse_right, cheese;
 
 
 boolean clockVisible;
@@ -181,6 +182,8 @@ void setup() {
   mouse_left = loadImage("mouse_peep_left.png");
   mouse_right = loadImage("mouse_peep_right.png");
 
+  cheese = loadImage("cheese.png");
+  
   smoke = loadImage("smoke.png");
 
   cursor(thepaw_32x32_png);
@@ -209,7 +212,9 @@ void setup() {
   Pepper =                                           new Pepper(true, 1090f, 160f, 90f, 90f);
   Mouse =                                            new Mouse(false, 1070f, 155f, 100f, 100f);
   Smoke =                                            new Smoke();
-
+  Cheese =                                           new Cheese();
+  
+  
   button_Play =                                      new Button(play_button, width/2, height*0.25, 200, 100, 0);
   button_Main_menu =                                 new Button(mainmenu_button, 150, height-75, 300, 150, 1);
   button_Settings =                                  new Button(settings_button, width/2, height*0.5, 200, 100, 2);

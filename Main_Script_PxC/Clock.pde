@@ -23,7 +23,6 @@ class Clock {
     }
 
     if (tenclock >= 6) {
-      Timer = 0;
       tenclock = 0;
     }
     
