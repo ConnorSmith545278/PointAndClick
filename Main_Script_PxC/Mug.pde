@@ -25,18 +25,15 @@ class Mug {
 
 
   void show() {
-
-    if (!spillMug) {
       asset = mug_empty;
-    }
-
+    
+    
     if (pot.fillMug) {
       mug.asset = mug_filled;
     }
-
+    
     if (spillMug) {
       asset = mug_spilled;
-      rag.spilled = true;
     }
 
 
@@ -66,15 +63,13 @@ class Mug {
         }
         
       glassFall.play();
-      spillMug = true;
       clickAble = false;
-      animation = true;
+      spillMug = true;
       
       
-      
+      Timer = Timer + 5;
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, true,
         timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
-      Timer = Timer + 5;
     }
     
     if (mouseButton == LEFT  && asset == mug_empty && clickAble &&

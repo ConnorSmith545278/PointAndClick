@@ -7,10 +7,8 @@ class Rag {
   float sizeX;
   float sizeY;
   int ragVar;
-  boolean visible = true;
-  boolean ragUp = true;
   int ragTimer;
-  boolean spilled = false;
+  boolean onFire = false;
 
 
   Rag(boolean click, float x, float y, float sx, float sy) {
@@ -22,8 +20,9 @@ class Rag {
   }
 
   void show() {
-    if (mug.spillMug) {
+    if (mug.spillMug && !onFire) {
       ragVar = 3;
+      animation = true;
     }
 
     switch(ragVar) {
@@ -31,23 +30,24 @@ class Rag {
       asset = rag_up;
       break;
     case 1:
+    
       ragTimer ++;
-      animation = true;
+      
       asset = rag_down;
-      ragUp = true;
+      
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
       }
+      
       if (ragTimer >=45) {
-        animation = false;
         ragVar = 0;
         ragTimer = 0;
+        animation = false;
       }
       
     case 3:
       ragTimer ++;
-        animation = true;
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
@@ -67,12 +67,9 @@ class Rag {
         posX = 600;
         posY = 350;
         mug.cleaned = true;
-        spilled = false;
-        visible = false;
         clickAble = false;
         posX = 205;
         posY = 260;
-        ragUp = false;
         pot.fillMug = false;
       }   
       if (ragTimer >= 120) {
@@ -88,20 +85,25 @@ class Rag {
 
 
 
-    if (visible) {
+    if (clickAble) {
       imageMode(CENTER);
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     }
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT && (mug.asset == mug_empty || mug.asset == mug_filled) && clickAble &&
+    if (mouseButton == LEFT  && clickAble && !animation && !onFire &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
-      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
+      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
         if(!CatMeow.isPlaying()){
           CatMeow.play();
         }
+        
+        
       ragVar = 1;
+      animation = true;
+      
+      
       Timer = Timer + 5;
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
         timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);

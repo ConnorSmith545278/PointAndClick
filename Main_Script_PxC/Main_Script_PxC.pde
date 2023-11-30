@@ -239,6 +239,7 @@ void setup() {
 void mouseClicked() {
   Menumanager.mouseClicked();
   println(animation);
+  println(rag.ragVar);
 }
 
 void draw() {

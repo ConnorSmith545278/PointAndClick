@@ -36,9 +36,9 @@ class Rewind {
         
         pot.fillMug = true;
         
-        rag.visible = true;
+
         rag.clickAble = true;
-        rag.ragUp = true;
+
           
         mug.cleaned = false;
         mug.clickAble  =true;
@@ -88,6 +88,7 @@ class Rewind {
     }
     if (Timer <= 20) {
       pan.cookingEggs = false;
+      rag.onFire = false;
       pan.asset = pan_empty;
     }
 
