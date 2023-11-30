@@ -1,17 +1,12 @@
-class Menu {
-  int menu;
+class Menumanager {
+  int menu = 1;
   boolean active;
   float shadow = 255;
 
-  Menu(int i, boolean act) {
-    menu = i;
-    active = act;
-  }
 
 
 
   void mouseClicked() {
-    if (active) {
       switch(menu) {
       case 0:
         button_Main_menu.mouseClicked();
@@ -62,12 +57,11 @@ class Menu {
         button_Resume.mouseClicked();
         button_Rewind.mouseClicked();
         break;
-      }
     }
   }
 
   void show() {
-    if (active) {
+    
       switch(menu) {
       case 0:
       if (Clock1.hourOneClock == 8){
@@ -169,4 +163,3 @@ class Menu {
       }
     }
   }
-}

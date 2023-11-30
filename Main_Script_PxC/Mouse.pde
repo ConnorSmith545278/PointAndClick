@@ -53,11 +53,7 @@ class Mouse {
       posY = Cheese.posY;
       NPC_the_guy.expression = 3;
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
-      Game.active = false;
-      MainMenu.active = false;
-      Settings_Menu.active = false;
-      menu_Game_over.active = true;
-      menu_Clock.active = false;
+      Menumanager.menu = 3;
     }
   }
   void mouseClicked() {

@@ -3,11 +3,7 @@ Stack<MomentInTime> timeStack;
 MomentInTime startTime;
 Rewind Rewind;
 
-Menu Game;
-Menu MainMenu;
-Menu Settings_Menu;
-Menu menu_Game_over;
-Menu menu_Clock;
+Menumanager Menumanager;
 
 Button button_Play;
 Button button_Settings;
@@ -223,19 +219,11 @@ void setup() {
   button_Settings_size2 =                            new Button(button_900, 300, 300, 100, 100, 102);
   button_Settings_size3 =                            new Button(button_1080, 400, 400, 100, 100, 103);
 
-  Game =                                             new Menu(0, false);
-  MainMenu =                                         new Menu(1, true);
-  Settings_Menu =                                    new Menu(2, false);
-  menu_Game_over=                                    new Menu(3, false);
-  menu_Clock =                                       new Menu(9, false);
+  Menumanager =                                      new Menumanager();
 }
 
 void mouseClicked() {
-  Game.mouseClicked();
-  MainMenu.mouseClicked();
-  Settings_Menu.mouseClicked();
-  menu_Game_over.mouseClicked();
-  menu_Clock.mouseClicked();
+  Menumanager.mouseClicked();
   println(mouseX, mouseY);
   if (!timeStack.empty()) {
     println(timeStack.empty(), timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
@@ -252,9 +240,5 @@ void draw() {
   getDeltaTime();
   Clock1.update();
 
-  Game.show();
-  MainMenu.show();
-  Settings_Menu.show();
-  menu_Game_over.show();
-  menu_Clock.show();
+  Menumanager.show();
 }

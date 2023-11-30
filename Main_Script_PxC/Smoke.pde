@@ -10,7 +10,9 @@ class Smoke {
     if (!toaster.toaster_off) {
       switch(Timer) {
       case 0:
-        break;
+        PosX = 2000;
+        PosY = 2000;
+      break;
       case 5:
         PosX = 130;
         PosY = 400;
@@ -57,13 +59,7 @@ class Smoke {
         SizeX = 250;
         SizeY = 250;
       
-      
-      
-          Game.active = false;
-          MainMenu.active = false;
-          Settings_Menu.active = false;
-          menu_Game_over.active = true;
-          menu_Clock.active = false;
+      Menumanager.menu = 3;
         break;
       }
       imageMode(CENTER);

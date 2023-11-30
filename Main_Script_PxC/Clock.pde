@@ -141,7 +141,7 @@ class Clock {
     }
 
 
-    if (!menu_Clock.active) {
+    if (Menumanager.menu == 0) {
       image(clock, 1130*scaleX, 645*scaleY, 370*scaleX, 296*scaleY);
 
       image(oneClock_asset, 1210*scaleX, clockNumber_posY*scaleY, numberSizeX*scaleX, numberSizeY*scaleY);
@@ -150,7 +150,7 @@ class Clock {
       image(hourTenClock_asset, 1130*scaleX, clockNumber_posY*scaleY, numberSizeX*scaleX, numberSizeY*scaleY);
     }
 
-    if (menu_Clock.active) {
+    if (Menumanager.menu == 9) {
       image(clock, 640*scaleX, 360*scaleY, 500*scaleX, 400*scaleY );
 
       image(oneClock_asset, 745*scaleX, 346*scaleY, 24*scaleX, 60*scaleY);

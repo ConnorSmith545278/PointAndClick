@@ -28,39 +28,19 @@ class Button {
       && mouseButton ==LEFT) {
         switch(destination){
         case 0:
-          Game.active = true;
-          MainMenu.active = false;
-          Settings_Menu.active = false;
-          menu_Game_over.active = false;
-          menu_Clock.active = false;
+          Menumanager.menu = 0;
         break;
         case 1:
-          Game.active = false;
-          MainMenu.active = true;
-          Settings_Menu.active = false;
-          menu_Game_over.active = false;
-          menu_Clock.active = false;
+          Menumanager.menu = 1;
         break;
         case 2:
-          Game.active = false;
-          MainMenu.active = false;
-          Settings_Menu.active = true;
-          menu_Game_over.active = false;
-          menu_Clock.active = false;
+          Menumanager.menu = 2;
         break;
         case 3:
-          Game.active = false;
-          MainMenu.active = false;
-          Settings_Menu.active = false;
-          menu_Game_over.active = true;
-          menu_Clock.active = false;
+          Menumanager.menu = 3;
         break;
         case 9:
-        Game.active = false;
-        MainMenu.active = false;
-        Settings_Menu.active = false;
-        menu_Game_over.active = false;
-        menu_Clock.active = true;
+          Menumanager.menu = 9;
         break;
         case 10:
         Rewind.update();

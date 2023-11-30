@@ -66,11 +66,7 @@ class NPC {
       }
       if (Clock1.oneclock == 5) {
         expression = 6;
-      Game.active = false;
-      MainMenu.active = false;
-      Settings_Menu.active = false;
-      menu_Game_over.active = true;
-      menu_Clock.active = false;
+      Menumanager.menu = 3;
       }
     }
 
