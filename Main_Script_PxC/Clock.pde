@@ -29,14 +29,17 @@ class Clock {
     }
 
     if (tenclock >= 6) {
-      tenclock = 0;
       hourOneClock++;
+      tenclock = 0;
+      Timer = 0;
     }
 
     if (hourOneClock >= 10) {
-      hourOneClock = 0;
       hourTenClock++;
+      hourOneClock = 0;
     }
+    
+    
   }
   void show() {
     imageMode(CENTER);

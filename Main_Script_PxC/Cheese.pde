@@ -1,6 +1,6 @@
 class Cheese{
-  float posX = 360;
-  float posY = 360;
+  float posX = 250;
+  float posY = 370;
   PImage asset = cheese;
   float sizeX = 75;
   float sizeY = 75;

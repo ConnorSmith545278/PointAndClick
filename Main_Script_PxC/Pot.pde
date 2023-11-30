@@ -41,7 +41,7 @@ class Pot {
         fillMug = false;
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
-        NPC_the_guy.expression = 0;
+        
        
         wantsCoffee = true;
       }

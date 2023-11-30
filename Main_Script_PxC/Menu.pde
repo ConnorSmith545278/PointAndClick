@@ -73,8 +73,9 @@ class Menu {
     if (active) {
       switch(menu) {
       case 0:
+      if (Clock1.hourOneClock == 8){
         shadow = 255 - (Timer * 4.25);
-        
+      }
         coffee_Beans.countDown();
         
         background(255);

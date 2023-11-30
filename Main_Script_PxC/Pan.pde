@@ -3,7 +3,7 @@ class Pan {
   boolean clickAble;
   float posX;
   float posY;
-  PImage asset;
+  PImage asset = pan_empty;
   float sizeX;
   float sizeY;
   int cookTimer;
@@ -20,8 +20,7 @@ class Pan {
   }
 
   void show() {
-    asset = pan_empty;
-    if (Timer >=25 && mug.mugActive == false && coffee_Beans.coffeeActive == false) {
+    if (Timer >=25 && mug.mugActive == false && coffee_Beans.coffeeActive == false && asset != pan_eggs) {
       cookTimer ++;
       if (cookTimer >= 30) {
         NPC_the_guy.expression = 4;
@@ -30,7 +29,8 @@ class Pan {
       }
       if (cookTimer >= 50) {
         asset = pan_eggs;
-        cookTimer = 50;
+        NPC_the_guy.expression = 0;
+        cookTimer = 0;
       }
     }
 

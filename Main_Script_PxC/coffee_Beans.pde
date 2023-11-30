@@ -24,14 +24,16 @@ class coffee_Beans {
     if (count < 180) {
       count++;
     }
+    
+    
   }
-
   void show() {
     imageMode(CENTER);
     switch(Paperrollvar) {
     case 0:
       asset = coffee_beans;
       break;
+      
     case 1:
       asset = coffee_beans_spilled;
       posX = 920;
@@ -55,14 +57,12 @@ class coffee_Beans {
       posY = 390;
       asset = coffee_beans;
       visible = false;
-      coffeeActive = true;
       NPC_the_guy.expression = 2;
-      if (count >= 150) {
-        coffeeActive = true;
-        NPC_the_guy.expression = 0;
-      }
       if (count >= 180) {
         coffeeActive = false;
+        Paperrollvar=0;
+        count = 0;
+        NPC_the_guy.expression = 0;
       }
     }
     if (visible) {

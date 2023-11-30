@@ -28,7 +28,6 @@ class Rewind {
      if (topElement.beansSpilled != secondElement.beansSpilled){  
        coffee_Beans.clickAble = true;
        coffee_Beans.visible = true;
-       coffee_Beans.Paperrollvar=0;
        pot.fillMug = false; 
      }
      
@@ -70,10 +69,6 @@ class Rewind {
     
     
     
-    if (Timer <= 25) {
-     pan.cookTimer = 0; 
-     NPC_the_guy.expression = 0;
-    }
     }
     Timer -= 5;
     timeStack.pop();
