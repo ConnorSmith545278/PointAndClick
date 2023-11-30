@@ -7,7 +7,7 @@ class Clock {
   int oneClock_posX;
   int tenclock;
   int tenClock_posX;
-  int hourOneClock = 8;
+  int hourOneClock;
   int hourOneClock_posX;
   int hourTenClock = 0;
   int hourTenClock_posX;
@@ -29,7 +29,7 @@ class Clock {
     tenclock = tenclock - 6;
     }
     
-    hourOneClock = Timer/60;
+    hourOneClock = 8 + Timer/60;
 
     if (Timer <0) {
       Timer = 0;

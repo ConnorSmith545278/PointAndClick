@@ -16,7 +16,6 @@ SoundFile MenuButtonClick;
 SoundFile PanSizzle;
 SoundFile TimeReverse;
 
-
 Button button_Play;
 Button button_Settings;
 Button button_Exit;
@@ -45,7 +44,6 @@ Pan pan;
 Salt Salt;
 Pepper Pepper;
 Mouse Mouse;
-Pawprint Pawprint;
 
 PImage Sunrise, Sun, background_fire, background, Vignette, Cupboard;
 
@@ -80,8 +78,6 @@ PImage button_720, button_900, button_1080;
 PImage mainmenu_button, play_button, quit_button, settings_button;
 
 PImage resume_button, rewind_button;
-
-PImage pawprint;
 
 PImage mouse_middle, mouse_left, mouse_right, cheese;
 
@@ -233,7 +229,6 @@ void setup() {
   Mouse =                                            new Mouse(false, 1070f, 155f, 100f, 100f);
   Smoke =                                            new Smoke();
   Cheese =                                           new Cheese();
-  Pawprint =                                         new Pawprint();
   
   button_Play =                                      new Button(play_button, width/2, height*0.25, 200, 100, 0);
   button_Main_menu =                                 new Button(mainmenu_button, 75, height-32.5, 150, 75, 1);

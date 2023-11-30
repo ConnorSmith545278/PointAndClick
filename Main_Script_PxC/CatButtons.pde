@@ -3,9 +3,11 @@ class CatButtons {
   float rightposY;
   float leftposX;
   float leftposY;
-  float sizeX;
-  float sizeY;
-  PImage asset;
+  float middleposX; 
+  float middleposY;
+  float sizeX = 75f;
+  float sizeY = 75f;
+  PImage asset = PawPrint;;
   int wait = 80;
   int timeSinceLastClick = wait;
   int jumpTime;
@@ -14,96 +16,98 @@ class CatButtons {
     if (timeSinceLastClick <= wait) {
       timeSinceLastClick++;
     }
-    leftposX = 50f;
-    leftposY = 50f;
-    rightposX = 1200f;
-    rightposY = 50f;
+    leftposX = 335f;
+    leftposY = 220f;
+    middleposX = 640f;
+    middleposY = 320f;
+    rightposX = 970f;
+    rightposY = 260f;
     sizeX = 75f;
     sizeY = 75f;
 
-    if (Cat.catPosition == 0 && timeSinceLastClick >= wait) {
-      rectMode(CENTER);
-      fill(255);
-      rect(rightposX*scaleX, rightposY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    if (timeSinceLastClick >= wait) {
+      imageMode(CENTER);
+      switch(Cat.catPosition) {
+      case 0:   
+        image(asset,middleposX*scaleX, middleposY*scaleY, sizeX*scaleX, sizeY*scaleY);
+        break;
+      case 1:
+        image(asset,rightposX*scaleX, rightposY*scaleY, sizeX*scaleX, sizeY*scaleY);
+        image(asset,leftposX*scaleX, leftposY*scaleY, sizeX*scaleX, sizeY*scaleY);
+        break;
+      case 2:
+        image(asset,middleposX*scaleX, middleposY*scaleY, sizeX*scaleX, sizeY*scaleY);
+        break;
+        
+      }
+      
     }
 
-    if (Cat.catPosition == 1 && timeSinceLastClick >= wait) {
-      rectMode(CENTER);
-      fill(255);
-      rect(rightposX*scaleX, rightposY*scaleY, sizeX*scaleX, sizeY*scaleY);
-      rect(leftposX*scaleX, leftposY*scaleY, sizeX*scaleX, sizeY*scaleY);
-    }
-
-    if (Cat.catPosition == 2 && timeSinceLastClick >= wait) {
-      rectMode(CENTER);
-      fill(255);
-      rect(leftposX*scaleX, leftposY*scaleY, sizeX*scaleX, sizeY*scaleY);
-    }
   }
 
 
 
   void mouseClicked() {
     if (mouseButton == LEFT  && Cat.catPosition == 2 && timeSinceLastClick >= wait &&
-      mouseX < (leftposX+sizeX/2)*scaleX && mouseX > (leftposX-sizeX/2)*scaleX &&
-      mouseY < (leftposY+sizeY/2)*scaleY && mouseY > (leftposY-sizeY/2)*scaleY) {
-        
-        
-        
+      mouseX < (middleposX+sizeX/2)*scaleX && mouseX > (middleposX-sizeX/2)*scaleX &&
+      mouseY < (middleposY+sizeY/2)*scaleY && mouseY > (middleposY-sizeY/2)*scaleY) {
+
+
+
       timeSinceLastClick = 0;
       Cat.catPosition = 6;
-      
-      
-      
-      
-      CreateMomentInTime(1, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
-      timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
+
+
+
+
+      CreateMomentInTime(1, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
+        timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;
-  }
+    }
     if (mouseButton == LEFT  && Cat.catPosition == 1 && timeSinceLastClick >= wait &&
       mouseX < (leftposX+sizeX/2)*scaleX && mouseX > (leftposX-sizeX/2)*scaleX &&
       mouseY < (leftposY+sizeY/2)*scaleY && mouseY > (leftposY-sizeY/2)*scaleY) {
-        
-        
-        
+
+
+
       timeSinceLastClick= 0;
       Cat.catPosition = 4;
-      
-            
-      
-      CreateMomentInTime(0, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
-      timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
+
+
+
+      CreateMomentInTime(0, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
+        timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;
-  }
+    }
     if (mouseButton == LEFT  && Cat.catPosition == 0 && timeSinceLastClick >= wait &&
-      mouseX < (rightposX+sizeX/2)*scaleX && mouseX > (rightposX-sizeX/2)*scaleX &&
-      mouseY < (rightposY+sizeY/2)*scaleY && mouseY > (rightposY-sizeY/2)*scaleY) {
-        
-        
-        
+      mouseX < (middleposX+sizeX/2)*scaleX && mouseX > (middleposX-sizeX/2)*scaleX &&
+      mouseY < (middleposY+sizeY/2)*scaleY && mouseY > (middleposY-sizeY/2)*scaleY) {
+
+
+
       timeSinceLastClick= 0;
       Cat.catPosition = 3;
-      
-      
-      
-      CreateMomentInTime(1, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
-      timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
-      Timer = Timer + 5;  
-  }
+
+
+
+      CreateMomentInTime(1, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
+        timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
+      Timer = Timer + 5;
+    }
     if (mouseButton == LEFT  && Cat.catPosition == 1 && timeSinceLastClick >= wait &&
       mouseX < (rightposX+sizeX/2)*scaleX && mouseX > (rightposX-sizeX/2)*scaleX &&
       mouseY < (rightposY+sizeY/2)*scaleY && mouseY > (rightposY-sizeY/2)*scaleY) {
-        
-        
-        
+
+
+
       timeSinceLastClick = 0;
       Cat.catPosition = 5;
-      
-      
-      
-      CreateMomentInTime(2, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
-      timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
-      Timer = Timer + 5;  
+
+
+
+      CreateMomentInTime(2, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
+        timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
+      Timer = Timer + 5;
+    }
   }
- }
 }
