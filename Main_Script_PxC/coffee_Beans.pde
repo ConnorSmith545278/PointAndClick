@@ -3,6 +3,8 @@ class coffee_Beans {
   boolean visible = true;
   boolean clickAble;
   boolean coffeeActive = false; //animation
+  float startposX;
+  float startposY;
   float posX;
   float posY;
   float sizeX;
@@ -14,8 +16,8 @@ class coffee_Beans {
 
   coffee_Beans(boolean click, float x, float y, float sx, float sy) {
     clickAble = click;
-    posX = x;
-    posY = y;
+    startposX = x;
+    startposY = y;
     sizeX = sx;
     sizeY = sy;
   }
@@ -32,6 +34,8 @@ class coffee_Beans {
     switch(Paperrollvar) {
     case 0:
       asset = coffee_beans;
+      posX = startposX;
+      posY = startposY;
       break;
       
     case 1:

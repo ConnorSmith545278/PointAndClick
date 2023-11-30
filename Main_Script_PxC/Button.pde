@@ -25,7 +25,7 @@ class Button {
   void mouseClicked() {
     if (mouseX > (posX-sizeX/2)*scaleX && mouseX < (posX+sizeX/2)*scaleX
       && mouseY > (posY-sizeY/2)*scaleY && mouseY < (posY+sizeY/2)*scaleY
-      && mouseButton ==LEFT) {    
+      && mouseButton ==LEFT && !coffee_Beans.coffeeActive) {    
         
         switch(destination){
         case 0:

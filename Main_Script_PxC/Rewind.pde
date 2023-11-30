@@ -33,8 +33,8 @@ class Rewind {
 
 
       if (topElement.coffeeSpilled != secondElement.coffeeSpilled) {
-        mug.asset = mug_filled;
-        pot.fillMug = true;
+        mug.asset = mug_empty;
+        pot.fillMug = false;
         rag.visible = true;
         rag.clickAble = true;
         rag.ragUp = true;
@@ -43,6 +43,8 @@ class Rewind {
         rag.posX = 205;
         rag.posY = 260;
         NPC_the_guy.expression = 0;
+        coffee_Beans.visible= true;
+        
       }
 
 
