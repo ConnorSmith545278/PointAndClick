@@ -1,10 +1,10 @@
 class Pepper{
   
   boolean pepperFallen = false;
-  boolean clickAble = true;
+  boolean clickAble;
   float posX;
   float posY;
-  PImage asset;
+  PImage asset = pepper;
   float sizeX;
   float sizeY;
   
@@ -19,15 +19,12 @@ class Pepper{
 
 
 void show(){
-  clickAble = true;
   if(pepperFallen){
     clickAble = false;
     posX = 1130;
     posY = 400;
   }
   
-  
-  asset = pepper;
  image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY); 
 }
 

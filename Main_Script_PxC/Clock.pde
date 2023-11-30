@@ -19,18 +19,14 @@ class Clock {
 
   void update() {
 
-    //time = time + deltaTime;
-    //timer = time/4000;
-    oneclock = Timer % 10;//changed this back so Timer can be used for time based events
-    
-    tenclock = Timer/10;
+    oneclock = Timer % 10;
+    tenclock = Timer/10; 
+    hourOneClock = 8 + Timer/60;
     
     if (tenclock >= 6){
     tenclock = tenclock - 6;
     }
     
-    hourOneClock = 8 + Timer/60;
-
     if (Timer <0) {
       Timer = 0;
     }
@@ -44,32 +40,8 @@ class Clock {
     case 0:
       oneClock_asset = clock_zero;
       break;
-    case 1:
-      oneClock_asset = clock_one;
-      break;
-    case 2:
-      oneClock_asset = clock_two;
-      break;
-    case 3:
-      oneClock_asset = clock_three;
-      break;
-    case 4:
-      oneClock_asset = clock_four;
-      break;
     case 5:
       oneClock_asset = clock_five;
-      break;
-    case 6:
-      oneClock_asset = clock_six;
-      break;
-    case 7:
-      oneClock_asset = clock_seven;
-      break;
-    case 8:
-      oneClock_asset = clock_eight;
-      break;
-    case 9:
-      oneClock_asset = clock_nine;
       break;
     }
     switch(tenclock) {

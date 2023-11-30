@@ -74,7 +74,9 @@ class Rewind {
 
 
 
-    Timer -= 5;
+   
+    
+    
     if (Timer <= 60) {
       NPC_the_guy.expression = 7;
     }

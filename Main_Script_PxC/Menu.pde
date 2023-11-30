@@ -56,7 +56,9 @@ class Menumanager {
       break;
       case 9:
         button_Resume.mouseClicked();
-        button_Rewind.mouseClicked();
+        button_Backwards.mouseClicked();
+        button_Forwards.mouseClicked();
+        //button_Rewind.mouseClicked();
         break;
     }
   }
@@ -164,11 +166,9 @@ class Menumanager {
         image(Sun, 0, 0, width, height);
         image(background, 0, 0, width, height);
         tint(255, 255);
-        button_Resume.show();
         Clock1.show();
-        button_Rewind.show();
-        
-        
+        button_Resume.show();
+        //button_Rewind.show();
       }
     }
   }
