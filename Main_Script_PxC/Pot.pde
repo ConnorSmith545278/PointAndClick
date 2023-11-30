@@ -23,7 +23,7 @@ class Pot {
 
   void show() {
   imageMode(CENTER);
-  asset = pot_filled;
+  asset = pot_empty;
     if (NPC_the_guy.expression == 2){
       wantsCoffee = true;
     }
@@ -35,18 +35,16 @@ class Pot {
         NPC_the_guy.posX = 780;
         NPC_the_guy.posY = 470;
         NPC_the_guy.expression = 0;
+        asset = pot_filled;
       }
       if(pot_Timer >= 140){
         asset = pot_empty;
-        fillMug = false;
+        fillMug = true;
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
-        
-       
         wantsCoffee = true;
       }
       if(pot_Timer >= 180){
-        fillMug = true;
         coffee_Beans.coffeeActive = false;
         NPC_the_guy.posX = NPC_the_guy.startPosX;
         NPC_the_guy.posY = NPC_the_guy.startPosY;

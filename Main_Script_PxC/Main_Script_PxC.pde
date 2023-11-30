@@ -218,7 +218,7 @@ void setup() {
   Cat =                                              new Cat(width/2, height/2 -50, 150F, 150F);
   
   mug =                                              new Mug(true, 580f, 400f, 100f, 100f);
-  pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
+  pot  =                                             new Pot(false, 695f, 430f, 125f, 125f);
   coffee_Beans  =                                    new coffee_Beans(true, 1120f, 430f, 100f, 100f);
   rag =                                              new Rag(true, 205f, 260f, 150f, 150f);
   object_fireanim =                                  new Fire(fireanim, false, 220f, 275f, 65f, 65f, false);

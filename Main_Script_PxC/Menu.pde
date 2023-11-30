@@ -116,7 +116,7 @@ class Menumanager {
         button_Settings_size3.show();
         break;
       case 3:
-              background(255);
+        background(255);
         imageMode(CORNER);
         image(Sunrise, 0, 0, width, height);
         image(Sun, 0, 0, width, height);

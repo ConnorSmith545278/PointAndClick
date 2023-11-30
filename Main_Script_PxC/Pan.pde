@@ -7,7 +7,7 @@ class Pan {
   float sizeX;
   float sizeY;
   int cookTimer;
-
+  boolean cookingEggs = false;
 
 
 
@@ -20,15 +20,16 @@ class Pan {
   }
 
   void show() {
-    if (Timer >=25 && mug.mugActive == false && coffee_Beans.coffeeActive == false && asset != pan_eggs) {
+    if (Timer >=25 && mug.mugActive == false && coffee_Beans.coffeeActive == false &&  !cookingEggs) {
       cookTimer ++;
-      if (cookTimer >= 30) {
-        NPC_the_guy.expression = 4;
+      NPC_the_guy.expression = 4;
+      if (cookTimer >= 30) { 
+        asset = pan_eggs;
         NPC_the_guy.posX=400;
         NPC_the_guy.posY=360;
       }
-      if (cookTimer >= 50) {
-        asset = pan_eggs;
+      if (cookTimer >= 80) {
+        cookingEggs = true;       
         NPC_the_guy.expression = 0;
         cookTimer = 0;
       }
