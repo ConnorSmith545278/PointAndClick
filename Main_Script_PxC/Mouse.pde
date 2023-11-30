@@ -53,6 +53,8 @@ class Mouse {
       posY = Cheese.posY;
       NPC_the_guy.expression = 3;
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+      
+      Menumanager.gameOverType = 1;
       Menumanager.menu = 3;
     }
   }

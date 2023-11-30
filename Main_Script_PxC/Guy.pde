@@ -69,6 +69,7 @@ class NPC {
       }
       if (Timer >= 65) {
         expression = 6;
+        Menumanager.gameOverType = 1;
         Menumanager.menu = 3;
       }
     }
@@ -91,6 +92,7 @@ class NPC {
       case 120:
         expression = 6;
         NPCTimer = 0;
+        Menumanager.gameOverType = 1;
         Menumanager.menu = 3;
         break;
       }

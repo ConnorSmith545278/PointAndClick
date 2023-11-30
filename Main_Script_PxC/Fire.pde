@@ -31,6 +31,7 @@ class Fire {
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
       
       if(Timer >= 30){
+        Menumanager.gameOverType = 0;
           Menumanager.menu = 3;
       }
     }

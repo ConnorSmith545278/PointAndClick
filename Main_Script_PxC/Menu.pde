@@ -142,9 +142,12 @@ class Menumanager {
         tint(255, shadow);
         image(Vignette, width/2, height/2, width, height);
         tint(255, 255);
-      
+        
+        
+        if (gameOverType == 0){
         imageMode(CENTER);
         image(background_fire, width/2, height/2, width, height);
+        }
         
         Clock1.show();
         button_Main_menu.show();
