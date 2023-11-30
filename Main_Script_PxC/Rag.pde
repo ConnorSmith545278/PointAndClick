@@ -11,7 +11,6 @@ class Rag {
   boolean ragUp = true;
   int ragTimer;
   boolean spilled = false;
-  boolean ragActive = false;
 
 
   Rag(boolean click, float x, float y, float sx, float sy) {
@@ -30,11 +29,10 @@ class Rag {
     switch(ragVar) {
     case 0:
       asset = rag_up;
-      ragActive = false;
       break;
     case 1:
       ragTimer ++;
-      ragActive = true;
+      animation = true;
       asset = rag_down;
       ragUp = true;
       if (ragTimer >=30) {
@@ -42,16 +40,15 @@ class Rag {
         NPC_the_guy.posY = 360;
       }
       if (ragTimer >=45) {
-        ragActive = false;
+        animation = false;
         ragVar = 0;
         ragTimer = 0;
-
       }
       
     case 3:
       ragTimer ++;
         ragUp = true;
-        ragActive = true;
+        animation = true;
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
@@ -77,7 +74,6 @@ class Rag {
         mug.cleaned = true;
         visible = false;
         spilled = false;
-        ragActive = true;
         clickAble = false;
         ragUp = false;
         pot.fillMug = false;
@@ -86,7 +82,7 @@ class Rag {
         NPC_the_guy.posX = NPC_the_guy.startPosX;
         NPC_the_guy.posY = NPC_the_guy.startPosY;
         ragVar = 0;
-        ragActive = false;
+        animation = false;
         ragTimer = 0;
         mug.spillMug = false;
       }
@@ -104,7 +100,7 @@ class Rag {
   void mouseClicked() {
     if (mouseButton == LEFT && (mug.asset == mug_empty || mug.asset == mug_filled) && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
-      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
         if(!CatMeow.isPlaying()){
           CatMeow.play();
         }

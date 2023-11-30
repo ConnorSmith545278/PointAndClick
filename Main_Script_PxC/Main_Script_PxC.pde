@@ -82,6 +82,7 @@ int getDeltaTime() {
   return deltaTime;
 }
 int f; // used for rewind system
+boolean animation; // checks if an animation is running
 
 void setup() {
   size(1280, 720, P2D);
@@ -239,10 +240,7 @@ void setup() {
 
 void mouseClicked() {
   Menumanager.mouseClicked();
-  //println(mouseX, mouseY);
-  if (!timeStack.empty()) {
-    //println(timeStack.empty(), timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
-  }
+  println(animation);
 }
 
 void draw() {
@@ -256,7 +254,7 @@ void draw() {
   Clock1.update();
 
   Menumanager.show();
-  if (Timer >= 65){
+  if (Timer >= 65 && Salt.saltFallen && Pepper.pepperFallen){
   Menumanager.menu = 10;
   }
   

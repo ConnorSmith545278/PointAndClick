@@ -50,7 +50,8 @@ class CatButtons {
   void mouseClicked() {
     if (mouseButton == LEFT  && Cat.catPosition == 2 && timeSinceLastClick >= wait &&
       mouseX < (middleposX+sizeX/2)*scaleX && mouseX > (middleposX-sizeX/2)*scaleX &&
-      mouseY < (middleposY+sizeY/2)*scaleY && mouseY > (middleposY-sizeY/2)*scaleY) {
+      mouseY < (middleposY+sizeY/2)*scaleY && mouseY > (middleposY-sizeY/2)*scaleY &&
+      !animation) {
 
 
 
@@ -66,7 +67,8 @@ class CatButtons {
     }
     if (mouseButton == LEFT  && Cat.catPosition == 1 && timeSinceLastClick >= wait &&
       mouseX < (leftposX+sizeX/2)*scaleX && mouseX > (leftposX-sizeX/2)*scaleX &&
-      mouseY < (leftposY+sizeY/2)*scaleY && mouseY > (leftposY-sizeY/2)*scaleY) {
+      mouseY < (leftposY+sizeY/2)*scaleY && mouseY > (leftposY-sizeY/2)*scaleY &&
+      !animation) {
 
 
 
@@ -81,7 +83,8 @@ class CatButtons {
     }
     if (mouseButton == LEFT  && Cat.catPosition == 0 && timeSinceLastClick >= wait &&
       mouseX < (middleposX+sizeX/2)*scaleX && mouseX > (middleposX-sizeX/2)*scaleX &&
-      mouseY < (middleposY+sizeY/2)*scaleY && mouseY > (middleposY-sizeY/2)*scaleY) {
+      mouseY < (middleposY+sizeY/2)*scaleY && mouseY > (middleposY-sizeY/2)*scaleY &&
+      !animation) {
 
 
 
@@ -96,7 +99,8 @@ class CatButtons {
     }
     if (mouseButton == LEFT  && Cat.catPosition == 1 && timeSinceLastClick >= wait &&
       mouseX < (rightposX+sizeX/2)*scaleX && mouseX > (rightposX-sizeX/2)*scaleX &&
-      mouseY < (rightposY+sizeY/2)*scaleY && mouseY > (rightposY-sizeY/2)*scaleY) {
+      mouseY < (rightposY+sizeY/2)*scaleY && mouseY > (rightposY-sizeY/2)*scaleY &&
+      !animation) {
 
 
 

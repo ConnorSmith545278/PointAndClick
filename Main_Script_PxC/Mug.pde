@@ -6,12 +6,11 @@ class Mug {
   PImage asset;
   float sizeX;
   float sizeY;
-  int mugVar;
+  boolean mugTip;
   int mugTimer;
   boolean visible;
   boolean spillMug = false;
   boolean cleaned = false;
-  boolean mugActive = false;
 
 
 
@@ -41,20 +40,18 @@ class Mug {
     }
 
 
-    if (mugVar == 1) {
+    if (mugTip) {
       asset = mug_empty_rotated;
       mugTimer ++;
-      mugActive = true;
       if (mugTimer >= 30) {
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
-        mugActive = true;
       }
       if (mugTimer >=60) {
         asset = mug_empty;
-        mugActive = false;
+        animation = false;
         mugTimer = 0;
-        mugVar=0;
+        mugTip=false;
       }
     }
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
@@ -63,25 +60,36 @@ class Mug {
   void mouseClicked() {
     if (mouseButton == LEFT  && asset == mug_filled && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
-      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
         if(!CatMeow.isPlaying()){
           CatMeow.play();
         }
-         glassFall.play();
+        
+      glassFall.play();
       spillMug = true;
       clickAble = false;
+      animation = true;
+      
+      
+      
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, true,
         timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;
     }
+    
     if (mouseButton == LEFT  && asset == mug_empty && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
-      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
         if(!CatMeow.isPlaying()){
           CatMeow.play();
         }
          glassFall.play();
-      mugVar = 1;
+      mugTip = true;
+      animation = true;
+      
+      
+      
+      
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
         timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;

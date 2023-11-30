@@ -23,7 +23,7 @@ class Fire {
     asset = fireanim;
     
     //changed it to Timer to make it shorter and more accurate also changed it to >= so a second if is not necessary
-    if (Timer >= 25 && rag.ragUp == true  && mug.mugActive == false && rag.ragActive == false && pan.asset == pan_eggs && coffee_Beans.coffeeActive == false) { 
+    if (Timer >= 25 && rag.ragUp == true  && !animation && pan.asset == pan_eggs) { 
       NPC_the_guy.expression = 3;
       NPC_the_guy.posX=400;
       NPC_the_guy.posY=360;

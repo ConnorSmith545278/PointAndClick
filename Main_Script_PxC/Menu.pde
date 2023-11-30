@@ -167,6 +167,7 @@ class Menumanager {
         tint(255, 255);
         Clock1.show();
         button_Resume.show();
+        break;
         case 10://Win screen
         imageMode(CORNER);
         image(end_screen, 0, 0, width, height);

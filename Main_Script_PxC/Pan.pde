@@ -20,7 +20,7 @@ class Pan {
   }
 
   void show() {
-    if (Timer >=25 && mug.mugActive == false && coffee_Beans.coffeeActive == false &&  !cookingEggs) {
+    if (Timer >=25 && !animation &&  !cookingEggs) {
       cookTimer ++;
       NPC_the_guy.expression = 4;
       if (cookTimer >= 30) { 

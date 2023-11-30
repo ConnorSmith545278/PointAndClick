@@ -45,7 +45,7 @@ class Pot {
         wantsCoffee = true;
       }
       if(pot_Timer >= 180){
-        coffee_Beans.coffeeActive = false;
+        animation = false;
         NPC_the_guy.posX = NPC_the_guy.startPosX;
         NPC_the_guy.posY = NPC_the_guy.startPosY;
         pot_Timer = 0;

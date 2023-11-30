@@ -31,7 +31,7 @@ void show(){
     void mouseClicked() {
     if (mouseButton == LEFT && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
-      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
         if(!CatMeow.isPlaying()){
           CatMeow.play();
         }
