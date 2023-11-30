@@ -48,8 +48,8 @@ class Pot {
       if(pot_Timer >= 180){
         fillMug = true;
         coffee_Beans.coffeeActive = false;
-        NPC_the_guy.posX = 400;
-        NPC_the_guy.posY = 360;
+        NPC_the_guy.posX = NPC_the_guy.startPosX;
+        NPC_the_guy.posY = NPC_the_guy.startPosY;
         pot_Timer = 0;
         wantsCoffee = false;
       }

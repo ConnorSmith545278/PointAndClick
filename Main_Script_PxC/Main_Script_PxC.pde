@@ -22,18 +22,14 @@ Button button_Settings_size2;
 Button button_Settings_size3;
 
 Clock Clock1;
-
 coffee_Beans coffee_Beans;
-
 Rag rag;
-
 NPC NPC_the_guy;
 Cat Cat;
 CatButtons Catbuttons;
 Fire object_fireanim;
 Mug mug;
 Pot pot;
-
 Cheese Cheese;
 Smoke Smoke;
 Toaster toaster;
@@ -54,7 +50,7 @@ PImage coffee_beans, coffee_beans_spilled;
 
 PImage rag_up, rag_down;
 
-PImage the_guy_panic_transparent, the_guy_different_expressions_angry, the_guy_transparent, the_guy_wants_coffee, the_guy_handsout_png, the_guy_wantsegg;
+PImage the_guy_panic_transparent, the_guy_different_expressions_angry, the_guy_transparent, the_guy_wants_coffee, the_guy_handsout_png, the_guy_wantsegg, the_guy_falling_png;
 
 PImage fireanim;
 
@@ -80,6 +76,7 @@ PImage pawprint;
 
 PImage mouse_middle, mouse_left, mouse_right, cheese;
 
+PImage chair;
 
 boolean clockVisible;
 boolean timerActive;
@@ -137,14 +134,12 @@ void setup() {
   the_guy_panic_transparent = loadImage("the_guy_panic_transparent.png");
   the_guy_handsout_png = loadImage("the_guy_handsout_png.png");
   the_guy_wantsegg = loadImage("the_guy_wantsegg.png");
+  the_guy_falling_png = loadImage("the_guy_falling_png.png");
 
   the_cat_sitting_transparent = loadImage("the_cat_sitting_transparent.png");
   the_cat_paw_up_tiltedhead_transparent = loadImage("the_cat_paw_up_tiltedhead_transparent.png");
   the_cat_jumping_to_the_left = loadImage("the_cat_jumping_to_the_left_png.png");
   the_cat_jumping_to_the_right = loadImage("the_cat_jumping_to_the_right_png.png");
-  
-  
-  
   
 
   clock = loadImage("clock.png");
@@ -185,6 +180,8 @@ void setup() {
   cheese = loadImage("cheese.png");
   
   smoke = loadImage("smoke.png");
+  
+  chair = loadImage("Chair.png");
 
   cursor(thepaw_32x32_png);
 
@@ -213,7 +210,6 @@ void setup() {
   Mouse =                                            new Mouse(false, 1070f, 155f, 100f, 100f);
   Smoke =                                            new Smoke();
   Cheese =                                           new Cheese();
-  
   
   button_Play =                                      new Button(play_button, width/2, height*0.25, 200, 100, 0);
   button_Main_menu =                                 new Button(mainmenu_button, 150, height-75, 300, 150, 1);

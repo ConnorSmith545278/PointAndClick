@@ -51,6 +51,7 @@ class Mouse {
       clickAble = true;
       posX = Cheese.posX;
       posY = Cheese.posY;
+      NPC_the_guy.expression = 3;
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     }
     

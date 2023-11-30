@@ -83,8 +83,8 @@ class Rag {
         pot.fillMug = false;
       }   
       if (ragTimer >= 120) {
-        NPC_the_guy.posX = 400;
-        NPC_the_guy.posY = 360;
+        NPC_the_guy.posX = NPC_the_guy.startPosX;
+        NPC_the_guy.posY = NPC_the_guy.startPosY;
         ragVar = 0;
         ragActive = false;
         ragTimer = 0;

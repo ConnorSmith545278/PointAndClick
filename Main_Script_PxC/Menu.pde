@@ -95,6 +95,7 @@ class Menu {
         coffee_Beans.show();  
         Smoke.show();
         Cat.show();
+        image(chair, width/2, height/2, width, height);
         NPC_the_guy.show();
         Mouse.show(); 
         Cheese.show();
@@ -140,6 +141,7 @@ class Menu {
         coffee_Beans.show();  
         Smoke.show();
         Cat.show();
+        image(chair, width/2, height/2, width, height);
         NPC_the_guy.show();
         Mouse.show(); 
         Cheese.show();

@@ -1,5 +1,8 @@
 class NPC {
 
+
+  float startPosX;
+  float startPosY;
   float posX;
   float posY;
   PImage asset;
@@ -9,7 +12,9 @@ class NPC {
 
 
   NPC(float x, float y, float sx, float sy) {
+    startPosX = x;
     posX = x;
+    startPosY = y;
     posY = y;
     sizeX = sx;
     sizeY = sy;
@@ -36,6 +41,10 @@ class NPC {
       break;
     case 5:
       asset = the_guy_handsout_png;
+      break;
+    case 6:
+      asset = the_guy_falling_png;
+      break;
     }
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
