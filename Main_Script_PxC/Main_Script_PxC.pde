@@ -47,63 +47,44 @@ Salt Salt;
 Pepper Pepper;
 Mouse Mouse;
 
-PImage Sunrise, Sun, background_fire, background, Vignette, Cupboard;
-PImage menu_background_whitetext, settings_empty;
-PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent, the_cat_jumping_to_the_left, the_cat_jumping_to_the_right;
-
+PImage Sunrise, Sun, background_fire, background, Vignette, Cupboard, chair,
+menu_background_whitetext, settings_empty, end_screen;
+PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent, 
+the_cat_jumping_to_the_left, the_cat_jumping_to_the_right;
 PImage mug_empty, mug_filled, mug_spilled, mug_empty_rotated;
-
 PImage pot_empty, pot_filled;
-
 PImage coffee_beans, coffee_beans_spilled;
-
 PImage rag_up, rag_down;
-
-PImage the_guy_panic_transparent, the_guy_different_expressions_angry, the_guy_transparent, the_guy_wants_coffee, the_guy_handsout_png, the_guy_wantsegg, the_guy_falling_png, the_guy_reachingforsaltandpeper_png;
-
+PImage the_guy_panic_transparent, the_guy_different_expressions_angry, 
+the_guy_transparent, the_guy_wants_coffee, the_guy_handsout_png, 
+the_guy_wantsegg, the_guy_falling_png, the_guy_reachingforsaltandpeper_png;
 PImage fireanim;
-
 PImage toast_crisp, toast_plain;
-
-PImage toaster_crisp, toaster_empty, toaster_wtoast, toaster_wtoast_on,toaster_wtoast_off, smoke;
-
+PImage toaster_crisp, toaster_empty, toaster_wtoast, 
+toaster_wtoast_on,toaster_wtoast_off, smoke;
 PImage pan_empty, pan_eggs;
-
-PImage clock, clock_zero, clock_one, clock_two, clock_three, clock_four, clock_five, clock_six, clock_seven, clock_eight, clock_nine;
-
+PImage clock, clock_zero, clock_one, clock_two, clock_three, clock_four, 
+clock_five, clock_six, clock_seven, clock_eight, clock_nine;
 PImage thepaw_32x32_png;
-
 PImage salt, pepper;
-
 PImage button_720, button_900, button_1080;
-
 PImage mainmenu_button, play_button, quit_button, settings_button;
-
 PImage resume_button, rewind_button;
-
 PImage mouse_middle, mouse_left, mouse_right, cheese;
-
-PImage chair;
-
 PImage PawPrint;
 boolean clockVisible;
 boolean timerActive;
-
 float scaleX, scaleY;
-
 int oldmillis, deltaTime, Timer;
-
 int getDeltaTime() {
   deltaTime = millis()-oldmillis;
   oldmillis = millis();
   return deltaTime;
 }
-
-
-int f;
+int f; // used for rewind system
 
 void setup() {
-  size(1280, 720);
+  size(1280, 720, P2D);
   
   
   menuMusic = new SoundFile(this,"Menu.wav");
@@ -136,6 +117,8 @@ void setup() {
   Cupboard = loadImage("Cupboard.png");
   menu_background_whitetext = loadImage("menu_background_whitetext.png");
   settings_empty = loadImage("settings_empty.png");
+  end_screen = loadImage("end_screen.png");
+  
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");
   mug_spilled = loadImage("mug_spilled.png");
@@ -273,4 +256,8 @@ void draw() {
   Clock1.update();
 
   Menumanager.show();
+  if (Timer >= 65){
+  Menumanager.menu = 10;
+  }
+  
 }

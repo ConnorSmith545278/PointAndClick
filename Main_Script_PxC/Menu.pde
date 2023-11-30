@@ -58,7 +58,6 @@ class Menumanager {
         button_Resume.mouseClicked();
         button_Backwards.mouseClicked();
         button_Forwards.mouseClicked();
-        //button_Rewind.mouseClicked();
         break;
     }
   }
@@ -66,7 +65,7 @@ class Menumanager {
   void show() {
     
       switch(menu) {
-      case 0:
+      case 0: //Game
       if (Clock1.hourOneClock == 8){
         shadow = 255 - (Timer * 4.25);
       }
@@ -104,7 +103,7 @@ class Menumanager {
         button_Main_menu.show();
         
         break;
-      case 1:
+      case 1: //Main menu
         imageMode(CENTER);
         background(255);
         image(menu_background_whitetext, width/2, height/2, width, height);
@@ -112,7 +111,7 @@ class Menumanager {
         button_Settings.show();
         button_Exit.show();
         break;
-      case 2:
+      case 2://Settings
       imageMode(CENTER);
         background(255);
         image(settings_empty, width/2, height/2, width, height);
@@ -121,7 +120,7 @@ class Menumanager {
         button_Settings_size2.show();
         button_Settings_size3.show();
         break;
-      case 3:
+      case 3://Game Over, time Suspension
         background(255);
         imageMode(CORNER);
         image(Sunrise, 0, 0, width, height);
@@ -158,7 +157,7 @@ class Menumanager {
         Clock1.show();
         button_Main_menu.show();
         break;
-      case 9:
+      case 9: //Clock
         imageMode(CORNER);
         background(0);
         tint(255, 128);
@@ -168,7 +167,10 @@ class Menumanager {
         tint(255, 255);
         Clock1.show();
         button_Resume.show();
-        //button_Rewind.show();
+        case 10://Win screen
+        imageMode(CORNER);
+        image(end_screen, 0, 0, width, height);
+        break;
       }
     }
   }
