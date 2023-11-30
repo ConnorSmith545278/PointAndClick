@@ -49,7 +49,7 @@ class NPC {
     }
 
 
-    if (Timer >= 60 && (!Salt.saltFallen || !Pepper.pepperFallen)) {
+    if (Timer >= 65 && (!Salt.saltFallen || !Pepper.pepperFallen)) {
       NPCTimer++;
       switch (NPCTimer) {
       case 30:
@@ -67,10 +67,32 @@ class NPC {
       if (Timer >= 65) {
         expression = 6;
         NPCTimer = 0;
-      Menumanager.menu = 3;
+        Menumanager.menu = 3;
       }
     }
 
+
+    if (Timer >= 40 && !toaster.toaster_off && Menumanager.menu != 3) {
+      NPCTimer++;
+      switch (NPCTimer) {
+      case 30:
+        posX = 790;
+        posY = 500;
+        break;
+      case 60:
+        posX = 800;
+        posY = 260;
+        break;
+      case 90:
+        expression = 5;
+        break;
+      case 120:
+        expression = 6;
+        NPCTimer = 0;
+        Menumanager.menu = 3;
+        break;
+      }
+    }
 
 
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
