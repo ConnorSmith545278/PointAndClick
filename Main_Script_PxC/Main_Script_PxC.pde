@@ -86,7 +86,7 @@ boolean animation; // checks if an animation is running
 
 void setup() {
   size(1280, 720, P2D);
-  cursor(thepaw_32x32_png);
+  
   
   menuMusic = new SoundFile(this,"Menu.wav");
   gameMusic = new SoundFile(this,"GameTheme.wav");
@@ -191,6 +191,8 @@ void setup() {
   chair = loadImage("Chair.png");
   
   PawPrint = loadImage("pawprint.png");
+  
+  cursor(thepaw_32x32_png);
 
   timeStack = new Stack<MomentInTime>();
   startTime = new MomentInTime();
