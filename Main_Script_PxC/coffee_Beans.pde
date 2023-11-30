@@ -74,6 +74,9 @@ class coffee_Beans {
     if (mouseButton == LEFT && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+        if(!CatMeow.isPlaying()){
+          CatMeow.play();
+        }
       clickAble = false;
       Paperrollvar=1;
       CreateMomentInTime(timeStack.peek().catLocation, true, timeStack.peek().coffeeSpilled, 

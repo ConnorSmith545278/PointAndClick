@@ -64,6 +64,9 @@ class Mug {
     if (mouseButton == LEFT  && asset == mug_filled && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+        if(!CatMeow.isPlaying()){
+          CatMeow.play();
+        }
          glassFall.play();
       spillMug = true;
       clickAble = false;
@@ -74,6 +77,9 @@ class Mug {
     if (mouseButton == LEFT  && asset == mug_empty && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+        if(!CatMeow.isPlaying()){
+          CatMeow.play();
+        }
          glassFall.play();
       mugVar = 1;
       Timer = Timer + 5;

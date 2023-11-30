@@ -60,6 +60,9 @@ class Mouse {
     if (mouseButton == LEFT  && clickAble && mouseLocation == Cat.catPosition &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+        if(!CatMeow.isPlaying()){
+          CatMeow.play();
+        }
       Timer = Timer + 5;
       mouseDead = true;
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,

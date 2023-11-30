@@ -45,6 +45,7 @@ Pan pan;
 Salt Salt;
 Pepper Pepper;
 Mouse Mouse;
+Pawprint Pawprint;
 
 PImage Sunrise, Sun, background_fire, background, Vignette, Cupboard;
 
@@ -86,6 +87,7 @@ PImage mouse_middle, mouse_left, mouse_right, cheese;
 
 PImage chair;
 
+PImage PawPrint;
 boolean clockVisible;
 boolean timerActive;
 
@@ -202,6 +204,8 @@ void setup() {
   smoke = loadImage("smoke.png");
   
   chair = loadImage("Chair.png");
+  
+  PawPrint = loadImage("pawprint.png");
 
   cursor(thepaw_32x32_png);
 
@@ -229,6 +233,7 @@ void setup() {
   Mouse =                                            new Mouse(false, 1070f, 155f, 100f, 100f);
   Smoke =                                            new Smoke();
   Cheese =                                           new Cheese();
+  Pawprint =                                         new Pawprint();
   
   button_Play =                                      new Button(play_button, width/2, height*0.25, 200, 100, 0);
   button_Main_menu =                                 new Button(mainmenu_button, 75, height-32.5, 150, 75, 1);
