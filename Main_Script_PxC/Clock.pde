@@ -9,7 +9,7 @@ class Clock {
   int tenClock_posX;
   int hourOneClock = 8;
   int hourOneClock_posX;
-  int hourTenClock;
+  int hourTenClock = 0;
   int hourTenClock_posX;
 
   PImage oneClock_asset;
@@ -22,21 +22,17 @@ class Clock {
     //time = time + deltaTime;
     //timer = time/4000;
     oneclock = Timer % 10;//changed this back so Timer can be used for time based events
+    
     tenclock = Timer/10;
+    
+    if (tenclock >= 6){
+    tenclock = tenclock - 6;
+    }
+    
+    hourOneClock = Timer/60;
 
     if (Timer <0) {
       Timer = 0;
-    }
-
-    if (tenclock >= 6) {
-      hourOneClock++;
-      tenclock = 0;
-      Timer = 0;
-    }
-
-    if (hourOneClock >= 10) {
-      hourTenClock++;
-      hourOneClock = 0;
     }
     
     
@@ -141,7 +137,7 @@ class Clock {
     }
 
 
-    if (Menumanager.menu == 0) {
+    if (Menumanager.menu == 0 || Menumanager.menu == 3) {
       image(clock, 1130*scaleX, 645*scaleY, 370*scaleX, 296*scaleY);
 
       image(oneClock_asset, 1210*scaleX, clockNumber_posY*scaleY, numberSizeX*scaleX, numberSizeY*scaleY);

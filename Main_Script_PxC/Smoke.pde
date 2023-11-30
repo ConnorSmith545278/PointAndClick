@@ -58,8 +58,6 @@ class Smoke {
         PosY = 50;
         SizeX = 250;
         SizeY = 250;
-      
-      Menumanager.menu = 3;
         break;
       }
       imageMode(CENTER);

@@ -49,7 +49,7 @@ class NPC {
     }
 
 
-    if (Clock1.hourOneClock == 9 && (!Salt.saltFallen || !Pepper.pepperFallen)) {
+    if (Timer >= 60 && (!Salt.saltFallen || !Pepper.pepperFallen)) {
       NPCTimer++;
       switch (NPCTimer) {
       case 30:
@@ -64,8 +64,9 @@ class NPC {
         expression = 5;
         break;
       }
-      if (Clock1.oneclock == 5) {
+      if (Timer >= 65) {
         expression = 6;
+        NPCTimer = 0;
       Menumanager.menu = 3;
       }
     }

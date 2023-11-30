@@ -42,6 +42,7 @@ class Rewind {
     mug.clickAble=true;
     rag.posX = 205;
     rag.posY = 260;
+    NPC_the_guy.expression = 0;
     }
      
      
@@ -68,18 +69,18 @@ class Rewind {
     }
     
     
-    
     }
+ 
  
     
     
-    
-    
-    
-    
-    if (Clock1.hourOneClock == 8){
     Timer -= 5;
-    }
+    if (Timer <= 55){
+ NPC_the_guy.expression = 0;
+ NPC_the_guy.posX = NPC_the_guy.startPosX;
+ NPC_the_guy.posY = NPC_the_guy.startPosY;
+ NPC_the_guy.NPCTimer = 0;
+ }
     timeStack.pop();
   }
 }
