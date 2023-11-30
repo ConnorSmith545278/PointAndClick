@@ -46,10 +46,13 @@ class NPC {
     case 6:
       asset = the_guy_falling_png;
       break;
+      case 7:
+     asset = the_guy_reachingforsaltandpeper_png;
+      break;
     }
 
 
-    if (Timer >= 65 && (!Salt.saltFallen || !Pepper.pepperFallen)) {
+    if (Timer >= 60 && (!Salt.saltFallen || !Pepper.pepperFallen)) {
       NPCTimer++;
       switch (NPCTimer) {
       case 30:
@@ -61,7 +64,7 @@ class NPC {
         posY = 260;
         break;
       case 90:
-        expression = 5;
+        expression = 7;
         break;
       }
       if (Timer >= 65) {

@@ -46,7 +46,7 @@ PImage coffee_beans, coffee_beans_spilled;
 
 PImage rag_up, rag_down;
 
-PImage the_guy_panic_transparent, the_guy_different_expressions_angry, the_guy_transparent, the_guy_wants_coffee, the_guy_handsout_png, the_guy_wantsegg, the_guy_falling_png;
+PImage the_guy_panic_transparent, the_guy_different_expressions_angry, the_guy_transparent, the_guy_wants_coffee, the_guy_handsout_png, the_guy_wantsegg, the_guy_falling_png, the_guy_reachingforsaltandpeper_png;
 
 PImage fireanim;
 
@@ -131,6 +131,7 @@ void setup() {
   the_guy_handsout_png = loadImage("the_guy_handsout_png.png");
   the_guy_wantsegg = loadImage("the_guy_wantsegg.png");
   the_guy_falling_png = loadImage("the_guy_falling_png.png");
+  the_guy_reachingforsaltandpeper_png = loadImage("the_guy_reachingforsaltandpeper_png.png");
 
   the_cat_sitting_transparent = loadImage("the_cat_sitting_transparent.png");
   the_cat_paw_up_tiltedhead_transparent = loadImage("the_cat_paw_up_tiltedhead_transparent.png");

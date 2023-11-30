@@ -66,8 +66,7 @@ class Rewind {
     
     if (topElement.toasterTurnedoff != secondElement.toasterTurnedoff){
     toaster.toaster_off = false;
-    }
-    
+    }  
     
     }
  
@@ -80,6 +79,10 @@ class Rewind {
  NPC_the_guy.posX = NPC_the_guy.startPosX;
  NPC_the_guy.posY = NPC_the_guy.startPosY;
  NPC_the_guy.NPCTimer = 0;
+ }
+ 
+ if (Timer == 60){
+ NPC_the_guy.expression = 7;
  }
     timeStack.pop();
   }
