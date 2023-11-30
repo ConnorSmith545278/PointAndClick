@@ -103,13 +103,17 @@ class Menumanager {
         
         break;
       case 1:
+        imageMode(CENTER);
         background(255);
+        image(menu_background_whitetext, width/2, height/2, width, height);
         button_Play.show();
         button_Settings.show();
         button_Exit.show();
         break;
       case 2:
+      imageMode(CENTER);
         background(255);
+        image(settings_empty, width/2, height/2, width, height);
         button_Main_menu.show();
         button_Settings_size1.show();
         button_Settings_size2.show();

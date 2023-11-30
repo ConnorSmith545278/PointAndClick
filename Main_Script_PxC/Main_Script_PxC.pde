@@ -46,7 +46,7 @@ Pepper Pepper;
 Mouse Mouse;
 
 PImage Sunrise, Sun, background_fire, background, Vignette, Cupboard;
-
+PImage menu_background_whitetext, settings_empty;
 PImage the_cat_sitting_transparent, the_cat_paw_up_tiltedhead_transparent, the_cat_jumping_to_the_left, the_cat_jumping_to_the_right;
 
 PImage mug_empty, mug_filled, mug_spilled, mug_empty_rotated;
@@ -99,7 +99,7 @@ int getDeltaTime() {
 
 
 void setup() {
-  size(1280, 720, P3D);
+  size(1280, 720);
   
   
   menuMusic = new SoundFile(this,"Menu.wav");
@@ -130,7 +130,8 @@ void setup() {
   background = loadImage("background.png");
   Vignette = loadImage("Vignette.png");
   Cupboard = loadImage("Cupboard.png");
-
+  menu_background_whitetext = loadImage("menu_background_whitetext.png");
+  settings_empty = loadImage("settings_empty.png");
   mug_empty = loadImage("mug_empty.png");
   mug_filled = loadImage("mug_filled.png");
   mug_spilled = loadImage("mug_spilled.png");
@@ -230,20 +231,20 @@ void setup() {
   Smoke =                                            new Smoke();
   Cheese =                                           new Cheese();
   
-  button_Play =                                      new Button(play_button, width/2, height*0.25, 200, 100, 0);
-  button_Main_menu =                                 new Button(mainmenu_button, 75, height-32.5, 150, 75, 1);
-  button_Settings =                                  new Button(settings_button, width/2, height*0.5, 200, 100, 2);
-  button_Exit =                                      new Button(quit_button, width/2, height*0.75, 200, 100, 3);
+  button_Play =                                      new Button(play_button,     250, 415, 344, 104, 0);
+  button_Settings =                                  new Button(settings_button, 250, 525, 344, 104, 2);
+  button_Exit =                                      new Button(quit_button,     250, 635, 344, 104, 3);
+  button_Main_menu =                                 new Button(mainmenu_button, 86, height-26.5, 172, 52, 1);
   button_Clock =                                     new Button(null, width - 150, height - 75, 300, 150, 9);
   button_Rewind =                                    new Button(rewind_button, width/2, height*0.75, 200, 100, 10);
   button_Resume =                                    new Button(resume_button, width/2, height*0.25, 200, 100, 0);
 
-  button_Settings_size1 =                            new Button(button_720, 200, 200, 100, 100, 101);
-  button_Settings_size2 =                            new Button(button_900, 300, 300, 100, 100, 102);
-  button_Settings_size3 =                            new Button(button_1080, 400, 400, 100, 100, 103);
+  button_Settings_size1 =                            new Button(button_720, 200,  100, 344, 104, 101);
+  button_Settings_size2 =                            new Button(button_900, 200,  210, 344, 104, 102);
+  button_Settings_size3 =                            new Button(button_1080, 200, 320, 344, 104, 103);
 
   Menumanager =                                      new Menumanager();
-   menuMusic.play(); 
+  menuMusic.play(); 
 
 }
 
