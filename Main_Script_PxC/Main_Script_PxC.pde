@@ -212,7 +212,7 @@ void setup() {
   Cheese =                                           new Cheese();
   
   button_Play =                                      new Button(play_button, width/2, height*0.25, 200, 100, 0);
-  button_Main_menu =                                 new Button(mainmenu_button, 150, height-75, 300, 150, 1);
+  button_Main_menu =                                 new Button(mainmenu_button, 75, height-32.5, 150, 75, 1);
   button_Settings =                                  new Button(settings_button, width/2, height*0.5, 200, 100, 2);
   button_Exit =                                      new Button(quit_button, width/2, height*0.75, 200, 100, 3);
   button_Clock =                                     new Button(null, width - 150, height - 75, 300, 150, 9);

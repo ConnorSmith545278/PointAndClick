@@ -8,7 +8,7 @@ class Cheese{
 
 
 void show(){
-  if (Timer >= 55){
+  if (Timer >= 55 || Clock1.hourOneClock >= 9){
 imageMode(CENTER);
 image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }

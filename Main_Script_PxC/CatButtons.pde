@@ -6,7 +6,7 @@ class CatButtons {
   float sizeX;
   float sizeY;
   PImage asset;
-  int wait = 60;
+  int wait = 80;
   int timeSinceLastClick = wait;
   int jumpTime;
 
@@ -20,8 +20,6 @@ class CatButtons {
     rightposY = 50f;
     sizeX = 75f;
     sizeY = 75f;
-
-
 
     if (Cat.catPosition == 0 && timeSinceLastClick >= wait) {
       rectMode(CENTER);
@@ -107,5 +105,5 @@ class CatButtons {
       timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;  
   }
-  }
+ }
 }

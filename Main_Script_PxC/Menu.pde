@@ -2,7 +2,6 @@ class Menu {
   int menu;
   boolean active;
   float shadow = 255;
-  //int timeLastClick = 180;
 
   Menu(int i, boolean act) {
     menu = i;
@@ -24,7 +23,6 @@ class Menu {
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
           Catbuttons.mouseClicked();
-          Cat.mouseClicked();
           Mouse.mouseClicked();
         }
         if (Cat.catPosition == 1) {
@@ -32,7 +30,6 @@ class Menu {
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
           Catbuttons.mouseClicked();
-          Cat.mouseClicked();
           Mouse.mouseClicked();
         }
         if (Cat.catPosition == 2) {
@@ -42,7 +39,6 @@ class Menu {
           button_Main_menu.mouseClicked();
           button_Clock.mouseClicked();
           Catbuttons.mouseClicked();
-          Cat.mouseClicked();
           Mouse.mouseClicked();
         }
         break;
@@ -58,7 +54,8 @@ class Menu {
         button_Settings_size3.mouseClicked();
         break;
       case 3:
-      
+          button_Main_menu.mouseClicked();
+          button_Clock.mouseClicked();
       
       break;
       case 9:
@@ -152,7 +149,10 @@ class Menu {
         tint(255, 255);
       
         imageMode(CENTER);
-        image(background_fire, width/2, height/2, width, height); 
+        image(background_fire, width/2, height/2, width, height);
+        
+        Clock1.show();
+        button_Main_menu.show();
         break;
       case 9:
         imageMode(CORNER);

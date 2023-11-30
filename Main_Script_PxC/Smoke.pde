@@ -67,7 +67,7 @@ class Smoke {
         break;
       }
       imageMode(CENTER);
-      image(smoke, PosX, PosY, SizeX, SizeY);
+      image(smoke, PosX*scaleX, PosY*scaleY, SizeX*scaleX, SizeY*scaleY);
     }
   }
 }

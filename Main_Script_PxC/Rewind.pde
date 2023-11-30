@@ -70,7 +70,16 @@ class Rewind {
     
     
     }
+ 
+    
+    
+    
+    
+    
+    
+    if (Clock1.hourOneClock == 8){
     Timer -= 5;
+    }
     timeStack.pop();
   }
 }

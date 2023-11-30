@@ -9,6 +9,7 @@ class NPC {
   float sizeX;
   float sizeY;
   int expression;
+  int NPCTimer = 0;
 
 
   NPC(float x, float y, float sx, float sy) {
@@ -46,6 +47,35 @@ class NPC {
       asset = the_guy_falling_png;
       break;
     }
+
+
+    if (Clock1.hourOneClock == 9 && (!Salt.saltFallen || !Pepper.pepperFallen)) {
+      NPCTimer++;
+      switch (NPCTimer) {
+      case 30:
+        posX = 790;
+        posY = 500;
+        break;
+      case 60:
+        posX = 800;
+        posY = 260;
+        break;
+      case 90:
+        expression = 5;
+        break;
+      }
+      if (Clock1.oneclock == 5) {
+        expression = 6;
+      Game.active = false;
+      MainMenu.active = false;
+      Settings_Menu.active = false;
+      menu_Game_over.active = true;
+      menu_Clock.active = false;
+      }
+    }
+
+
+
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
 }

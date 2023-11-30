@@ -74,25 +74,8 @@ class Cat {
       }
       break;
     }
-    
 
-    
-    
-    
-    
-    
     image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
   }
-  
-  
-  
-  
-  void mouseClicked(){
-   if (expression == 0){
-    expression = 1; 
-   } else {
-    expression = 0; 
-   }
     
   }
-}
