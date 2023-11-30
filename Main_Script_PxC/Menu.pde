@@ -160,6 +160,7 @@ class Menumanager {
         Clock1.show();
         button_Rewind.show();
         
+        
       }
     }
   }
