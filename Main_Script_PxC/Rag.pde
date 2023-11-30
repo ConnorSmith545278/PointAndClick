@@ -47,34 +47,31 @@ class Rag {
       
     case 3:
       ragTimer ++;
-        ragUp = true;
         animation = true;
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
-      }
-      
+      }     
       if (ragTimer >=60) {
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
-        
         posX = 600;
         posY = 350;
         asset = rag_down;
       }
-      
       if (ragTimer >=75) {
         posX = 600;
         posY = 365;
-      }
-      
+      }     
       if (ragTimer >=110) {
         posX = 600;
         posY = 350;
         mug.cleaned = true;
-        visible = false;
         spilled = false;
+        visible = false;
         clickAble = false;
+        posX = 205;
+        posY = 260;
         ragUp = false;
         pot.fillMug = false;
       }   

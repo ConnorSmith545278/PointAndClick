@@ -224,11 +224,9 @@ void setup() {
   button_Exit =                                      new Button(quit_button,     250, 635, 344, 104, 3);
   button_Main_menu =                                 new Button(mainmenu_button, 86, height-26.5, 172, 52, 1);
   button_Clock =                                     new Button(null, width - 150, height - 75, 300, 150, 9);
-  //button_Rewind =                                    new Button(rewind_button, width/2, height*0.75, 200, 100, 10);
   button_Resume =                                    new Button(resume_button, 655, 420, 172, 52, 10);
   button_Backwards =                                 new Button(null, 590, 365, 30, 30, 11);
   button_Forwards =                                  new Button(null, 590, 330, 30, 30, 12);
-
   button_Settings_size1 =                            new Button(button_720, 200,  100, 344, 104, 101);
   button_Settings_size2 =                            new Button(button_900, 200,  210, 344, 104, 102);
   button_Settings_size3 =                            new Button(button_1080, 200, 320, 344, 104, 103);
