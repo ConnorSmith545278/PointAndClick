@@ -58,6 +58,10 @@ class Smoke {
         PosY = 50;
         SizeX = 250;
         SizeY = 250;
+        gameMusic.pause();
+        if(!FireAlarm.isPlaying()){
+        FireAlarm.play();
+        }
         break;
       }
       imageMode(CENTER);
