@@ -1,9 +1,21 @@
 import java.util.*;
+import processing.sound.*;
 Stack<MomentInTime> timeStack;
 MomentInTime startTime;
 Rewind Rewind;
 
 Menumanager Menumanager;
+
+SoundFile menuMusic;
+SoundFile gameMusic;
+SoundFile glassFall;
+SoundFile CatMeow;
+SoundFile FireAlarm;
+SoundFile GameOver;
+SoundFile MenuButtonClick;
+SoundFile PanSizzle;
+SoundFile TimeReverse;
+
 
 Button button_Play;
 Button button_Settings;
@@ -90,6 +102,17 @@ int getDeltaTime() {
 
 void setup() {
   size(1280, 720, P3D);
+  
+  
+  menuMusic = new SoundFile(this,"Menu.wav");
+  gameMusic = new SoundFile(this,"GameTheme.wav");
+  glassFall = new SoundFile(this,"MugFall.wav");
+  CatMeow = new SoundFile(this,"CatMeow.wav");
+  FireAlarm = new SoundFile(this,"FireAlarm.wav");
+  GameOver = new SoundFile(this,"GameOverStop.wav");
+  MenuButtonClick = new SoundFile(this,"MenuButtonPop.wav");
+  PanSizzle = new SoundFile(this,"Sizzling.wav");
+  TimeReverse = new SoundFile(this,"TimeReverse.wav");
   
   resume_button = loadImage("resume_button.png");
   rewind_button = loadImage("rewind_button.png");
@@ -197,12 +220,11 @@ void setup() {
   pot  =                                             new Pot(false, 680f, 420f, 100f, 100f);
   coffee_Beans  =                                    new coffee_Beans(true, 1120f, 430f, 100f, 100f);
   rag =                                              new Rag(true, 205f, 260f, 150f, 150f);
-  object_fireanim =                                  new Fire(fireanim, false, 280f, 350f, 100f, 100f, false);
-
+  object_fireanim =                                  new Fire(fireanim, false, 220f, 275f, 65f, 65f, false);
   toaster =                                          new Toaster(true, 140f, 423f, 150f, 150f);
   pan =                                              new Pan( false, 280f, 363f, 150f, 150f);
-  Salt =                                             new Salt(true, 1040f, 137f, 90f, 90f);
-  Pepper =                                           new Pepper(true, 1090f, 160f, 90f, 90f);
+  Salt =                                             new Salt(true, 1123f, 164f, 80f, 80f);
+  Pepper =                                           new Pepper(true, 1033f, 137f, 80f, 80f);
   Mouse =                                            new Mouse(false, 1070f, 155f, 100f, 100f);
   Smoke =                                            new Smoke();
   Cheese =                                           new Cheese();
@@ -220,6 +242,8 @@ void setup() {
   button_Settings_size3 =                            new Button(button_1080, 400, 400, 100, 100, 103);
 
   Menumanager =                                      new Menumanager();
+   menuMusic.play(); 
+
 }
 
 void mouseClicked() {

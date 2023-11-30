@@ -64,6 +64,7 @@ class Mug {
     if (mouseButton == LEFT  && asset == mug_filled && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+         glassFall.play();
       spillMug = true;
       clickAble = false;
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, true,
@@ -73,6 +74,7 @@ class Mug {
     if (mouseButton == LEFT  && asset == mug_empty && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
+         glassFall.play();
       mugVar = 1;
       Timer = Timer + 5;
     }
