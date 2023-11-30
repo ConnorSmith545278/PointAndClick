@@ -20,6 +20,7 @@ class Salt{
   }
   
 void show(){
+  clickAble = true;
   if(saltFallen == true){
     clickAble = false;
     posX = 1070;

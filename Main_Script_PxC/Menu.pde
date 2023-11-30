@@ -2,6 +2,7 @@ class Menumanager {
   int menu = 1;
   boolean active;
   float shadow = 255;
+  int gameOverType;
 
 
 

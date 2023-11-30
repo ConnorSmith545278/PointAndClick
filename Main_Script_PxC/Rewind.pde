@@ -53,15 +53,15 @@ class Rewind {
      
      if (topElement.pepperOff != secondElement.pepperOff){
      Pepper.pepperFallen = false;
-     Pepper.posX = 1090;
-     Pepper.posY = 160;
+     Pepper.posX = 1033;
+     Pepper.posY = 137;
     }
  
     
      if (topElement.saltOff != secondElement.saltOff){
      Salt.saltFallen = false;
-     Salt.posX =1040;
-     Salt.posY = 137;
+     Salt.posX =1123;
+     Salt.posY = 164;
     } 
     
     if (topElement.toasterTurnedoff != secondElement.toasterTurnedoff){

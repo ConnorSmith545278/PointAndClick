@@ -69,7 +69,6 @@ class NPC {
       }
       if (Timer >= 65) {
         expression = 6;
-        NPCTimer = 0;
         Menumanager.menu = 3;
       }
     }
