@@ -86,7 +86,7 @@ boolean animation; // checks if an animation is running
 
 void setup() {
   size(1280, 720, P2D);
-  
+  cursor(thepaw_32x32_png);
   
   menuMusic = new SoundFile(this,"Menu.wav");
   gameMusic = new SoundFile(this,"GameTheme.wav");
@@ -192,8 +192,6 @@ void setup() {
   
   PawPrint = loadImage("pawprint.png");
 
-  cursor(thepaw_32x32_png);
-
   timeStack = new Stack<MomentInTime>();
   startTime = new MomentInTime();
   timeStack.push(startTime);
@@ -247,6 +245,12 @@ void draw() {
   if (timeStack.empty()) {
     timeStack.push(startTime);
   }
+  
+  //if (!animation){
+  //cursor(thepaw_32x32_png);
+  //} else {
+  // noCursor(); 
+  //}
 
   scaleX = width/1280f;
   scaleY = height/720f;
