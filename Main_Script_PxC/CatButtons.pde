@@ -3,11 +3,12 @@ class CatButtons {
   float rightposY;
   float leftposX;
   float leftposY;
-  float middleposX; 
+  float middleposX;
   float middleposY;
   float sizeX = 75f;
   float sizeY = 75f;
-  PImage asset = PawPrint;;
+  PImage asset = PawPrint;
+  ;
   int wait = 80;
   int timeSinceLastClick = wait;
   int jumpTime;
@@ -28,21 +29,18 @@ class CatButtons {
     if (timeSinceLastClick >= wait) {
       imageMode(CENTER);
       switch(Cat.catPosition) {
-      case 0:   
-        image(asset,middleposX*scaleX, middleposY*scaleY, sizeX*scaleX, sizeY*scaleY);
+      case 0:
+        image(asset, middleposX*scaleX, middleposY*scaleY, sizeX*scaleX, sizeY*scaleY);
         break;
       case 1:
-        image(asset,rightposX*scaleX, rightposY*scaleY, sizeX*scaleX, sizeY*scaleY);
-        image(asset,leftposX*scaleX, leftposY*scaleY, sizeX*scaleX, sizeY*scaleY);
+        image(asset, rightposX*scaleX, rightposY*scaleY, sizeX*scaleX, sizeY*scaleY);
+        image(asset, leftposX*scaleX, leftposY*scaleY, sizeX*scaleX, sizeY*scaleY);
         break;
       case 2:
-        image(asset,middleposX*scaleX, middleposY*scaleY, sizeX*scaleX, sizeY*scaleY);
+        image(asset, middleposX*scaleX, middleposY*scaleY, sizeX*scaleX, sizeY*scaleY);
         break;
-        
       }
-      
     }
-
   }
 
 

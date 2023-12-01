@@ -4,15 +4,13 @@ class Smoke {
   int SizeX = 100;
   int SizeY = 100;
 
-
-
   void show() {
     if (!toaster.toaster_off) {
       switch(Timer) {
       case 0:
         PosX = 2000;
         PosY = 2000;
-      break;
+        break;
       case 5:
         PosX = 130;
         PosY = 400;
@@ -59,8 +57,8 @@ class Smoke {
         SizeX = 250;
         SizeY = 250;
         gameMusic.pause();
-        if(!FireAlarm.isPlaying()){
-        FireAlarm.play();
+        if (!FireAlarm.isPlaying()) {
+          FireAlarm.play();
         }
         break;
       }

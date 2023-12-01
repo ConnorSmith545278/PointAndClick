@@ -6,7 +6,7 @@ class Button {
   PImage asset;
   int destination;
 
-  
+
 
 
   Button(PImage ass, float x, float y, float sx, float sy, int des) {
@@ -60,15 +60,13 @@ class Button {
       case 10: //resume
         for (int i=f; i>0; i--) {
           Rewind.update();
-          print("TimeTravel");
+          if (!TimeReverse.isPlaying()) {
+            TimeReverse.play();
+          }
         }
-        print("resume");
         Menumanager.menu = 0;
         break;
       case 11: //backwards
-        if (!TimeReverse.isPlaying()) {
-          TimeReverse.play();
-        }
         if (f < timeStack.size() - 1) {
           f++;
           Timer -= 5;
@@ -76,10 +74,6 @@ class Button {
         println(f + " backwards");
         break;
       case 12: //forwards
-        
-        if (!TimeReverse.isPlaying()) {
-          TimeReverse.play();
-        }
         if (f != 0) {
           f--;
           Timer += 5;

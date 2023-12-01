@@ -1,25 +1,16 @@
 class NPC {
 
 
-  float startPosX;
-  float startPosY;
-  float posX;
-  float posY;
+  float startPosX = 400f;
+  float startPosY = 360f;
+  float posX = startPosX;
+  float posY = startPosY;
   PImage asset;
-  float sizeX;
-  float sizeY;
-  int expression;
+  float size = 400f;
+  int expression = 0;
   int NPCTimer = 0;
 
 
-  NPC(float x, float y, float sx, float sy) {
-    startPosX = x;
-    posX = x;
-    startPosY = y;
-    posY = y;
-    sizeX = sx;
-    sizeY = sy;
-  }
 
 
   void show() {
@@ -46,8 +37,8 @@ class NPC {
     case 6:
       asset = the_guy_falling_png;
       break;
-      case 7:
-     asset = the_guy_reachingforsaltandpeper_png;
+    case 7:
+      asset = the_guy_reachingforsaltandpeper_png;
       break;
     }
 
@@ -99,6 +90,6 @@ class NPC {
     }
 
 
-    image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
+    image(asset, posX*scaleX, posY*scaleY, size*scaleX, size*scaleY);
   }
 }

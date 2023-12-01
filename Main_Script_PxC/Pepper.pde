@@ -1,48 +1,35 @@
-class Pepper{
-  
+class Pepper {
+
   boolean pepperFallen = false;
-  boolean clickAble;
-  float posX;
-  float posY;
+  boolean clickAble = true;
+  float posX = 1033f;
+  float posY = 137f;
   PImage asset = pepper;
-  float sizeX;
-  float sizeY;
-  
-  
-  Pepper(boolean click, float x, float y, float sx, float sy) {
-    clickAble = click;
-    posX = x;
-    posY = y;
-    sizeX = sx;
-    sizeY = sy;  
+  float size = 80F;
+
+  void show() {
+    clickAble = true;
+    if (pepperFallen) {
+      clickAble = false;
+      posX = 1130;
+      posY = 400;
+    }
+
+    image(asset, posX*scaleX, posY*scaleY, size*scaleX, size*scaleY);
   }
 
-
-void show(){
-  if(pepperFallen){
-    clickAble = false;
-    posX = 1130;
-    posY = 400;
-  }
-  
- image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY); 
-}
-
-    void mouseClicked() {
+  void mouseClicked() {
     if (mouseButton == LEFT && clickAble &&
-      mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
-      mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
-        if(!CatMeow.isPlaying()){
-          CatMeow.play();
-        }
-         glassFall.play();
+      mouseX < (posX+size/2)*scaleX && mouseX > (posX-size/2)*scaleX &&
+      mouseY < (posY+size/2)*scaleY && mouseY > (posY-size/2)*scaleY && !animation) {
+      if (!CatMeow.isPlaying()) {
+        CatMeow.play();
+      }
+      glassFall.play();
       pepperFallen = true;
       Timer = Timer + 5;
-     CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled, 
-       timeStack.peek().toasterTurnedoff,timeStack.peek().mouseCaught ,timeStack.peek().saltOff,true);
-      
-       }
-      }
-
-
+      CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
+        timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, true);
+    }
+  }
 }

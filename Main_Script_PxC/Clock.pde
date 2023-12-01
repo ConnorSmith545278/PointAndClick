@@ -20,18 +20,16 @@ class Clock {
   void update() {
 
     oneclock = Timer % 10;
-    tenclock = Timer/10; 
+    tenclock = Timer/10;
     hourOneClock = 8 + Timer/60;
-    
-    if (tenclock >= 6){
-    tenclock = tenclock - 6;
+
+    if (tenclock >= 6) {
+      tenclock = tenclock - 6;
     }
-    
+
     if (Timer <0) {
       Timer = 0;
     }
-    
-    
   }
   void show() {
     imageMode(CENTER);

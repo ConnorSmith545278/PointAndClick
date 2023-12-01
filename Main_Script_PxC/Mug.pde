@@ -1,6 +1,5 @@
 class Mug {
 
-  boolean clickAble;
   float posX;
   float posY;
   PImage asset;
@@ -8,30 +7,27 @@ class Mug {
   float sizeY;
   boolean mugTip;
   int mugTimer;
-  boolean visible;
   boolean spillMug = false;
   boolean cleaned = false;
 
 
 
-  Mug(boolean click, float x, float y, float sx, float sy) {
-    clickAble = click;
+  Mug(float x, float y, float sx, float sy) {
     posX = x;
     posY = y;
-    clickAble=click;
     sizeX = sx;
     sizeY = sy;
   }
 
 
   void show() {
-      asset = mug_empty;
-    
-    
+    asset = mug_empty;
+
+
     if (pot.fillMug) {
       mug.asset = mug_filled;
     }
-    
+
     if (spillMug) {
       asset = mug_spilled;
     }
@@ -55,36 +51,35 @@ class Mug {
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT  && asset == mug_filled && clickAble &&
+    if (mouseButton == LEFT  && asset == mug_filled &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
-        if(!CatMeow.isPlaying()){
-          CatMeow.play();
-        }
-        
+      if (!CatMeow.isPlaying()) {
+        CatMeow.play();
+      }
+
       glassFall.play();
-      clickAble = false;
       spillMug = true;
-      
-      
+
+
       Timer = Timer + 5;
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, true,
         timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
     }
-    
-    if (mouseButton == LEFT  && asset == mug_empty && clickAble &&
+
+    if (mouseButton == LEFT  && asset == mug_empty &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
-        if(!CatMeow.isPlaying()){
-          CatMeow.play();
-        }
-         glassFall.play();
+      if (!CatMeow.isPlaying()) {
+        CatMeow.play();
+      }
+      glassFall.play();
       mugTip = true;
       animation = true;
-      
-      
-      
-      
+
+
+
+
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
         timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
       Timer = Timer + 5;

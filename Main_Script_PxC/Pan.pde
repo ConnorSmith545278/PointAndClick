@@ -1,6 +1,5 @@
 class Pan {
 
-  boolean clickAble;
   float posX;
   float posY;
   PImage asset = pan_empty;
@@ -11,8 +10,7 @@ class Pan {
 
 
 
-  Pan(boolean click, float x, float y, float sx, float sy) {
-    clickAble = click;
+  Pan(float x, float y, float sx, float sy) {
     posX = x;
     posY = y;
     sizeX = sx;
@@ -23,13 +21,13 @@ class Pan {
     if (Timer >=25 && !animation &&  !cookingEggs) {
       cookTimer ++;
       NPC_the_guy.expression = 4;
-      if (cookTimer >= 30) { 
+      if (cookTimer >= 30) {
         asset = pan_eggs;
         NPC_the_guy.posX=400;
         NPC_the_guy.posY=360;
       }
       if (cookTimer >= 80) {
-        cookingEggs = true;       
+        cookingEggs = true;
         NPC_the_guy.expression = 0;
         cookTimer = 0;
       }

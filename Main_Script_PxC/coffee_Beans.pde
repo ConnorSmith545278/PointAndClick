@@ -1,5 +1,4 @@
 class coffee_Beans {
-
   boolean visible = true;
   boolean clickAble;
   float startposX;
@@ -28,15 +27,16 @@ class coffee_Beans {
   }
   void show() {
     imageMode(CENTER);
-      asset = coffee_beans;
-      posX = startposX;
-      posY = startposY;
-      
-      
-      if(setCoffee){
+    asset = coffee_beans;
+    posX = startposX;
+    posY = startposY;
+
+
+    if (setCoffee) {
       asset = coffee_beans_spilled;
       posX = 920;
       posY = 570;
+      NPC_the_guy.expression = 1;
       if (count >= 30) {
         asset = coffee_beans_spilled;
         NPC_the_guy.posX = 850;
@@ -55,9 +55,7 @@ class coffee_Beans {
         count = 0;
         NPC_the_guy.expression = 0;
       }
-      
-      
-      }
+    }
     if (visible) {
       image(asset, posX*scaleX, posY*scaleY, sizeX*scaleX, sizeY*scaleY);
     }

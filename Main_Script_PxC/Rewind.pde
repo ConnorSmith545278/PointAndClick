@@ -33,18 +33,10 @@ class Rewind {
 
 
       if (topElement.coffeeSpilled != secondElement.coffeeSpilled) {
-        
         pot.fillMug = true;
-        
-
         rag.clickAble = true;
-
-          
         mug.cleaned = false;
-        mug.clickAble  =true;
-        
         NPC_the_guy.expression = 0;
-        
       }
 
 
@@ -72,11 +64,6 @@ class Rewind {
     }
 
 
-
-
-   
-    
-    
     if (Timer <= 60) {
       NPC_the_guy.expression = 7;
     }

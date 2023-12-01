@@ -6,7 +6,7 @@ class Rag {
   PImage asset;
   float sizeX;
   float sizeY;
-  int ragVar;
+  boolean ragMove = false;
   int ragTimer;
   boolean onFire = false;
 
@@ -20,38 +20,31 @@ class Rag {
   }
 
   void show() {
-    if (mug.spillMug && !onFire) {
-      ragVar = 3;
-      animation = true;
-    }
+    asset = rag_up;
 
-    switch(ragVar) {
-    case 0:
-      asset = rag_up;
-      break;
-    case 1:
-    
-      ragTimer ++;
-      
+    if (ragMove) {
+      animation = true;
       asset = rag_down;
-      
+      ragTimer ++;
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
       }
-      
       if (ragTimer >=45) {
-        ragVar = 0;
         ragTimer = 0;
+        ragMove = false;
         animation = false;
       }
-      
-    case 3:
+    }
+
+
+    if (mug.spillMug && !onFire) {
+      animation = true;
       ragTimer ++;
       if (ragTimer >=30) {
         NPC_the_guy.posX = 380;
         NPC_the_guy.posY = 360;
-      }     
+      }
       if (ragTimer >=60) {
         NPC_the_guy.posX = 500;
         NPC_the_guy.posY = 400;
@@ -62,7 +55,7 @@ class Rag {
       if (ragTimer >=75) {
         posX = 600;
         posY = 365;
-      }     
+      }
       if (ragTimer >=110) {
         posX = 600;
         posY = 350;
@@ -71,19 +64,15 @@ class Rag {
         posX = 205;
         posY = 260;
         pot.fillMug = false;
-      }   
+      }
       if (ragTimer >= 120) {
         NPC_the_guy.posX = NPC_the_guy.startPosX;
         NPC_the_guy.posY = NPC_the_guy.startPosY;
-        ragVar = 0;
         animation = false;
         ragTimer = 0;
         mug.spillMug = false;
       }
     }
-
-
-
 
     if (clickAble) {
       imageMode(CENTER);
@@ -95,15 +84,11 @@ class Rag {
     if (mouseButton == LEFT  && clickAble && !animation && !onFire &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY) {
-        if(!CatMeow.isPlaying()){
-          CatMeow.play();
-        }
-        
-        
-      ragVar = 1;
-      animation = true;
-      
-      
+      if (!CatMeow.isPlaying()) {
+        CatMeow.play();
+      }
+      ragMove = true;
+
       Timer = Timer + 5;
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, timeStack.peek().coffeeSpilled,
         timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
