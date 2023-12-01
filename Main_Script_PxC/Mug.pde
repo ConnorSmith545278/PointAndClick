@@ -9,7 +9,7 @@ class Mug {
   int mugTimer;
   boolean spillMug = false;
   boolean cleaned = false;
-
+  boolean clickAble = true;
 
 
   Mug(float x, float y, float sx, float sy) {
@@ -23,13 +23,13 @@ class Mug {
   void show() {
     asset = mug_empty;
 
-
     if (pot.fillMug) {
       mug.asset = mug_filled;
     }
 
     if (spillMug) {
       asset = mug_spilled;
+      clickAble = false;
     }
 
 
@@ -51,7 +51,7 @@ class Mug {
   }
 
   void mouseClicked() {
-    if (mouseButton == LEFT  && asset == mug_filled &&
+    if (mouseButton == LEFT  && asset == mug_filled && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
       if (!CatMeow.isPlaying()) {
@@ -61,13 +61,12 @@ class Mug {
       glassFall.play();
       spillMug = true;
 
-
       Timer = Timer + 5;
       CreateMomentInTime(timeStack.peek().catLocation, timeStack.peek().beansSpilled, true,
         timeStack.peek().toasterTurnedoff, timeStack.peek().mouseCaught, timeStack.peek().saltOff, timeStack.peek().pepperOff);
     }
 
-    if (mouseButton == LEFT  && asset == mug_empty &&
+    if (mouseButton == LEFT  && asset == mug_empty && clickAble &&
       mouseX < (posX+sizeX/2)*scaleX && mouseX > (posX-sizeX/2)*scaleX &&
       mouseY < (posY+sizeY/2)*scaleY && mouseY > (posY-sizeY/2)*scaleY && !animation) {
       if (!CatMeow.isPlaying()) {

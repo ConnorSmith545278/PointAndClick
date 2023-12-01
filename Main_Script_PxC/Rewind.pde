@@ -34,6 +34,7 @@ class Rewind {
 
       if (topElement.coffeeSpilled != secondElement.coffeeSpilled) {
         pot.fillMug = true;
+        mug.clickAble = true;
         rag.clickAble = true;
         mug.cleaned = false;
         NPC_the_guy.expression = 0;
